@@ -59,24 +59,24 @@ const ImageMergeAnimation = () => {
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
-      {/* Left curtain */}
+      {/* Left curtain - coming from outside to inside */}
       <div 
         className={`absolute inset-0 w-1/2 h-full bg-cover bg-right bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
         style={{ 
           backgroundImage: 'url("/images/golden-hours-image-6.JPG")',
-          transform: `translateX(-${curtainOffset}%)`,
+          transform: `translateX(-${100 - curtainOffset}%)`,
           right: '50%',
           left: 0,
           transition: 'transform 0.5s ease-out'
         }}
       />
 
-      {/* Right curtain */}
+      {/* Right curtain - coming from outside to inside */}
       <div 
         className={`absolute inset-0 w-1/2 h-full bg-cover bg-left bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
         style={{ 
           backgroundImage: 'url("/images/golden-hours-image-7.JPG")',
-          transform: `translateX(${curtainOffset}%)`,
+          transform: `translateX(${100 - curtainOffset}%)`,
           left: '50%',
           right: 0,
           transition: 'transform 0.5s ease-out'
