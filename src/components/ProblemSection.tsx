@@ -29,7 +29,7 @@ const ProblemSection = () => {
   }, []);
 
   return (
-    <section id="problem" className="py-24 md:py-32 bg-background" ref={sectionRef}>
+    <section id="problem" className="py-24 md:py-32" ref={sectionRef}>
       <div className="container mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}

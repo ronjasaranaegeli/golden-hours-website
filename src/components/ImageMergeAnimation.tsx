@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 const ImageMergeAnimation = () => {
@@ -5,7 +6,6 @@ const ImageMergeAnimation = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [leftImageUrl, setLeftImageUrl] = useState('');
   const [rightImageUrl, setRightImageUrl] = useState('');
-  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     // Check if the split images are already in localStorage
@@ -46,61 +46,40 @@ const ImageMergeAnimation = () => {
     const handleScroll = () => {
       const currentPosition = window.scrollY;
       setScrollPosition(currentPosition);
-      
-      // Set hasAnimated to true once we've scrolled past the trigger point
-      if (currentPosition > 50 && !hasAnimated) {
-        setHasAnimated(true);
-      } else if (currentPosition < 10) {
-        // Reset animation state when scrolled back to top
-        setHasAnimated(false);
-      }
     };
 
-    // Set initial scroll position
+    // Set initial scroll position to trigger animation
     setScrollPosition(window.scrollY);
-    // Check if we're already scrolled down on load
-    if (window.scrollY > 50) {
-      setHasAnimated(true);
-    }
 
     window.addEventListener("scroll", handleScroll);
     
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [hasAnimated]);
+  }, []);
 
-  // Calculate the maximum slide value
-  const maxSlideValue = 100;
+  // Calculate image position based on scroll
+  // Lower value = more sensitivity to scroll
+  const scrollFactor = 3;
   
-  // For initial load, if we're not scrolled, show the split images
-  // Once we scroll beyond the threshold, the animation happens once
-  let slidePercentage = 0;
+  // Left image slides in from left, right image slides in from right
+  // Maximum slide is 100% (completely off-screen)
+  // Minimum slide is 0% (completely visible)
+  const slidePercentage = Math.max(0, Math.min(100, (scrollPosition / scrollFactor)));
   
-  if (!hasAnimated) {
-    // If we haven't animated yet and we're scrolling, calculate slide percentage
-    slidePercentage = Math.min(maxSlideValue, (scrollPosition / 3));
-  } else {
-    // After animation has occurred, keep the images in their final positions
-    slidePercentage = 0;
-  }
-  
-  // Background zoom effect - only zoom in a little and then stop
-  // Limit the maximum zoom to avoid excessive zooming
-  const maxZoom = 1.15;
-  const zoomFactor = 1 + Math.min((scrollPosition / 1000), (maxZoom - 1));
-  
-  // Apply a smooth transition to background zoom
-  const backgroundScale = hasAnimated ? maxZoom : zoomFactor;
+  // Background zoom effect
+  const backgroundScale = 1 + (scrollPosition / 1000);
+
+  console.log("Animation state:", { isLoaded, leftImageUrl, rightImageUrl, slidePercentage });
 
   return (
-    <div className="fixed inset-0 overflow-hidden z-0">
-      {/* Background image (zooms in on scroll, but only up to a point) */}
+    <div className="absolute inset-0 overflow-hidden z-0">
+      {/* Background image (zooms in on scroll) */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300"
         style={{ 
           backgroundImage: 'url("/images/golden-hours-image-1.JPG")',
           backgroundPosition: 'center 30%',
           transform: `scale(${backgroundScale})`,
-          transition: 'transform 0.7s ease-out'
+          transition: 'transform 0.5s ease-out'
         }}
       >
         <div className="absolute inset-0 bg-black/20"></div>
@@ -116,7 +95,7 @@ const ImageMergeAnimation = () => {
             backgroundSize: 'cover',
             width: '50%',
             transform: `translateX(-${slidePercentage}%)`,
-            transition: 'transform 0.7s ease-out, opacity 0.5s ease-out',
+            transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
             zIndex: 5
           }}
         />
@@ -132,7 +111,7 @@ const ImageMergeAnimation = () => {
             backgroundSize: 'cover',
             width: '50%',
             transform: `translateX(${slidePercentage}%)`,
-            transition: 'transform 0.7s ease-out, opacity 0.5s ease-out',
+            transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
             zIndex: 5
           }}
         />
