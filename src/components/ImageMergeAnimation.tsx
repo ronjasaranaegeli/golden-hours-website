@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -10,45 +9,44 @@ const ImageMergeAnimation = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Choose a cleaner left image without mustache
-    const cleanLeftImage = "/lovable-uploads/7e44dd91-112d-4cb4-a631-f7f48cf99571.png";
+    // Check if the split images are already in localStorage
+    const storedLeftImg = localStorage.getItem('leftHalfImage');
+    const storedRightImg = localStorage.getItem('rightHalfImage');
     
-    // Use the previously selected right image
-    const rightImage = isMobile 
-      ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png' 
-      : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png';
-    
-    // Clear previous stored images to force new selection
-    localStorage.removeItem('leftHalfImage');
-    localStorage.removeItem('rightHalfImage');
-    
-    // Set new image URLs
-    setLeftImageUrl(cleanLeftImage);
-    setRightImageUrl(rightImage);
-    
-    // Preload images
-    const leftHalf = new Image();
-    const rightHalf = new Image();
-    const background = new Image();
-    
-    leftHalf.src = cleanLeftImage;
-    rightHalf.src = rightImage;
-    background.src = '/images/golden-hours-image-1.JPG';
-    
-    let loadedCount = 0;
-    const checkAllLoaded = () => {
-      loadedCount++;
-      if (loadedCount === 3) {
-        setIsLoaded(true);
-        // Store images in localStorage for future use
-        localStorage.setItem('leftHalfImage', cleanLeftImage);
-        localStorage.setItem('rightHalfImage', rightImage);
-      }
-    };
-    
-    leftHalf.onload = checkAllLoaded;
-    rightHalf.onload = checkAllLoaded;
-    background.onload = checkAllLoaded;
+    if (storedLeftImg && storedRightImg) {
+      setLeftImageUrl(storedLeftImg);
+      setRightImageUrl(storedRightImg);
+      setIsLoaded(true);
+    } else {
+      // Update right image URL for mobile
+      setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
+      setRightImageUrl(isMobile 
+        ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png' 
+        : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
+      
+      // Preload images
+      const leftHalf = new Image();
+      const rightHalf = new Image();
+      const background = new Image();
+      
+      leftHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png';
+      rightHalf.src = isMobile 
+        ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png'
+        : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png';
+      background.src = '/images/golden-hours-image-1.JPG';
+      
+      let loadedCount = 0;
+      const checkAllLoaded = () => {
+        loadedCount++;
+        if (loadedCount === 3) {
+          setIsLoaded(true);
+        }
+      };
+      
+      leftHalf.onload = checkAllLoaded;
+      rightHalf.onload = checkAllLoaded;
+      background.onload = checkAllLoaded;
+    }
 
     const handleScroll = () => {
       const currentPosition = window.scrollY;
