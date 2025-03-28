@@ -51,9 +51,6 @@ const HeroSection = () => {
           onClick={() => scrollToSection('problem')}
         />
       </div>
-
-      {/* Subtle gradient overlay at bottom for smoother transition */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-background via-background/70 to-transparent z-10"></div>
     </section>
   );
 };
