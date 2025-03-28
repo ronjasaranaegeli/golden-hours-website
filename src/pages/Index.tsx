@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -16,16 +17,11 @@ const Index = () => {
     // Update document title
     document.title = "Golden Hours Coaching - Dein Sinn. Deine Wahrheit. Dein Leben.";
     
-    // Clear any stored split images to force using the new images
-    localStorage.removeItem('leftHalfImage');
-    localStorage.removeItem('rightHalfImage');
-    
     // Preload key images
     const imagesToPreload = [
       "/images/golden-hours-image-1.JPG", // Main background
-      "/lovable-uploads/cf5693e3-5472-469d-95d7-ddb7891a10dc.png", // New left image
-      "/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png", // Mobile right image
-      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png" // Desktop right image
+      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png", // Full image
+      "/images/golden-hours-image-16.JPG"
     ];
     
     imagesToPreload.forEach(src => {
@@ -33,50 +29,110 @@ const Index = () => {
       img.src = src;
     });
 
-    // We're using different images now, so we'll modify the split image creation
+    // Create split images from the uploaded image
     createSplitImages();
   }, []);
 
   // Function to split the image into left and right halves
   const createSplitImages = () => {
-    // We'll use different source images now
-    console.log('Creating split images with new source images...');
+    // Check if we already have the split images stored
+    if (localStorage.getItem('leftHalfImage') && localStorage.getItem('rightHalfImage')) {
+      console.log('Split images already exist in localStorage');
+      return;
+    }
+
+    console.log('Creating split images...');
     
-    const leftImage = new Image();
-    leftImage.crossOrigin = "anonymous";
-    leftImage.src = "/lovable-uploads/cf5693e3-5472-469d-95d7-ddb7891a10dc.png";
+    const fullImage = new Image();
+    fullImage.crossOrigin = "anonymous";
+    fullImage.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png";
     
-    const rightImage = new Image();
-    rightImage.crossOrigin = "anonymous";
-    rightImage.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png";
-    
-    // We'll store the images directly without splitting them further
-    leftImage.onload = () => {
-      console.log('Left image loaded, storing in localStorage');
-      try {
-        const leftUrl = leftImage.src;
-        localStorage.setItem('leftHalfImage', leftUrl);
-      } catch (error) {
-        console.error('Error storing left image:', error);
+    fullImage.onload = () => {
+      console.log('Full image loaded, dimensions:', fullImage.width, 'x', fullImage.height);
+      
+      // Create canvas for the left half
+      const leftCanvas = document.createElement('canvas');
+      leftCanvas.width = fullImage.width / 2;
+      leftCanvas.height = fullImage.height;
+      const leftCtx = leftCanvas.getContext('2d');
+      
+      // Create canvas for the right half
+      const rightCanvas = document.createElement('canvas');
+      rightCanvas.width = fullImage.width / 2;
+      rightCanvas.height = fullImage.height;
+      const rightCtx = rightCanvas.getContext('2d');
+      
+      if (leftCtx && rightCtx) {
+        // Draw left half
+        leftCtx.drawImage(
+          fullImage, 
+          0, 0, fullImage.width / 2, fullImage.height,
+          0, 0, fullImage.width / 2, fullImage.height
+        );
+        
+        // Draw right half
+        rightCtx.drawImage(
+          fullImage, 
+          fullImage.width / 2, 0, fullImage.width / 2, fullImage.height,
+          0, 0, fullImage.width / 2, fullImage.height
+        );
+        
+        // Create URLs for the split images
+        try {
+          // Save left half to file and set URL
+          const leftUrl = leftCanvas.toDataURL('image/png');
+          localStorage.setItem('leftHalfImage', leftUrl);
+          console.log('Left half image created');
+          
+          // Create a physical image to test loading
+          const leftImg = new Image();
+          leftImg.src = leftUrl;
+          
+          // Save right half to file and set URL
+          const rightUrl = rightCanvas.toDataURL('image/png');
+          localStorage.setItem('rightHalfImage', rightUrl);
+          console.log('Right half image created');
+          
+          // Create a physical image to test loading
+          const rightImg = new Image();
+          rightImg.src = rightUrl;
+          
+          // Create static versions of the split images for fallback
+          fetch('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png')
+            .catch(() => {
+              console.log('Creating static left half image as fallback');
+              // If the file doesn't exist, create it
+              leftCanvas.toBlob((blob) => {
+                if (blob) {
+                  const formData = new FormData();
+                  formData.append('image', blob, '24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
+                  // Here you would typically upload the image to your server
+                  // For now we'll just use the localStorage version
+                }
+              });
+            });
+          
+          fetch('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png')
+            .catch(() => {
+              console.log('Creating static right half image as fallback');
+              // If the file doesn't exist, create it
+              rightCanvas.toBlob((blob) => {
+                if (blob) {
+                  const formData = new FormData();
+                  formData.append('image', blob, '24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
+                  // Here you would typically upload the image to your server
+                  // For now we'll just use the localStorage version
+                }
+              });
+            });
+        } catch (error) {
+          console.error('Error creating split images:', error);
+        }
       }
     };
     
-    rightImage.onload = () => {
-      console.log('Right image loaded, storing in localStorage');
-      try {
-        const rightUrl = rightImage.src;
-        localStorage.setItem('rightHalfImage', rightUrl);
-      } catch (error) {
-        console.error('Error storing right image:', error);
-      }
-    };
-    
-    leftImage.onerror = (err) => {
-      console.error('Error loading left image:', err);
-    };
-    
-    rightImage.onerror = (err) => {
-      console.error('Error loading right image:', err);
+    fullImage.onerror = (err) => {
+      console.error('Error loading full image:', err);
     };
   };
 

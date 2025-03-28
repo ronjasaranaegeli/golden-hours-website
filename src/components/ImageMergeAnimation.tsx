@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -19,9 +18,8 @@ const ImageMergeAnimation = () => {
       setRightImageUrl(storedRightImg);
       setIsLoaded(true);
     } else {
-      // Use a different image for the left side that doesn't have the mustache issue
-      // We're using one of the other available images in the project
-      setLeftImageUrl('/lovable-uploads/cf5693e3-5472-469d-95d7-ddb7891a10dc.png');
+      // Update right image URL for mobile
+      setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
       setRightImageUrl(isMobile 
         ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png' 
         : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
@@ -31,7 +29,7 @@ const ImageMergeAnimation = () => {
       const rightHalf = new Image();
       const background = new Image();
       
-      leftHalf.src = '/lovable-uploads/cf5693e3-5472-469d-95d7-ddb7891a10dc.png';
+      leftHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png';
       rightHalf.src = isMobile 
         ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png'
         : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png';
