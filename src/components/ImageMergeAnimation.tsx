@@ -79,7 +79,7 @@ const ImageMergeAnimation = () => {
           backgroundPosition: 'right center',
           backgroundSize: 'cover',
           transform: `translateX(-${100 - curtainOffset}%)`,
-          width: '50.1%', // Slightly overlap to prevent gap
+          width: '50.2%', // Slightly larger overlap to prevent any gap
           left: '0',
           zIndex: 5
         }}
@@ -93,7 +93,7 @@ const ImageMergeAnimation = () => {
           backgroundPosition: 'left center',
           backgroundSize: 'cover',
           transform: `translateX(${100 - curtainOffset}%)`,
-          width: '50.1%', // Slightly overlap to prevent gap
+          width: '50.2%', // Slightly larger overlap to prevent any gap
           right: '0',
           zIndex: 5
         }}
