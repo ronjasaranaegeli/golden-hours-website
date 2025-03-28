@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const HeroSection = () => {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
-    () => ["Dein Sinn.", "Deine Wahrheit.", "Dein Leben."],
+    () => ["Dein Sinn", "Wahrheit", "Dein Leben"],
     []
   );
 
@@ -49,7 +49,7 @@ const HeroSection = () => {
         <div className="text-center mb-6">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight tracking-tight">
             <div className="flex items-center justify-center">
-              <div className="relative h-[1.2em] w-[20rem] md:w-[25rem] lg:w-[30rem] overflow-hidden ml-3">
+              <div className="relative h-[1.2em] w-[24rem] md:w-[28rem] lg:w-[32rem] overflow-hidden ml-3">
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
@@ -65,7 +65,7 @@ const HeroSection = () => {
                       duration: 0.6
                     }}
                   >
-                    {title === "Wahrheit" ? "Deine " : ""}{title}
+                    {title === "Wahrheit" ? "Deine " : ""}{title}.
                   </motion.span>
                 ))}
               </div>
