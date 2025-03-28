@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -20,8 +19,7 @@ const Index = () => {
     // Preload key images
     const imagesToPreload = [
       "/images/golden-hours-image-1.JPG", // Main background
-      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png", // Left half
-      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png", // Right half
+      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png", // Full image
       "/images/golden-hours-image-16.JPG"
     ];
     
@@ -36,11 +34,21 @@ const Index = () => {
 
   // Function to split the image into left and right halves
   const createSplitImages = () => {
+    // Check if we already have the split images stored
+    if (localStorage.getItem('leftHalfImage') && localStorage.getItem('rightHalfImage')) {
+      console.log('Split images already exist in localStorage');
+      return;
+    }
+
+    console.log('Creating split images...');
+    
     const fullImage = new Image();
     fullImage.crossOrigin = "anonymous";
     fullImage.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png";
     
     fullImage.onload = () => {
+      console.log('Full image loaded, dimensions:', fullImage.width, 'x', fullImage.height);
+      
       // Create canvas for the left half
       const leftCanvas = document.createElement('canvas');
       leftCanvas.width = fullImage.width / 2;
@@ -68,35 +76,62 @@ const Index = () => {
           0, 0, fullImage.width / 2, fullImage.height
         );
         
-        // Convert to data URLs and create blob objects
-        leftCanvas.toBlob((leftBlob) => {
-          if (leftBlob) {
-            // Create a URL for the blob
-            const leftUrl = URL.createObjectURL(leftBlob);
-            
-            // Preload the left half image
-            const leftImg = new Image();
-            leftImg.src = leftUrl;
-            
-            // Store the URL in localStorage for quick access
-            localStorage.setItem('leftHalfImage', leftUrl);
-          }
-        });
-        
-        rightCanvas.toBlob((rightBlob) => {
-          if (rightBlob) {
-            // Create a URL for the blob
-            const rightUrl = URL.createObjectURL(rightBlob);
-            
-            // Preload the right half image
-            const rightImg = new Image();
-            rightImg.src = rightUrl;
-            
-            // Store the URL in localStorage for quick access
-            localStorage.setItem('rightHalfImage', rightUrl);
-          }
-        });
+        // Create URLs for the split images
+        try {
+          // Save left half to file and set URL
+          const leftUrl = leftCanvas.toDataURL('image/png');
+          localStorage.setItem('leftHalfImage', leftUrl);
+          console.log('Left half image created');
+          
+          // Create a physical image to test loading
+          const leftImg = new Image();
+          leftImg.src = leftUrl;
+          
+          // Save right half to file and set URL
+          const rightUrl = rightCanvas.toDataURL('image/png');
+          localStorage.setItem('rightHalfImage', rightUrl);
+          console.log('Right half image created');
+          
+          // Create a physical image to test loading
+          const rightImg = new Image();
+          rightImg.src = rightUrl;
+          
+          // Create static versions of the split images for fallback
+          fetch('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png')
+            .catch(() => {
+              console.log('Creating static left half image as fallback');
+              // If the file doesn't exist, create it
+              leftCanvas.toBlob((blob) => {
+                if (blob) {
+                  const formData = new FormData();
+                  formData.append('image', blob, '24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
+                  // Here you would typically upload the image to your server
+                  // For now we'll just use the localStorage version
+                }
+              });
+            });
+          
+          fetch('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png')
+            .catch(() => {
+              console.log('Creating static right half image as fallback');
+              // If the file doesn't exist, create it
+              rightCanvas.toBlob((blob) => {
+                if (blob) {
+                  const formData = new FormData();
+                  formData.append('image', blob, '24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
+                  // Here you would typically upload the image to your server
+                  // For now we'll just use the localStorage version
+                }
+              });
+            });
+        } catch (error) {
+          console.error('Error creating split images:', error);
+        }
       }
+    };
+    
+    fullImage.onerror = (err) => {
+      console.error('Error loading full image:', err);
     };
   };
 

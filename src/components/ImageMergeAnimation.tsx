@@ -4,28 +4,44 @@ import React, { useEffect, useState } from 'react';
 const ImageMergeAnimation = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [leftImageUrl, setLeftImageUrl] = useState('');
+  const [rightImageUrl, setRightImageUrl] = useState('');
 
   useEffect(() => {
-    // Preload images
-    const leftHalf = new Image();
-    const rightHalf = new Image();
-    const background = new Image();
+    // Check if the split images are already in localStorage
+    const storedLeftImg = localStorage.getItem('leftHalfImage');
+    const storedRightImg = localStorage.getItem('rightHalfImage');
     
-    leftHalf.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png";
-    rightHalf.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png";
-    background.src = "/images/golden-hours-image-1.JPG";
-    
-    let loadedCount = 0;
-    const checkAllLoaded = () => {
-      loadedCount++;
-      if (loadedCount === 3) {
-        setIsLoaded(true);
-      }
-    };
-    
-    leftHalf.onload = checkAllLoaded;
-    rightHalf.onload = checkAllLoaded;
-    background.onload = checkAllLoaded;
+    if (storedLeftImg && storedRightImg) {
+      setLeftImageUrl(storedLeftImg);
+      setRightImageUrl(storedRightImg);
+      setIsLoaded(true);
+    } else {
+      // If not in localStorage, use the direct image paths
+      setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
+      setRightImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
+      
+      // Preload images
+      const leftHalf = new Image();
+      const rightHalf = new Image();
+      const background = new Image();
+      
+      leftHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png';
+      rightHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png';
+      background.src = '/images/golden-hours-image-1.JPG';
+      
+      let loadedCount = 0;
+      const checkAllLoaded = () => {
+        loadedCount++;
+        if (loadedCount === 3) {
+          setIsLoaded(true);
+        }
+      };
+      
+      leftHalf.onload = checkAllLoaded;
+      rightHalf.onload = checkAllLoaded;
+      background.onload = checkAllLoaded;
+    }
 
     const handleScroll = () => {
       const currentPosition = window.scrollY;
@@ -52,6 +68,8 @@ const ImageMergeAnimation = () => {
   // Background zoom effect
   const backgroundScale = 1 + (scrollPosition / 1000);
 
+  console.log("Animation state:", { isLoaded, leftImageUrl, rightImageUrl, slidePercentage });
+
   return (
     <div className="absolute inset-0 overflow-hidden z-0">
       {/* Background image (zooms in on scroll) */}
@@ -68,32 +86,36 @@ const ImageMergeAnimation = () => {
       </div>
 
       {/* Left half of the image - slide from left */}
-      <div 
-        className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-        style={{ 
-          backgroundImage: 'url("/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png")',
-          backgroundPosition: 'right center', 
-          backgroundSize: 'cover',
-          width: '50%',
-          transform: `translateX(-${slidePercentage}%)`,
-          transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
-          zIndex: 5
-        }}
-      />
+      {leftImageUrl && (
+        <div 
+          className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ 
+            backgroundImage: `url("${leftImageUrl}")`,
+            backgroundPosition: 'right center', 
+            backgroundSize: 'cover',
+            width: '50%',
+            transform: `translateX(-${slidePercentage}%)`,
+            transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+            zIndex: 5
+          }}
+        />
+      )}
 
       {/* Right half of the image - slide from right */}
-      <div 
-        className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-        style={{ 
-          backgroundImage: 'url("/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png")',
-          backgroundPosition: 'left center',
-          backgroundSize: 'cover',
-          width: '50%',
-          transform: `translateX(${slidePercentage}%)`,
-          transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
-          zIndex: 5
-        }}
-      />
+      {rightImageUrl && (
+        <div 
+          className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ 
+            backgroundImage: `url("${rightImageUrl}")`,
+            backgroundPosition: 'left center',
+            backgroundSize: 'cover',
+            width: '50%',
+            transform: `translateX(${slidePercentage}%)`,
+            transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+            zIndex: 5
+          }}
+        />
+      )}
 
       {/* Add a check to visualize loaded state */}
       {!isLoaded && (
