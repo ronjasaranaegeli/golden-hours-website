@@ -36,7 +36,7 @@ const ImageMergeAnimation = () => {
       <motion.div
         className="absolute inset-0 bg-cover bg-left bg-no-repeat"
         style={{ 
-          backgroundImage: 'url("/lovable-uploads/7f530417-8f71-4393-933b-096bbe45a69e.png")',
+          backgroundImage: 'url("/lovable-uploads/30bd8eb6-93aa-49b7-b7c3-3af9787c1041.png")',
           clipPath: 'polygon(0 0, 50% 0, 50% 100%, 0 100%)'
         }}
         initial={{ x: -100, opacity: 0 }}

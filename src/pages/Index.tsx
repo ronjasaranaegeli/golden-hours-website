@@ -20,7 +20,7 @@ const Index = () => {
     // Preload key images
     const imagesToPreload = [
       "/images/golden-hours-image-1.JPG", // Main background
-      "/lovable-uploads/7f530417-8f71-4393-933b-096bbe45a69e.png", // Left side image for animation
+      "/lovable-uploads/30bd8eb6-93aa-49b7-b7c3-3af9787c1041.png", // Left side image for animation
       "/lovable-uploads/f07e6c66-dbb5-4609-909f-99904edf8d66.png", // Right side image for animation
       "/images/golden-hours-image-16.JPG"
     ];
