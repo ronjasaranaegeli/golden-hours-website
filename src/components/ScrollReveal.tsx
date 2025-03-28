@@ -21,8 +21,8 @@ const ScrollReveal = () => {
     window.addEventListener('scroll', reveal);
     window.addEventListener('load', reveal);
     
-    // Initial check
-    setTimeout(reveal, 100);
+    // Initial check - wait a bit longer to let the curtain animation initialize
+    setTimeout(reveal, 600);
     
     return () => {
       window.removeEventListener('scroll', reveal);

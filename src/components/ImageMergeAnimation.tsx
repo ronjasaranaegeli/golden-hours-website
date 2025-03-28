@@ -33,11 +33,19 @@ const ImageMergeAnimation = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    
+    // Initial animation on page load
+    setTimeout(() => {
+      // Start with a small initial curtain offset even at zero scroll
+      setScrollPosition(20);
+    }, 500);
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Calculate curtain position based on scroll
   const curtainOffset = Math.min(100, scrollPosition / 5);
+  // Calculate background zoom based on scroll
   const backgroundScale = 1 + (scrollPosition / 1000);
 
   return (
@@ -49,6 +57,7 @@ const ImageMergeAnimation = () => {
           backgroundImage: 'url("/images/golden-hours-image-1.JPG")',
           backgroundPosition: 'center 30%',
           transform: `scale(${backgroundScale})`,
+          transition: 'transform 0.5s ease-out'
         }}
       >
         <div className="absolute inset-0 bg-black/20"></div>
@@ -62,6 +71,7 @@ const ImageMergeAnimation = () => {
           transform: `translateX(-${curtainOffset}%)`,
           right: '50%',
           left: 0,
+          transition: 'transform 0.5s ease-out'
         }}
       />
 
@@ -73,6 +83,7 @@ const ImageMergeAnimation = () => {
           transform: `translateX(${curtainOffset}%)`,
           left: '50%',
           right: 0,
+          transition: 'transform 0.5s ease-out'
         }}
       />
     </div>
