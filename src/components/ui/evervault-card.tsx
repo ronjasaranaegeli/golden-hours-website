@@ -79,7 +79,7 @@ export function CardPattern({ mouseX, mouseY, randomString }: any) {
         className="absolute inset-0 opacity-0 mix-blend-overlay group-hover/card:opacity-100"
         style={style}
       >
-        <p className="absolute inset-x-0 inset-y-0 h-full w-full break-words whitespace-pre-wrap text-forest-800 font-serif font-medium transition duration-500 overflow-hidden text-xl md:text-2xl lg:text-3xl">
+        <p className="absolute inset-x-0 inset-y-0 h-full w-full break-words whitespace-pre-wrap text-forest-800 font-['Courier_New'] transition duration-500 overflow-hidden text-xl md:text-2xl lg:text-3xl">
           {randomString}
         </p>
       </motion.div>
@@ -95,7 +95,9 @@ export const generateRandomString = (length: number, customWords?: string[]) => 
     let result = "";
     while (result.length < length) {
       const randomWord = customWords[Math.floor(Math.random() * customWords.length)];
-      result += randomWord + " ";
+      // Remove the bullet points (•) from the questions
+      const cleanWord = randomWord.replace(" •", "");
+      result += cleanWord + " ";
     }
     return result.substring(0, length);
   } else {
