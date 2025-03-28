@@ -19,9 +19,9 @@ const Index = () => {
     
     // Preload key images
     const imagesToPreload = [
-      "/images/golden-hours-image-1.JPG",
-      "/images/golden-hours-image-2.JPG",
-      "/images/golden-hours-image-3.JPG",
+      "/images/golden-hours-image-1.JPG", // Main background
+      "/images/golden-hours-image-2.JPG", // Left side image for animation
+      "/images/golden-hours-image-3.JPG", // Right side image for animation
       "/images/golden-hours-image-16.JPG"
     ];
     

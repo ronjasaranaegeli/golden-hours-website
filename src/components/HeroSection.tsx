@@ -1,7 +1,9 @@
+
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import ImageMergeAnimation from './ImageMergeAnimation';
 
 const HeroSection = () => {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -30,17 +32,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <div 
-          className="h-full w-full bg-cover bg-center bg-no-repeat" 
-          style={{ 
-            backgroundImage: 'url("/images/golden-hours-image-1.JPG")',
-            backgroundPosition: 'center 30%',
-          }}
-        >
-          <div className="absolute inset-0 bg-black/20"></div>
-        </div>
-      </div>
+      <ImageMergeAnimation />
 
       <div className="relative z-10 container mx-auto px-6 md:px-8 text-white max-w-2xl flex flex-col items-center">
         <div className="text-center mb-4">
