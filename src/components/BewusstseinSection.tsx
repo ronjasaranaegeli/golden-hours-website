@@ -70,7 +70,7 @@ const BewusstseinSection = () => {
   return (
     <section 
       id="bewusstsein" 
-      className="py-0 bg-gradient-to-b from-golden-50 to-transparent overflow-hidden relative h-screen flex items-center justify-center"
+      className="py-0 bg-gradient-to-b from-golden-50 to-transparent overflow-hidden relative h-screen flex items-center justify-center w-full"
       ref={sectionRef}
     >
       <div 
@@ -81,17 +81,17 @@ const BewusstseinSection = () => {
         }}
       ></div>
       
-      <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center justify-center h-full w-full">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
         <div className="max-w-3xl mx-auto text-center mb-4 md:mb-6 reveal" ref={titleRef}>
           <h2 className="font-serif text-2xl md:text-4xl font-medium heading-underline inline-block">
             Die Reise zu deinem wahren Selbst
           </h2>
         </div>
 
-        <div className="w-full mx-auto reveal flex-1 flex items-center" ref={cardRef} style={{ transform: `translateY(${scrollY * -0.05}px)` }}>
-          <div className="h-full w-full overflow-hidden rounded-3xl bg-gradient-to-br from-golden-100 to-golden-50 shadow-lg border border-golden-200" style={{ minHeight: isMobile ? "75vh" : "70vh" }}>
+        <div className="w-full h-full reveal flex items-center" ref={cardRef} style={{ transform: `translateY(${scrollY * -0.05}px)` }}>
+          <div className="h-full w-full overflow-hidden bg-gradient-to-br from-golden-100 to-golden-50">
             <EvervaultCard 
-              text={<h3 className="font-serif text-2xl md:text-3xl text-center">A Journey of Self Discovery</h3>} 
+              text={<h3 className="font-serif text-2xl md:text-3xl">A Journey of Self Discovery</h3>} 
               customWords={customWords}
               className="hover:scale-[1.02] transition-transform duration-500 h-full" 
             />

@@ -22,7 +22,8 @@ export const EvervaultCard = ({
   const [randomString, setRandomString] = useState("");
 
   useEffect(() => {
-    let str = generateRandomString(3500, customWords);
+    // Erhöhte Menge an Text für vollständige Abdeckung
+    let str = generateRandomString(7000, customWords);
     setRandomString(str);
   }, [customWords]);
 
@@ -31,20 +32,20 @@ export const EvervaultCard = ({
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
 
-    const str = generateRandomString(3500, customWords);
+    const str = generateRandomString(7000, customWords);
     setRandomString(str);
   }
 
   return (
     <div
       className={cn(
-        "p-0.5 bg-transparent aspect-square flex items-center justify-center w-full h-full relative",
+        "p-0 bg-transparent aspect-square flex items-center justify-center w-full h-full relative",
         className
       )}
     >
       <div
         onMouseMove={onMouseMove}
-        className="group/card rounded-3xl w-full relative overflow-hidden bg-transparent flex items-center justify-center h-full"
+        className="group/card rounded-none w-full relative overflow-hidden bg-transparent flex items-center justify-center h-full"
       >
         <CardPattern
           mouseX={mouseX}
@@ -63,21 +64,22 @@ export const EvervaultCard = ({
 };
 
 export function CardPattern({ mouseX, mouseY, randomString }: any) {
-  let maskImage = useMotionTemplate`radial-gradient(350px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  // Vergrößerter Maskierungsradius für bessere Abdeckung
+  let maskImage = useMotionTemplate`radial-gradient(450px at ${mouseX}px ${mouseY}px, white, transparent)`;
   let style = { maskImage, WebkitMaskImage: maskImage };
 
   return (
     <div className="pointer-events-none">
-      <div className="absolute inset-0 rounded-2xl [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
+      <div className="absolute inset-0 [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#e2d1c3] to-[#F2FCE2] opacity-0 group-hover/card:opacity-100 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 bg-gradient-to-r from-[#e2d1c3] to-[#F2FCE2] opacity-0 group-hover/card:opacity-100 backdrop-blur-xl transition duration-500"
         style={style}
       />
       <motion.div
-        className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay group-hover/card:opacity-100"
+        className="absolute inset-0 opacity-0 mix-blend-overlay group-hover/card:opacity-100"
         style={style}
       >
-        <p className="absolute inset-x-0 inset-y-0 text-xs h-full w-full break-words whitespace-pre-wrap text-forest-800 font-mono font-bold transition duration-500 overflow-hidden">
+        <p className="absolute inset-x-0 inset-y-0 h-full w-full break-words whitespace-pre-wrap text-forest-800 font-mono font-bold transition duration-500 overflow-hidden text-2xl md:text-3xl lg:text-4xl">
           {randomString}
         </p>
       </motion.div>
