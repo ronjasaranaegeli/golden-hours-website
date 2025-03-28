@@ -78,11 +78,11 @@ const HeroSection = () => {
         </p>
         <div className="flex justify-center w-full">
           <Button 
-            onClick={() => scrollToSection('problem')} 
+            onClick={() => scrollToSection('waitlist')} 
             variant="cream"
             className="mt-2 px-4 sm:px-6 py-3 sm:py-4 text-sm btn-shine"
           >
-            Jetzt entdecken
+            Auf die Warteliste
           </Button>
         </div>
       </div>
