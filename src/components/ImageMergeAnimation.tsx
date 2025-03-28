@@ -3,18 +3,16 @@ import React, { useEffect, useState } from 'react';
 
 const ImageMergeAnimation = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [prevScrollPosition, setPrevScrollPosition] = useState(0);
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     // Preload images
-    const curtainLeft = new Image();
-    const curtainRight = new Image();
+    const leftHalf = new Image();
+    const rightHalf = new Image();
     const background = new Image();
     
-    curtainLeft.src = "/lovable-uploads/565b6923-2224-4cb4-b3a4-17590505c554.png";
-    curtainRight.src = "/lovable-uploads/ee7e5774-a3eb-4af4-9d4b-ae15e1b58b67.png";
+    leftHalf.src = "/lovable-uploads/75089de6-acf0-48c1-acd5-5211c709345f-left.png";
+    rightHalf.src = "/lovable-uploads/75089de6-acf0-48c1-acd5-5211c709345f-right.png";
     background.src = "/images/golden-hours-image-1.JPG";
     
     let loadedCount = 0;
@@ -22,38 +20,36 @@ const ImageMergeAnimation = () => {
       loadedCount++;
       if (loadedCount === 3) {
         setIsLoaded(true);
-        // Start animation immediately when images are loaded
-        setScrollPosition(20);
       }
     };
     
-    curtainLeft.onload = checkAllLoaded;
-    curtainRight.onload = checkAllLoaded;
+    leftHalf.onload = checkAllLoaded;
+    rightHalf.onload = checkAllLoaded;
     background.onload = checkAllLoaded;
 
     const handleScroll = () => {
       const currentPosition = window.scrollY;
-      // Determine scroll direction
-      const direction = currentPosition > prevScrollPosition ? 'down' : 'up';
-      
-      setScrollDirection(direction);
-      setPrevScrollPosition(currentPosition);
       setScrollPosition(currentPosition);
     };
+
+    // Initial animation trigger even before scroll
+    setScrollPosition(20);
 
     window.addEventListener("scroll", handleScroll);
     
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPosition]);
+  }, []);
 
-  // Calculate curtain position based on scroll and direction
-  // When scrolling down: curtains move inward (smaller offset means more closed)
-  // When scrolling up: curtains move outward (larger offset means more open)
-  const curtainOffset = scrollDirection === 'down' 
-    ? Math.min(100, scrollPosition / 5) // Inward when scrolling down
-    : Math.max(0, 100 - (scrollPosition / 5)); // Outward when scrolling up
+  // Calculate image position based on scroll
+  // Lower value = more sensitivity to scroll
+  const scrollFactor = 3;
   
-  // Calculate background zoom based on scroll
+  // Left image slides in from left, right image slides in from right
+  // Maximum slide is 100% (completely off-screen)
+  // Minimum slide is 0% (completely visible)
+  const slidePercentage = Math.min(100, Math.max(0, 100 - (scrollPosition / scrollFactor)));
+  
+  // Background zoom effect
   const backgroundScale = 1 + (scrollPosition / 1000);
 
   return (
@@ -71,30 +67,28 @@ const ImageMergeAnimation = () => {
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
-      {/* Left curtain */}
+      {/* Left half of the image */}
       <div 
-        className={`absolute top-0 bottom-0 h-full bg-cover bg-no-repeat transition-all duration-500 ${isLoaded ? '' : 'opacity-0'}`}
+        className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
         style={{ 
-          backgroundImage: 'url("/lovable-uploads/565b6923-2224-4cb4-b3a4-17590505c554.png")',
-          backgroundPosition: 'right center',
+          backgroundImage: 'url("/lovable-uploads/75089de6-acf0-48c1-acd5-5211c709345f-left.png")',
+          backgroundPosition: 'right center', 
           backgroundSize: 'cover',
-          transform: `translateX(-${100 - curtainOffset}%)`,
-          width: '50.2%', // Slightly larger overlap to prevent any gap
-          left: '0',
+          width: '50%',
+          transform: `translateX(-${slidePercentage}%)`,
           zIndex: 5
         }}
       />
 
-      {/* Right curtain */}
+      {/* Right half of the image */}
       <div 
-        className={`absolute top-0 bottom-0 h-full bg-cover bg-no-repeat transition-all duration-500 ${isLoaded ? '' : 'opacity-0'}`}
+        className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
         style={{ 
-          backgroundImage: 'url("/lovable-uploads/ee7e5774-a3eb-4af4-9d4b-ae15e1b58b67.png")',
+          backgroundImage: 'url("/lovable-uploads/75089de6-acf0-48c1-acd5-5211c709345f-right.png")',
           backgroundPosition: 'left center',
           backgroundSize: 'cover',
-          transform: `translateX(${100 - curtainOffset}%)`,
-          width: '50.2%', // Slightly larger overlap to prevent any gap
-          right: '0',
+          width: '50%',
+          transform: `translateX(${slidePercentage}%)`,
           zIndex: 5
         }}
       />
