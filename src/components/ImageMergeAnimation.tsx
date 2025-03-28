@@ -1,11 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const ImageMergeAnimation = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [leftImageUrl, setLeftImageUrl] = useState('');
   const [rightImageUrl, setRightImageUrl] = useState('');
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // Check if the split images are already in localStorage
@@ -63,12 +65,28 @@ const ImageMergeAnimation = () => {
   // Left image slides in from left, right image slides in from right
   // Maximum slide is 100% (completely off-screen)
   // Minimum slide is 0% (completely visible)
-  const slidePercentage = Math.max(0, Math.min(100, (scrollPosition / scrollFactor)));
+  // Adjust slide percentage for mobile - make it less aggressive
+  const slidePercentage = isMobile 
+    ? Math.max(0, Math.min(80, (scrollPosition / (scrollFactor * 1.5))))
+    : Math.max(0, Math.min(100, (scrollPosition / scrollFactor)));
   
   // Background zoom effect
   const backgroundScale = 1 + (scrollPosition / 1000);
 
-  console.log("Animation state:", { isLoaded, leftImageUrl, rightImageUrl, slidePercentage });
+  // Mobile adjustments for image positioning
+  const mobileLeftPosition = isMobile ? '30% center' : 'right center';
+  const mobileRightPosition = isMobile ? '70% center' : 'left center';
+  
+  // Adjust slide direction for mobile to reveal more of the person
+  const leftTransform = isMobile
+    ? `translateX(-${slidePercentage * 0.6}%)`
+    : `translateX(-${slidePercentage}%)`;
+  
+  const rightTransform = isMobile
+    ? `translateX(${slidePercentage * 0.6}%)`
+    : `translateX(${slidePercentage}%)`;
+
+  console.log("Animation state:", { isLoaded, leftImageUrl, rightImageUrl, slidePercentage, isMobile });
 
   return (
     <div className="absolute inset-0 overflow-hidden z-0">
@@ -77,7 +95,7 @@ const ImageMergeAnimation = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300"
         style={{ 
           backgroundImage: 'url("/images/golden-hours-image-1.JPG")',
-          backgroundPosition: 'center 30%',
+          backgroundPosition: isMobile ? 'center 35%' : 'center 30%',
           transform: `scale(${backgroundScale})`,
           transition: 'transform 0.5s ease-out'
         }}
@@ -92,10 +110,10 @@ const ImageMergeAnimation = () => {
           className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
             backgroundImage: `url("${leftImageUrl}")`,
-            backgroundPosition: 'right center', 
+            backgroundPosition: mobileLeftPosition, 
             backgroundSize: 'cover',
             width: '50%',
-            transform: `translateX(-${slidePercentage}%)`,
+            transform: leftTransform,
             transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
             zIndex: 5
           }}
@@ -108,10 +126,10 @@ const ImageMergeAnimation = () => {
           className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
             backgroundImage: `url("${rightImageUrl}")`,
-            backgroundPosition: 'left center',
+            backgroundPosition: mobileRightPosition,
             backgroundSize: 'cover',
             width: '50%',
-            transform: `translateX(${slidePercentage}%)`,
+            transform: rightTransform,
             transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
             zIndex: 5
           }}
@@ -123,6 +141,7 @@ const ImageMergeAnimation = () => {
         className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{ 
           backgroundImage: 'url("/lovable-uploads/fd2f67e3-46fb-4053-ae36-34ab9f926ba7.png")',
+          backgroundPosition: isMobile ? 'center 40%' : 'center center',
           opacity: Math.max(0, 0.8 - (scrollPosition / 400)),
           zIndex: 3
         }}
