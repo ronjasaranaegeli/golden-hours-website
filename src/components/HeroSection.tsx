@@ -44,16 +44,16 @@ const HeroSection = () => {
       </div>
 
       {/* Elegant scroll indicator - centered for mobile and desktop */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20 opacity-0 animate-fade-in-delay-3 flex flex-col items-center w-full text-center">
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20 opacity-0 animate-fade-in-delay-3 flex flex-col items-center text-center">
         <p className="text-white text-sm mb-2 tracking-widest font-light">ENTDECKE MEHR</p>
         <ChevronDown 
-          className="text-white w-10 h-10 animate-bounce cursor-pointer mx-auto" 
+          className="text-white w-10 h-10 animate-bounce cursor-pointer" 
           onClick={() => scrollToSection('problem')}
         />
       </div>
 
-      {/* Subtle gradient overlay at bottom */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
+      {/* Subtle gradient overlay at bottom for smoother transition */}
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-background via-background/70 to-transparent z-10"></div>
     </section>
   );
 };
