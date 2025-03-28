@@ -35,8 +35,12 @@ const ImageMergeAnimation = () => {
     window.addEventListener("scroll", handleScroll);
     
     // Initial animation on page load
+    // Start with curtains fully closed (e.g., curtainOffset = 0)
+    setScrollPosition(0);
+    
+    // After a short delay, start the opening animation
     setTimeout(() => {
-      // Start with a small initial curtain offset even at zero scroll
+      // Simulate scrolling to trigger the animation
       setScrollPosition(20);
     }, 500);
     
