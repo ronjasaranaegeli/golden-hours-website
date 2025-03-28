@@ -1,4 +1,3 @@
-
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
@@ -70,7 +69,7 @@ const HeroSection = () => {
           </h1>
         </div>
         <p className="text-base md:text-lg mb-6 opacity-0 animate-fade-in-delay-1 font-extralight leading-relaxed max-w-lg text-center">
-          Ist dein Bewusstsein bereit für dein vollstes Potenzial?
+          Ist dein Bewusstsein bereit dein vollstes Potenzial zu entfalten?
         </p>
         <div className="flex justify-center w-full">
           <Button 
