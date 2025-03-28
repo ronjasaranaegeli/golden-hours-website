@@ -115,7 +115,7 @@ const BewusstseinSection = () => {
       className="py-0 bg-[#F9F6F0] overflow-hidden relative h-screen flex items-center justify-center w-full"
       ref={sectionRef}
     >
-      {/* Top transition gradient - sanfter Verlauf */}
+      {/* Top transition gradient - softer, lighter transition */}
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background via-[#F3F0EA] to-[#F9F6F0] z-10"></div>
       
       <div 
@@ -134,9 +134,9 @@ const BewusstseinSection = () => {
         </div>
 
         <div className="w-full h-full reveal flex items-center" ref={cardRef} style={{ transform: `translateY(${scrollY * -0.05}px)` }}>
-          <div className="h-full w-full overflow-hidden bg-[#2D2A24]">
+          <div className="h-full w-full overflow-hidden bg-[#F9F6F0]">
             <EvervaultCard 
-              text={<h3 className="font-serif text-2xl md:text-3xl">A Journey of Self Discovery</h3>} 
+              text={<h3 className="font-serif text-2xl md:text-3xl text-[#2D2A24]">A Journey of Self Discovery</h3>} 
               customWords={customQuestions}
               className="hover:scale-[1.02] transition-transform duration-500 h-full" 
             />
@@ -144,10 +144,11 @@ const BewusstseinSection = () => {
         </div>
       </div>
       
-      {/* Bottom transition gradient - sanfter Verlauf */}
+      {/* Bottom transition gradient - softer, lighter transition */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-[#F3F0EA] to-[#F9F6F0] z-10"></div>
     </section>
   );
 };
 
 export default BewusstseinSection;
+
