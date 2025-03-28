@@ -73,29 +73,29 @@ const ImageMergeAnimation = () => {
 
       {/* Left curtain */}
       <div 
-        className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
+        className={`absolute top-0 bottom-0 h-full bg-cover bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
         style={{ 
           backgroundImage: 'url("/lovable-uploads/6ec88932-855c-4ad3-ab49-1fb4a8d3cd1a.png")',
           backgroundPosition: 'right center',
           transform: `translateX(-${100 - curtainOffset}%)`,
           transformOrigin: 'right center',
           width: '50%',
-          right: '50%',
-          transition: 'transform 0.5s ease-out'
+          left: '0',
+          right: '50%'
         }}
       />
 
       {/* Right curtain */}
       <div 
-        className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
+        className={`absolute top-0 bottom-0 h-full bg-cover bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
         style={{ 
           backgroundImage: 'url("/lovable-uploads/08073b01-c182-4752-9faa-6d1484816c80.png")',
           backgroundPosition: 'left center',
           transform: `translateX(${100 - curtainOffset}%)`,
           transformOrigin: 'left center',
           width: '50%',
-          left: '50%',
-          transition: 'transform 0.5s ease-out'
+          right: '0',
+          left: '50%'
         }}
       />
     </div>
