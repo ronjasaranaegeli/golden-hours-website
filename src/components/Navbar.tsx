@@ -33,7 +33,7 @@ const Navbar = () => {
   };
   
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 backdrop-blur-sm py-2 shadow-sm' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 backdrop-blur-sm py-2 shadow-sm' : 'bg-background/20 backdrop-blur-md py-4'}`}>
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto flex justify-between items-center">
         <a href="#" className="flex items-center">
           <img 
@@ -48,7 +48,7 @@ const Navbar = () => {
           <li>
             <button 
               onClick={() => scrollToSection('about')} 
-              className="text-sm text-foreground hover:text-primary transition-colors border-b border-transparent hover:border-primary py-1"
+              className="text-sm text-white hover:text-primary transition-colors border-b border-transparent hover:border-primary py-1 font-medium"
             >
               Über mich
             </button>
@@ -56,7 +56,7 @@ const Navbar = () => {
           <li>
             <button 
               onClick={() => scrollToSection('program')} 
-              className="text-sm text-foreground hover:text-primary transition-colors border-b border-transparent hover:border-primary py-1"
+              className="text-sm text-white hover:text-primary transition-colors border-b border-transparent hover:border-primary py-1 font-medium"
             >
               Programm
             </button>
@@ -64,7 +64,7 @@ const Navbar = () => {
           <li>
             <button 
               onClick={() => scrollToSection('testimonials')} 
-              className="text-sm text-foreground hover:text-primary transition-colors border-b border-transparent hover:border-primary py-1"
+              className="text-sm text-white hover:text-primary transition-colors border-b border-transparent hover:border-primary py-1 font-medium"
             >
               Erfahrungen
             </button>
@@ -80,7 +80,7 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Navigation Toggle */}
-        <button onClick={toggleMenu} className="md:hidden text-foreground">
+        <button onClick={toggleMenu} className="md:hidden text-white bg-black/20 p-2 rounded-full backdrop-blur-sm">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>

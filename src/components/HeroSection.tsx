@@ -33,19 +33,21 @@ const HeroSection = () => {
         <p className="text-xl md:text-2xl mb-10 opacity-0 animate-fade-in-delay-1 font-light leading-relaxed max-w-2xl">
           Ist dein Bewusstsein bereit für dein Potenzial?
         </p>
-        <Button 
-          onClick={() => scrollToSection('waitlist')} 
-          className="mt-4 bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg opacity-0 animate-fade-in-delay-2 btn-hover-effect rounded-full"
-        >
-          Jetzt auf die Warteliste eintragen
-        </Button>
+        <div className="flex justify-center sm:justify-start">
+          <Button 
+            onClick={() => scrollToSection('waitlist')} 
+            className="mt-4 bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg opacity-0 animate-fade-in-delay-2 btn-hover-effect rounded-full"
+          >
+            Auf die Warteliste
+          </Button>
+        </div>
       </div>
 
-      {/* Elegant scroll indicator */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20 opacity-0 animate-fade-in-delay-3 flex flex-col items-center">
+      {/* Elegant scroll indicator - centered for mobile and desktop */}
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20 opacity-0 animate-fade-in-delay-3 flex flex-col items-center w-full text-center">
         <p className="text-white text-sm mb-2 tracking-widest font-light">ENTDECKE MEHR</p>
         <ChevronDown 
-          className="text-white w-10 h-10 animate-bounce cursor-pointer" 
+          className="text-white w-10 h-10 animate-bounce cursor-pointer mx-auto" 
           onClick={() => scrollToSection('problem')}
         />
       </div>
