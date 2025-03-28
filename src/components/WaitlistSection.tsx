@@ -155,7 +155,7 @@ const WaitlistSection = () => {
                     variant="cream"
                     className="w-full py-6 text-lg shadow-md hover:shadow-lg transition-all duration-300 btn-shine"
                   >
-                    Jetzt auf die Warteliste eintragen
+                    Auf die Warteliste
                   </Button>
                 </form>
               )}

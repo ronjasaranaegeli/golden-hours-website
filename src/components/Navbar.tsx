@@ -100,7 +100,7 @@ const Navbar = () => {
               variant="cream"
               className="hover:scale-105 transform transition-all duration-300 shadow-md hover:shadow-lg btn-shine"
             >
-              Warteliste
+              Auf die Warteliste
             </Button>
           </li>
         </ul>
@@ -155,7 +155,7 @@ const Navbar = () => {
                 variant="cream"
                 className="w-full transition-colors shadow-sm btn-shine"
               >
-                Warteliste
+                Auf die Warteliste
               </Button>
             </li>
           </ul>
