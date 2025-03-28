@@ -70,7 +70,7 @@ export const EvervaultCard = ({
         onMouseMove={onMouseMove}
         onTouchMove={onTouchMove}
         onTouchStart={onTouchStart}
-        className="group/card rounded-none w-full relative overflow-hidden bg-golden-950 flex items-center justify-center h-full"
+        className="group/card rounded-none w-full relative overflow-hidden bg-[#2D2A24] flex items-center justify-center h-full"
       >
         <CardPattern
           mouseX={mouseX}
@@ -79,9 +79,9 @@ export const EvervaultCard = ({
           isTouch={isTouch}
         />
         <div className="relative z-10 flex items-center justify-center">
-          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center justify-center text-golden-800 font-bold">
-            <div className="absolute w-full h-full bg-white/[0.85] dark:bg-black/[0.8] blur-sm rounded-full" />
-            <span className="dark:text-white text-golden-800 z-20 font-serif">{text}</span>
+          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center justify-center text-[#E6D7B9] font-bold">
+            <div className="absolute w-full h-full bg-[#2D2A24]/[0.85] dark:bg-black/[0.8] blur-sm rounded-full" />
+            <span className="dark:text-[#E6D7B9] text-[#E6D7B9] z-20 font-serif">{text}</span>
           </div>
         </div>
       </div>
@@ -99,14 +99,14 @@ export function CardPattern({ mouseX, mouseY, randomString, isTouch }: any) {
     <div className="pointer-events-none">
       <div className="absolute inset-0 [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-golden-900 to-golden-950 opacity-100 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 bg-gradient-to-r from-[#2D2A24] to-[#3D3832] opacity-100 backdrop-blur-xl transition duration-500"
         style={style}
       />
       <motion.div
         className="absolute inset-0 opacity-0 mix-blend-overlay group-hover/card:opacity-100"
         style={style}
       >
-        <p className="absolute inset-x-0 inset-y-0 h-full w-full break-words whitespace-pre-wrap text-golden-200 font-['Courier_New'] transition duration-500 overflow-hidden text-xl md:text-2xl lg:text-3xl">
+        <p className="absolute inset-x-0 inset-y-0 h-full w-full break-words whitespace-pre-wrap text-[#E6D7B9] font-['Courier_New'] transition duration-500 overflow-hidden text-xl md:text-2xl lg:text-3xl">
           {randomString}
         </p>
       </motion.div>

@@ -112,29 +112,29 @@ const BewusstseinSection = () => {
   return (
     <section 
       id="bewusstsein" 
-      className="py-0 bg-gradient-to-b from-background via-golden-950/80 to-background overflow-hidden relative h-screen flex items-center justify-center w-full"
+      className="py-0 bg-[#F9F6F0] overflow-hidden relative h-screen flex items-center justify-center w-full"
       ref={sectionRef}
     >
-      {/* Top transition gradient */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent z-10"></div>
+      {/* Top transition gradient - sanfter Verlauf */}
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background via-[#F3F0EA] to-[#F9F6F0] z-10"></div>
       
       <div 
         className="absolute inset-0 opacity-10 z-0" 
         style={{ 
           transform: `translateY(${scrollY * 0.15}px)`,
-          background: 'radial-gradient(circle at center, rgba(209, 183, 128, 0.2) 0%, rgba(255, 255, 255, 0) 70%)'
+          background: 'radial-gradient(circle at center, rgba(230, 215, 185, 0.3) 0%, rgba(255, 255, 255, 0) 70%)'
         }}
       ></div>
       
       <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
         <div className="max-w-3xl mx-auto text-center mb-4 md:mb-6 reveal" ref={titleRef}>
-          <h2 className="font-serif text-2xl md:text-4xl font-medium heading-underline inline-block text-golden-200">
+          <h2 className="font-serif text-2xl md:text-4xl font-medium heading-underline inline-block text-[#2D2A24]">
             Die Reise zu deinem wahren Selbst
           </h2>
         </div>
 
         <div className="w-full h-full reveal flex items-center" ref={cardRef} style={{ transform: `translateY(${scrollY * -0.05}px)` }}>
-          <div className="h-full w-full overflow-hidden bg-golden-950">
+          <div className="h-full w-full overflow-hidden bg-[#2D2A24]">
             <EvervaultCard 
               text={<h3 className="font-serif text-2xl md:text-3xl">A Journey of Self Discovery</h3>} 
               customWords={customQuestions}
@@ -144,8 +144,8 @@ const BewusstseinSection = () => {
         </div>
       </div>
       
-      {/* Bottom transition gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
+      {/* Bottom transition gradient - sanfter Verlauf */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-[#F3F0EA] to-[#F9F6F0] z-10"></div>
     </section>
   );
 };
