@@ -55,37 +55,49 @@ const Navbar = () => {
           <li>
             <button 
               onClick={() => scrollToSection('about')} 
-              className={`text-sm hover:text-primary transition-colors border-b border-transparent hover:border-primary py-1 font-medium ${
+              className={`relative text-sm transition-colors py-1 font-medium group ${
                 scrolled ? 'text-foreground' : 'text-white'
               }`}
             >
-              Über mich
+              <span className="relative z-10">Über mich</span>
+              <span className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              <span className={`absolute bottom-0 left-0 w-full h-0.5 ${
+                scrolled ? 'bg-golden-400' : 'bg-golden-300'
+              } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
             </button>
           </li>
           <li>
             <button 
               onClick={() => scrollToSection('program')} 
-              className={`text-sm hover:text-primary transition-colors border-b border-transparent hover:border-primary py-1 font-medium ${
+              className={`relative text-sm transition-colors py-1 font-medium group ${
                 scrolled ? 'text-foreground' : 'text-white'
               }`}
             >
-              Programm
+              <span className="relative z-10">Programm</span>
+              <span className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              <span className={`absolute bottom-0 left-0 w-full h-0.5 ${
+                scrolled ? 'bg-golden-400' : 'bg-golden-300'
+              } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
             </button>
           </li>
           <li>
             <button 
               onClick={() => scrollToSection('testimonials')} 
-              className={`text-sm hover:text-primary transition-colors border-b border-transparent hover:border-primary py-1 font-medium ${
+              className={`relative text-sm transition-colors py-1 font-medium group ${
                 scrolled ? 'text-foreground' : 'text-white'
               }`}
             >
-              Erfahrungen
+              <span className="relative z-10">Erfahrungen</span>
+              <span className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              <span className={`absolute bottom-0 left-0 w-full h-0.5 ${
+                scrolled ? 'bg-golden-400' : 'bg-golden-300'
+              } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
             </button>
           </li>
           <li>
             <Button 
               onClick={() => scrollToSection('waitlist')} 
-              className="bg-primary text-white hover:bg-primary/90 btn-hover-effect"
+              className="bg-golden-400 text-white hover:bg-golden-500 hover:scale-105 transform transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Warteliste
             </Button>
@@ -112,31 +124,34 @@ const Navbar = () => {
             <li>
               <button 
                 onClick={() => scrollToSection('about')} 
-                className="w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+                className="w-full text-left py-2 px-4 rounded-lg text-foreground hover:bg-golden-100 hover:text-golden-800 transition-colors flex items-center"
               >
+                <span className="w-1 h-1 bg-golden-400 rounded-full mr-2"></span>
                 Über mich
               </button>
             </li>
             <li>
               <button 
                 onClick={() => scrollToSection('program')} 
-                className="w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+                className="w-full text-left py-2 px-4 rounded-lg text-foreground hover:bg-golden-100 hover:text-golden-800 transition-colors flex items-center"
               >
+                <span className="w-1 h-1 bg-golden-400 rounded-full mr-2"></span>
                 Programm
               </button>
             </li>
             <li>
               <button 
                 onClick={() => scrollToSection('testimonials')} 
-                className="w-full text-left py-2 text-foreground hover:text-primary transition-colors"
+                className="w-full text-left py-2 px-4 rounded-lg text-foreground hover:bg-golden-100 hover:text-golden-800 transition-colors flex items-center"
               >
+                <span className="w-1 h-1 bg-golden-400 rounded-full mr-2"></span>
                 Erfahrungen
               </button>
             </li>
             <li className="pt-2">
               <Button 
                 onClick={() => scrollToSection('waitlist')} 
-                className="w-full bg-primary text-white hover:bg-primary/90"
+                className="w-full bg-golden-400 text-white hover:bg-golden-500 transition-colors shadow-sm"
               >
                 Warteliste
               </Button>
