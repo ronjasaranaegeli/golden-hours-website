@@ -28,6 +28,7 @@ const HeroSection = () => {
     };
     
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial scroll position
     
     return () => {
       clearTimeout(timeoutId);

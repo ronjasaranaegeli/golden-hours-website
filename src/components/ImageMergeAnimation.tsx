@@ -32,8 +32,8 @@ const ImageMergeAnimation = () => {
       setScrollPosition(currentPosition);
     };
 
-    // Initial animation trigger even before scroll
-    setScrollPosition(20);
+    // Set initial scroll position to trigger animation
+    setScrollPosition(window.scrollY);
 
     window.addEventListener("scroll", handleScroll);
     
@@ -47,7 +47,7 @@ const ImageMergeAnimation = () => {
   // Left image slides in from left, right image slides in from right
   // Maximum slide is 100% (completely off-screen)
   // Minimum slide is 0% (completely visible)
-  const slidePercentage = Math.min(100, Math.max(0, 100 - (scrollPosition / scrollFactor)));
+  const slidePercentage = Math.max(0, Math.min(100, (scrollPosition / scrollFactor)));
   
   // Background zoom effect
   const backgroundScale = 1 + (scrollPosition / 1000);
@@ -67,31 +67,40 @@ const ImageMergeAnimation = () => {
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
-      {/* Left half of the image */}
+      {/* Left half of the image - slide from left */}
       <div 
-        className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
+        className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{ 
           backgroundImage: 'url("/lovable-uploads/75089de6-acf0-48c1-acd5-5211c709345f-left.png")',
           backgroundPosition: 'right center', 
           backgroundSize: 'cover',
           width: '50%',
           transform: `translateX(-${slidePercentage}%)`,
+          transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
           zIndex: 5
         }}
       />
 
-      {/* Right half of the image */}
+      {/* Right half of the image - slide from right */}
       <div 
-        className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
+        className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{ 
           backgroundImage: 'url("/lovable-uploads/75089de6-acf0-48c1-acd5-5211c709345f-right.png")',
           backgroundPosition: 'left center',
           backgroundSize: 'cover',
           width: '50%',
           transform: `translateX(${slidePercentage}%)`,
+          transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
           zIndex: 5
         }}
       />
+
+      {/* Add a check to visualize loaded state */}
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center text-white bg-black/50 z-10">
+          <div className="animate-pulse">Bilder werden geladen...</div>
+        </div>
+      )}
     </div>
   );
 };
