@@ -46,32 +46,34 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-8 text-white max-w-4xl flex flex-col items-center">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium mb-6 leading-tight tracking-tight text-center">
-          <span className="opacity-0 animate-fade-in">Dein</span>
-          <span className="relative flex w-full justify-center overflow-hidden h-[1.2em] mx-2">
-            {titles.map((title, index) => (
-              <motion.span
-                key={index}
-                className="absolute font-semibold opacity-0 animate-fade-in"
-                initial={{ opacity: 0, y: 40 }}
-                transition={{ type: "spring", stiffness: 50 }}
-                animate={
-                  titleNumber === index
-                    ? {
-                        y: 0,
-                        opacity: 1,
-                      }
-                    : {
-                        y: titleNumber > index ? -60 : 60,
-                        opacity: 0,
-                      }
-                }
-              >
-                {title}.
-              </motion.span>
-            ))}
-          </span>
-        </h1>
+        <div className="text-center mb-6">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight tracking-tight inline-flex flex-wrap justify-center">
+            <span className="opacity-0 animate-fade-in mr-3">Dein</span>
+            <div className="relative inline-block h-[1.2em] w-[5rem] md:w-[6rem] lg:w-[7rem] xl:w-[8rem] overflow-hidden">
+              {titles.map((title, index) => (
+                <motion.span
+                  key={index}
+                  className="absolute left-0 top-0 w-full text-center font-semibold opacity-0 animate-fade-in"
+                  initial={{ opacity: 0, y: 40 }}
+                  transition={{ type: "spring", stiffness: 50 }}
+                  animate={
+                    titleNumber === index
+                      ? {
+                          y: 0,
+                          opacity: 1,
+                        }
+                      : {
+                          y: titleNumber > index ? -60 : 60,
+                          opacity: 0,
+                        }
+                  }
+                >
+                  {title}.
+                </motion.span>
+              ))}
+            </div>
+          </h1>
+        </div>
         <p className="text-xl md:text-2xl mb-10 opacity-0 animate-fade-in-delay-1 font-light leading-relaxed max-w-2xl text-center">
           Ist dein Bewusstsein bereit für dein Potenzial?
         </p>
