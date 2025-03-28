@@ -23,7 +23,7 @@ const Index = () => {
     // Preload key images
     const imagesToPreload = [
       "/images/golden-hours-image-1.JPG", // Main background
-      "/lovable-uploads/7e44dd91-112d-4cb4-a631-f7f48cf99571.png", // New left image without mustache
+      "/lovable-uploads/cf5693e3-5472-469d-95d7-ddb7891a10dc.png", // New left image
       "/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png", // Mobile right image
       "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png" // Desktop right image
     ];
@@ -33,26 +33,29 @@ const Index = () => {
       img.src = src;
     });
 
-    // We'll use a simpler image selection method
+    // We're using different images now, so we'll modify the split image creation
     createSplitImages();
   }, []);
 
-  // Simplified image selection function
+  // Function to split the image into left and right halves
   const createSplitImages = () => {
-    console.log('Creating split images with cleaner source images...');
+    // We'll use different source images now
+    console.log('Creating split images with new source images...');
     
     const leftImage = new Image();
     leftImage.crossOrigin = "anonymous";
-    leftImage.src = "/lovable-uploads/7e44dd91-112d-4cb4-a631-f7f48cf99571.png";
+    leftImage.src = "/lovable-uploads/cf5693e3-5472-469d-95d7-ddb7891a10dc.png";
     
     const rightImage = new Image();
     rightImage.crossOrigin = "anonymous";
     rightImage.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png";
     
+    // We'll store the images directly without splitting them further
     leftImage.onload = () => {
       console.log('Left image loaded, storing in localStorage');
       try {
-        localStorage.setItem('leftHalfImage', leftImage.src);
+        const leftUrl = leftImage.src;
+        localStorage.setItem('leftHalfImage', leftUrl);
       } catch (error) {
         console.error('Error storing left image:', error);
       }
@@ -61,10 +64,19 @@ const Index = () => {
     rightImage.onload = () => {
       console.log('Right image loaded, storing in localStorage');
       try {
-        localStorage.setItem('rightHalfImage', rightImage.src);
+        const rightUrl = rightImage.src;
+        localStorage.setItem('rightHalfImage', rightUrl);
       } catch (error) {
         console.error('Error storing right image:', error);
       }
+    };
+    
+    leftImage.onerror = (err) => {
+      console.error('Error loading left image:', err);
+    };
+    
+    rightImage.onerror = (err) => {
+      console.error('Error loading right image:', err);
     };
   };
 
