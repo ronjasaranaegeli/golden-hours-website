@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,83 +6,80 @@
 
 @layer base {
   :root {
-    --background: 36 33% 97%; /* Light cream/beige */
-    --foreground: 20 10% 10%; /* Dark gray for text */
+    --background: 43 38% 97%; /* Wärmeres Cream */
+    --foreground: 25 15% 15%; /* Dunkleres Braun für Text */
 
     --card: 0 0% 100%;
-    --card-foreground: 20 10% 10%;
+    --card-foreground: 25 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 10%;
+    --popover-foreground: 25 15% 15%;
 
-    --primary: 162 59% 35%; /* Deep muted green */
-    --primary-foreground: 36 33% 97%;
+    --primary: 35 55% 53%; /* Goldener Ton */
+    --primary-foreground: 43 38% 97%;
 
-    --secondary: 36 33% 94%;
-    --secondary-foreground: 20 10% 10%;
+    --secondary: 43 38% 94%;
+    --secondary-foreground: 25 15% 15%;
 
-    --muted: 36 33% 94%;
-    --muted-foreground: 20 14% 40%;
+    --muted: 43 38% 94%;
+    --muted-foreground: 25 19% 40%;
 
-    --accent: 36 33% 94%;
-    --accent-foreground: 20 10% 10%;
+    --accent: 43 38% 94%;
+    --accent-foreground: 25 15% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 36 33% 97%;
+    --destructive-foreground: 43 38% 97%;
 
-    --border: 20 10% 90%;
-    --input: 20 10% 90%;
-    --ring: 162 59% 35%;
+    --border: 25 15% 90%;
+    --input: 25 15% 90%;
+    --ring: 35 55% 53%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 20 10% 10%;
-    --foreground: 36 33% 97%;
+    --background: 25 15% 15%;
+    --foreground: 43 38% 97%;
 
-    --card: 20 10% 10%;
-    --card-foreground: 36 33% 97%;
+    --card: 25 15% 15%;
+    --card-foreground: 43 38% 97%;
 
-    --popover: 20 10% 10%;
-    --popover-foreground: 36 33% 97%;
+    --popover: 25 15% 15%;
+    --popover-foreground: 43 38% 97%;
 
-    --primary: 162 59% 35%;
-    --primary-foreground: 36 33% 97%;
+    --primary: 35 55% 53%;
+    --primary-foreground: 43 38% 97%;
 
-    --secondary: 20 14% 20%;
-    --secondary-foreground: 36 33% 97%;
+    --secondary: 25 19% 20%;
+    --secondary-foreground: 43 38% 97%;
 
-    --muted: 20 14% 20%;
-    --muted-foreground: 20 14% 60%;
+    --muted: 25 19% 20%;
+    --muted-foreground: 25 19% 60%;
 
-    --accent: 20 14% 20%;
-    --accent-foreground: 36 33% 97%;
+    --accent: 25 19% 20%;
+    --accent-foreground: 43 38% 97%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 36 33% 97%;
+    --destructive-foreground: 43 38% 97%;
 
-    --border: 20 14% 20%;
-    --input: 20 14% 20%;
-    --ring: 36 33% 70%;
+    --border: 25 19% 20%;
+    --input: 25 19% 20%;
+    --ring: 43 38% 70%;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
-  }
+* {
+  @apply border-border;
 }
 
-/* Decorative underline for headings */
+body {
+  @apply bg-background text-foreground font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif;
+}
+
 .heading-underline {
   @apply relative;
 }
@@ -100,7 +96,6 @@
   transform: scaleX(1.2);
 }
 
-/* Animation classes */
 .vertical-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -118,7 +113,6 @@
   transform: translateY(0);
 }
 
-/* Decorative elements */
 .circle-decoration {
   @apply absolute rounded-full bg-golden-100 opacity-50;
 }
@@ -131,13 +125,11 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Decorative lines */
 .decorative-line {
   height: 1px;
   @apply bg-golden-300 my-8 opacity-40;
 }
 
-/* Card styles */
 .elegant-card {
   @apply bg-white rounded-xl border border-golden-100 shadow-sm p-8 transition-all duration-300;
 }
@@ -146,7 +138,6 @@ html {
   @apply shadow-md border-golden-200;
 }
 
-/* Image styles */
 .img-frame {
   @apply rounded-xl overflow-hidden relative;
 }
@@ -160,7 +151,6 @@ html {
   bottom: 10px;
 }
 
-/* Button hover effects */
 .btn-hover-effect {
   @apply relative overflow-hidden;
 }
@@ -174,7 +164,6 @@ html {
   @apply opacity-20;
 }
 
-/* Enhanced keyframes */
 @keyframes fadeUpIn {
   from {
     opacity: 0;
@@ -209,12 +198,10 @@ html {
   }
 }
 
-/* Additional animations */
 .float {
   animation: floatAnimation 6s ease-in-out infinite;
 }
 
-/* Enhanced transitions */
 .transition-custom {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
