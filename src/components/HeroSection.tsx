@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const HeroSection = () => {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
-    () => ["Dein Sinn", "Wahrheit", "Dein Leben"],
+    () => ["Dein <i>Sein</i>", "<i>Wahrheit</i>", "Dein <i>Leben</i>"],
     []
   );
 
@@ -64,9 +64,8 @@ const HeroSection = () => {
                       stiffness: 50,
                       duration: 0.6
                     }}
-                  >
-                    {title === "Wahrheit" ? "Deine " : ""}{title}.
-                  </motion.span>
+                    dangerouslySetInnerHTML={{ __html: title === "<i>Wahrheit</i>" ? "Deine " + title + "." : title + "." }}
+                  />
                 ))}
               </div>
             </div>
