@@ -1,4 +1,3 @@
-
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
@@ -31,7 +30,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div 
           className="h-full w-full bg-cover bg-center bg-no-repeat" 
@@ -44,7 +42,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-8 text-white max-w-2xl flex flex-col items-center">
         <div className="text-center mb-4">
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight tracking-wide">
@@ -72,7 +69,7 @@ const HeroSection = () => {
           </h1>
         </div>
         <p className="text-base md:text-lg mb-6 opacity-0 animate-fade-in-delay-1 font-extralight leading-relaxed max-w-lg text-center">
-          Ist dein Bewusstsein bereit für dein Potenzial?
+          Ist dein Bewusstsein bereit für dein vollstes Potenzial?
         </p>
         <div className="flex justify-center w-full">
           <Button 
@@ -84,7 +81,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Elegant scroll indicator - centered for mobile and desktop */}
       <div className="absolute bottom-6 left-0 right-0 mx-auto w-full max-w-xs z-20 opacity-0 animate-fade-in-delay-3 flex flex-col items-center">
         <p className="text-white text-xs mb-1 tracking-widest font-extralight text-center">ENTDECKE MEHR</p>
         <ChevronDown 
