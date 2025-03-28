@@ -20,6 +20,8 @@ const ImageMergeAnimation = () => {
       loadedCount++;
       if (loadedCount === 3) {
         setIsLoaded(true);
+        // Start animation immediately when images are loaded
+        setScrollPosition(20);
       }
     };
     
@@ -33,16 +35,6 @@ const ImageMergeAnimation = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    
-    // Initial animation on page load
-    // Start with curtains fully closed (e.g., curtainOffset = 0)
-    setScrollPosition(0);
-    
-    // After a short delay, start the opening animation
-    setTimeout(() => {
-      // Simulate scrolling to trigger the animation
-      setScrollPosition(20);
-    }, 500);
     
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
