@@ -47,30 +47,29 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-8 text-white max-w-4xl flex flex-col items-center">
         <div className="text-center mb-6">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight tracking-tight inline-flex flex-wrap justify-center">
-            <span className="opacity-0 animate-fade-in mr-3">Dein</span>
-            <div className="relative inline-block h-[1.2em] w-[5rem] md:w-[6rem] lg:w-[7rem] xl:w-[8rem] overflow-hidden">
-              {titles.map((title, index) => (
-                <motion.span
-                  key={index}
-                  className="absolute left-0 top-0 w-full text-center font-semibold opacity-0 animate-fade-in"
-                  initial={{ opacity: 0, y: 40 }}
-                  transition={{ type: "spring", stiffness: 50 }}
-                  animate={
-                    titleNumber === index
-                      ? {
-                          y: 0,
-                          opacity: 1,
-                        }
-                      : {
-                          y: titleNumber > index ? -60 : 60,
-                          opacity: 0,
-                        }
-                  }
-                >
-                  {title}.
-                </motion.span>
-              ))}
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight tracking-tight">
+            <div className="flex flex-wrap justify-center items-center">
+              <span className="mr-2">Dein</span>
+              <div className="relative inline-block h-[1.2em] w-[6rem] md:w-[8rem] lg:w-[10rem] overflow-hidden">
+                {titles.map((title, index) => (
+                  <motion.span
+                    key={index}
+                    className="absolute left-0 top-0 w-full text-center font-semibold"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{
+                      opacity: titleNumber === index ? 1 : 0,
+                      y: titleNumber === index ? 0 : (titleNumber > index ? -50 : 50)
+                    }}
+                    transition={{ 
+                      type: "spring", 
+                      stiffness: 50,
+                      duration: 0.6
+                    }}
+                  >
+                    {title}.
+                  </motion.span>
+                ))}
+              </div>
             </div>
           </h1>
         </div>
