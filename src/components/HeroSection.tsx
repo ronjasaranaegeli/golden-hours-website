@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const HeroSection = () => {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
-    () => ["Sinn", "Wahrheit", "Leben"],
+    () => ["Dein Sinn.", "Deine Wahrheit.", "Dein Leben."],
     []
   );
 
