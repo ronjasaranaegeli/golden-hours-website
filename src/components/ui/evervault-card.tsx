@@ -1,7 +1,7 @@
 
 "use client";
 import { useMotionValue } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
 import { useMotionTemplate, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -10,7 +10,7 @@ export const EvervaultCard = ({
   className,
   customWords,
 }: {
-  text?: React.ReactNode;
+  text?: ReactNode;
   className?: string;
   customWords?: string[];
 }) => {
@@ -20,7 +20,7 @@ export const EvervaultCard = ({
   const [randomString, setRandomString] = useState("");
 
   useEffect(() => {
-    let str = generateRandomString(1500, customWords);
+    let str = generateRandomString(2500, customWords);
     setRandomString(str);
   }, [customWords]);
 
@@ -29,7 +29,7 @@ export const EvervaultCard = ({
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
 
-    const str = generateRandomString(1500, customWords);
+    const str = generateRandomString(2500, customWords);
     setRandomString(str);
   }
 
@@ -50,9 +50,9 @@ export const EvervaultCard = ({
           randomString={randomString}
         />
         <div className="relative z-10 flex items-center justify-center">
-          <div className="relative h-44 w-44 rounded-full flex items-center justify-center text-white font-bold text-4xl">
+          <div className="relative min-h-44 min-w-44 px-8 rounded-full flex items-center justify-center text-white font-bold text-4xl">
             <div className="absolute w-full h-full bg-white/[0.8] dark:bg-black/[0.8] blur-sm rounded-full" />
-            <span className="dark:text-white text-black z-20">{text}</span>
+            <span className="dark:text-white text-forest-800 z-20">{text}</span>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@ export const EvervaultCard = ({
 };
 
 export function CardPattern({ mouseX, mouseY, randomString }: any) {
-  let maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  let maskImage = useMotionTemplate`radial-gradient(350px at ${mouseX}px ${mouseY}px, white, transparent)`;
   let style = { maskImage, WebkitMaskImage: maskImage };
 
   return (
@@ -75,7 +75,7 @@ export function CardPattern({ mouseX, mouseY, randomString }: any) {
         className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay group-hover/card:opacity-100"
         style={style}
       >
-        <p className="absolute inset-x-0 text-xs h-full break-words whitespace-pre-wrap text-white font-mono font-bold transition duration-500">
+        <p className="absolute inset-x-0 inset-y-0 text-xs h-full w-full break-words whitespace-pre-wrap text-white font-mono font-bold transition duration-500 overflow-hidden">
           {randomString}
         </p>
       </motion.div>
