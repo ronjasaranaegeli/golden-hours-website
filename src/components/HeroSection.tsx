@@ -60,21 +60,21 @@ const HeroSection = () => {
             </div>
           </h1>
         </div>
-        <p className="text-base md:text-lg mb-6 opacity-0 animate-fade-in-delay-1 font-extralight leading-relaxed max-w-lg text-center">
+        <p className="text-base md:text-lg mb-6 font-extralight leading-relaxed max-w-lg text-center">
           Ist dein Bewusstsein bereit dein vollstes Potenzial zu entfalten?
         </p>
         <div className="flex justify-center w-full">
           <Button 
             onClick={() => scrollToSection('waitlist')} 
             variant="cream"
-            className="mt-2 px-4 sm:px-6 py-3 sm:py-4 text-sm opacity-0 animate-fade-in-delay-2 btn-shine"
+            className="mt-2 px-4 sm:px-6 py-3 sm:py-4 text-sm btn-shine"
           >
             Auf die Warteliste
           </Button>
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-0 right-0 mx-auto w-full max-w-xs z-20 opacity-0 animate-fade-in-delay-3 flex flex-col items-center">
+      <div className="absolute bottom-6 left-0 right-0 mx-auto w-full max-w-xs z-20 flex flex-col items-center">
         <p className="text-white text-xs mb-1 tracking-widest font-extralight text-center">ENTDECKE MEHR</p>
         <ChevronDown 
           className="text-white w-6 h-6 animate-bounce cursor-pointer mx-auto" 
