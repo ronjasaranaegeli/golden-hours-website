@@ -77,7 +77,9 @@ const ImageMergeAnimation = () => {
         style={{ 
           backgroundImage: 'url("/images/golden-hours-image-6.JPG")',
           transform: `translateX(-${100 - curtainOffset}%)`,
-          width: '50%', // Removed the extra 0.1% to ensure precise alignment
+          transformOrigin: 'right center',
+          width: '50%',
+          right: '50%',
           transition: 'transform 0.5s ease-out'
         }}
       />
@@ -88,7 +90,9 @@ const ImageMergeAnimation = () => {
         style={{ 
           backgroundImage: 'url("/images/golden-hours-image-7.JPG")',
           transform: `translateX(${100 - curtainOffset}%)`,
-          width: '50%', // Removed the extra 0.1% to ensure precise alignment
+          transformOrigin: 'left center',
+          width: '50%',
+          left: '50%',
           transition: 'transform 0.5s ease-out'
         }}
       />
