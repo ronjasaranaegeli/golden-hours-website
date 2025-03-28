@@ -44,7 +44,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="fixed top-0 left-0 w-full h-screen flex items-center justify-center overflow-hidden">
       <ImageMergeAnimation />
 
       <div className={`relative z-10 container mx-auto px-6 md:px-8 text-white max-w-2xl flex flex-col items-center transition-opacity duration-500 ${hasScrolled ? 'opacity-75' : 'opacity-100'}`}>
@@ -78,11 +78,11 @@ const HeroSection = () => {
         </p>
         <div className="flex justify-center w-full">
           <Button 
-            onClick={() => scrollToSection('waitlist')} 
+            onClick={() => scrollToSection('problem')} 
             variant="cream"
             className="mt-2 px-4 sm:px-6 py-3 sm:py-4 text-sm btn-shine"
           >
-            Auf die Warteliste
+            Jetzt entdecken
           </Button>
         </div>
       </div>

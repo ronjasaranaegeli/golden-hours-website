@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -139,19 +140,27 @@ const Index = () => {
     <div className="min-h-screen overflow-x-hidden bg-background">
       <Navbar />
       
-      {/* Main content */}
-      <main>
-        <HeroSection />
-        <ProblemSection />
-        <SolutionSection />
-        <TransformationSection />
-        <AboutSection />
-        <ProgramDetailsSection />
-        <TestimonialsSection />
-        <WaitlistSection />
+      {/* Hero section (fixed) */}
+      <HeroSection />
+      
+      {/* Main content (scrolls over the Hero) */}
+      <main className="relative z-10">
+        {/* Spacer to push content below the viewport height */}
+        <div className="h-screen w-full"></div>
+        
+        {/* Content sections */}
+        <div className="relative bg-background">
+          <ProblemSection />
+          <SolutionSection />
+          <TransformationSection />
+          <AboutSection />
+          <ProgramDetailsSection />
+          <TestimonialsSection />
+          <WaitlistSection />
+          <FooterSection />
+        </div>
       </main>
       
-      <FooterSection />
       <ScrollReveal />
       
       {/* Decorative elements */}
