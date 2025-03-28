@@ -1,11 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const ImageMergeAnimation = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [leftImageUrl, setLeftImageUrl] = useState('');
   const [rightImageUrl, setRightImageUrl] = useState('');
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // Check if the split images are already in localStorage
@@ -68,7 +70,15 @@ const ImageMergeAnimation = () => {
   // Background zoom effect
   const backgroundScale = 1 + (scrollPosition / 1000);
 
-  console.log("Animation state:", { isLoaded, leftImageUrl, rightImageUrl, slidePercentage });
+  // Get the correct background position for different screen sizes
+  const getBgPosition = () => {
+    if (isMobile) {
+      return 'center 25%'; // Adjusted to show hand on chest on mobile
+    }
+    return 'center 30%';
+  };
+
+  console.log("Animation state:", { isLoaded, leftImageUrl, rightImageUrl, slidePercentage, isMobile });
 
   return (
     <div className="absolute inset-0 overflow-hidden z-0">
@@ -77,7 +87,7 @@ const ImageMergeAnimation = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300"
         style={{ 
           backgroundImage: 'url("/images/golden-hours-image-1.JPG")',
-          backgroundPosition: 'center 30%',
+          backgroundPosition: getBgPosition(),
           transform: `scale(${backgroundScale})`,
           transition: 'transform 0.5s ease-out'
         }}
@@ -91,7 +101,7 @@ const ImageMergeAnimation = () => {
           className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
             backgroundImage: `url("${leftImageUrl}")`,
-            backgroundPosition: 'right center', 
+            backgroundPosition: isMobile ? '65% center' : 'right center', 
             backgroundSize: 'cover',
             width: '50%',
             transform: `translateX(-${slidePercentage}%)`,
@@ -107,7 +117,7 @@ const ImageMergeAnimation = () => {
           className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
             backgroundImage: `url("${rightImageUrl}")`,
-            backgroundPosition: 'left center',
+            backgroundPosition: isMobile ? '35% center' : 'left center',
             backgroundSize: 'cover',
             width: '50%',
             transform: `translateX(${slidePercentage}%)`,
