@@ -1,120 +1,114 @@
 
 import React from "react";
-import { EvervaultCard } from "@/components/ui/evervault-card";
+import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
 import { Brain, Lightbulb, Heart } from "lucide-react";
-import { motion } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 const BewusstseinSection = () => {
-  return (
-    <section id="bewusstsein" className="relative py-24 md:py-32 overflow-hidden">
-      {/* Mystischer Hintergrund mit Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-golden-50/50 via-forest-50/30 to-transparent z-0" />
-      
-      {/* Dekorative Elemente */}
-      <div className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-golden-200/20 blur-3xl" />
-      <div className="absolute bottom-20 left-[15%] w-72 h-72 rounded-full bg-forest-200/20 blur-3xl" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Headline mit Animation */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="max-w-3xl mx-auto text-center mb-16"
-        >
-          <h2 className="font-serif text-3xl md:text-5xl font-medium mb-6 leading-tight text-forest-800">
-            Entfalte dein höheres Bewusstsein
-          </h2>
-          <div className="w-20 h-1 bg-golden-300 mx-auto mb-8" />
-          <p className="text-lg text-forest-700 max-w-xl mx-auto">
-            Erlebe tiefgreifende Transformation durch Bewusstseinserweiterung, 
-            Persönlichkeitsentwicklung und Selbstheilungsaktivierung.
-          </p>
-        </motion.div>
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const descriptionRef = useRef<HTMLDivElement>(null);
 
-        {/* Karten mit Animation */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-20">
-          {[
-            {
-              icon: <Brain className="w-12 h-12" />,
-              title: "Bewusstseinserweiterung",
-              description: "Erfahre neue Dimensionen deiner Wahrnehmung",
-              gradient: "from-golden-200 to-golden-100",
-              delay: 0
-            },
-            {
-              icon: <Lightbulb className="w-12 h-12" />,
-              title: "Persönlichkeitsentwicklung",
-              description: "Entfalte dein wahres Potenzial",
-              gradient: "from-forest-100 to-forest-50",
-              delay: 0.15
-            },
-            {
-              icon: <Heart className="w-12 h-12" />,
-              title: "Selbstheilungsaktivierung",
-              description: "Erwecke deine inneren Heilkräfte",
-              gradient: "from-golden-300 to-golden-200",
-              delay: 0.3
-            }
-          ].map((card, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: card.delay, ease: "easeOut" }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="flex flex-col items-center"
-            >
-              <div className="group h-[280px] w-full overflow-hidden rounded-2xl mb-6 bg-gradient-to-br hover:shadow-xl transition-all duration-500 relative">
-                <div className="absolute inset-0 bg-gradient-to-br opacity-40 z-0" />
-                <div className="absolute inset-0 bg-gradient-to-br group-hover:opacity-70 transition-opacity duration-500" />
-                <EvervaultCard text={card.icon} />
-                
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/40 to-transparent">
-                  <h3 className="font-serif text-xl text-white font-medium mb-2">{card.title}</h3>
-                  <p className="text-sm text-white/90">{card.description}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+    if (cardsRef.current) {
+      observer.observe(cardsRef.current);
+    }
+    if (descriptionRef.current) {
+      observer.observe(descriptionRef.current);
+    }
+    
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+      if (cardsRef.current) {
+        observer.unobserve(cardsRef.current);
+      }
+      if (descriptionRef.current) {
+        observer.unobserve(descriptionRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <section id="bewusstsein" className="py-24 md:py-32 bg-gradient-to-b from-golden-50 to-transparent" ref={sectionRef}>
+      <div className="container mx-auto px-6 md:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-16 reveal" ref={titleRef}>
+          <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">
+            Die Reise zu deinem wahren Selbst
+          </h2>
+          <p className="text-lg leading-relaxed text-forest-800">
+            Entdecke die transformative Kraft von Bewusstseinserweiterung, Persönlichkeitsentwicklung und Selbstheilungsaktivierung
+          </p>
         </div>
 
-        {/* Unterer Abschnitt mit Bild und Text */}
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="flex flex-col md:flex-row md:items-center md:space-x-12 max-w-5xl mx-auto"
-        >
-          <div className="md:w-1/2 mb-10 md:mb-0">
-            <div className="relative">
-              <div className="absolute -top-6 -left-6 w-full h-full border-2 border-golden-200 rounded-full" />
-              <div className="relative overflow-hidden rounded-full aspect-square">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-16 reveal" ref={cardsRef}>
+          <div className="flex flex-col items-center">
+            <div className="h-[300px] w-full md:h-[350px] overflow-hidden rounded-3xl mb-6 bg-gradient-to-br from-golden-100 to-golden-50">
+              <EvervaultCard text={<Brain className="w-10 h-10" />} />
+            </div>
+            <h3 className="font-serif text-xl font-medium mb-3 text-forest-800">Bewusstseinserweiterung</h3>
+            <p className="text-center text-forest-600">Erweitere deine Wahrnehmung und entdecke neue Perspektiven jenseits deiner bisherigen Grenzen.</p>
+          </div>
+          
+          <div className="flex flex-col items-center">
+            <div className="h-[300px] w-full md:h-[350px] overflow-hidden rounded-3xl mb-6 bg-gradient-to-br from-forest-100 to-forest-50">
+              <EvervaultCard text={<Lightbulb className="w-10 h-10" />} />
+            </div>
+            <h3 className="font-serif text-xl font-medium mb-3 text-forest-800">Persönlichkeitsentwicklung</h3>
+            <p className="text-center text-forest-600">Entfalte dein volles Potenzial und wachse zu der Person, die du wirklich sein möchtest.</p>
+          </div>
+          
+          <div className="flex flex-col items-center">
+            <div className="h-[300px] w-full md:h-[350px] overflow-hidden rounded-3xl mb-6 bg-gradient-to-br from-golden-200 to-golden-100">
+              <EvervaultCard text={<Heart className="w-10 h-10" />} />
+            </div>
+            <h3 className="font-serif text-xl font-medium mb-3 text-forest-800">Selbstheilungsaktivierung</h3>
+            <p className="text-center text-forest-600">Aktiviere die natürlichen Selbstheilungskräfte deines Körpers, Geistes und deiner Seele.</p>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-sm border border-golden-100 reveal" ref={descriptionRef}>
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="md:w-1/2">
+              <h3 className="font-serif text-2xl mb-4 text-forest-800">Dein Weg zum höheren Bewusstsein</h3>
+              <p className="mb-4 text-forest-700">In unseren Coaching-Sitzungen begleite ich dich auf einer tiefgreifenden Reise zu deinem wahren Selbst. Durch speziell entwickelte Techniken und Methoden öffnen wir gemeinsam Türen zu neuen Bewusstseinsebenen.</p>
+              <p className="text-forest-700">Jede Sitzung ist ein Schritt auf dem Weg zu mehr Klarheit, innerer Ruhe und einem tieferen Verständnis deines Lebenswegs.</p>
+            </div>
+            <div className="md:w-1/2 relative">
+              <div className="aspect-square max-w-[300px] mx-auto overflow-hidden rounded-full border-8 border-golden-100/50">
                 <img 
                   src="/images/golden-hours-image-16.JPG" 
                   alt="Bewusstseinserweiterung" 
-                  className="object-cover w-full h-full transform transition-transform duration-1000 hover:scale-110"
+                  className="object-cover w-full h-full"
                 />
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-golden-100 rounded-full flex items-center justify-center z-10 shadow-md">
+                <span className="font-serif text-forest-800 text-sm font-medium text-center">Entdecke dich selbst</span>
               </div>
             </div>
           </div>
-          
-          <div className="md:w-1/2">
-            <h3 className="font-serif text-2xl md:text-3xl text-forest-800 mb-4">Der Weg zu deinem Selbst</h3>
-            <p className="text-forest-700 mb-8">
-              In unseren Sitzungen begleite ich dich auf einer Reise zu tieferen 
-              Bewusstseinsebenen und helfe dir, deine innere Weisheit zu entdecken.
-            </p>
-            <a 
-              href="#waitlist" 
-              className="inline-block px-8 py-3 bg-golden-400 text-white rounded-full hover:bg-golden-500 transition-colors duration-300 font-medium"
-            >
-              Beginne deine Reise
-            </a>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
