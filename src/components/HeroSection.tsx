@@ -49,7 +49,6 @@ const HeroSection = () => {
         <div className="text-center mb-6">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight tracking-tight">
             <div className="flex items-center justify-center">
-              <span>Dein</span>
               <div className="relative h-[1.2em] w-[8rem] md:w-[10rem] lg:w-[12rem] overflow-hidden ml-3">
                 {titles.map((title, index) => (
                   <motion.span
