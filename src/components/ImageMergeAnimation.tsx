@@ -13,8 +13,8 @@ const ImageMergeAnimation = () => {
     const curtainRight = new Image();
     const background = new Image();
     
-    curtainLeft.src = "/images/golden-hours-image-6.JPG";
-    curtainRight.src = "/images/golden-hours-image-7.JPG";
+    curtainLeft.src = "/lovable-uploads/6ec88932-855c-4ad3-ab49-1fb4a8d3cd1a.png";
+    curtainRight.src = "/lovable-uploads/08073b01-c182-4752-9faa-6d1484816c80.png";
     background.src = "/images/golden-hours-image-1.JPG";
     
     let loadedCount = 0;
@@ -73,9 +73,10 @@ const ImageMergeAnimation = () => {
 
       {/* Left curtain */}
       <div 
-        className={`absolute top-0 bottom-0 left-0 w-1/2 h-full bg-cover bg-right bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
+        className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
         style={{ 
-          backgroundImage: 'url("/images/golden-hours-image-6.JPG")',
+          backgroundImage: 'url("/lovable-uploads/6ec88932-855c-4ad3-ab49-1fb4a8d3cd1a.png")',
+          backgroundPosition: 'right center',
           transform: `translateX(-${100 - curtainOffset}%)`,
           transformOrigin: 'right center',
           width: '50%',
@@ -86,9 +87,10 @@ const ImageMergeAnimation = () => {
 
       {/* Right curtain */}
       <div 
-        className={`absolute top-0 bottom-0 right-0 w-1/2 h-full bg-cover bg-left bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
+        className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
         style={{ 
-          backgroundImage: 'url("/images/golden-hours-image-7.JPG")',
+          backgroundImage: 'url("/lovable-uploads/08073b01-c182-4752-9faa-6d1484816c80.png")',
+          backgroundPosition: 'left center',
           transform: `translateX(${100 - curtainOffset}%)`,
           transformOrigin: 'left center',
           width: '50%',
