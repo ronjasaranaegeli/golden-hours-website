@@ -22,8 +22,6 @@ const Index = () => {
       "/images/golden-hours-image-1.JPG",
       "/images/golden-hours-image-2.JPG",
       "/images/golden-hours-image-3.JPG",
-      "/images/golden-hours-image-4.JPG",
-      "/images/golden-hours-image-5.JPG",
       "/images/golden-hours-image-16.JPG"
     ];
     
