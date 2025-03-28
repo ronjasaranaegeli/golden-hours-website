@@ -89,20 +89,6 @@ export default {
 					900: '#2c3c27',
 					950: '#162013',
 				},
-				// Neue Beige-Palette - eleganter und wärmer
-				beige: {
-					50: '#f9f6f0',
-					100: '#f3f0ea',
-					200: '#e6dfd0',
-					300: '#d9ccb8',
-					400: '#c7b59c',
-					500: '#b8a183',
-					600: '#a38c6e',
-					700: '#8c755c',
-					800: '#74614f',
-					900: '#5f5043',
-					950: '#2d2a24',
-				},
 			},
 			fontFamily: {
 				sans: ['Poppins', 'sans-serif'],
