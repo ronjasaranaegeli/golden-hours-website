@@ -1,3 +1,4 @@
+
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
@@ -74,7 +75,8 @@ const HeroSection = () => {
         <div className="flex justify-center w-full">
           <Button 
             onClick={() => scrollToSection('waitlist')} 
-            className="mt-2 bg-primary hover:bg-primary/90 text-white px-4 sm:px-6 py-3 sm:py-4 text-sm opacity-0 animate-fade-in-delay-2 btn-shine"
+            variant="cream"
+            className="mt-2 px-4 sm:px-6 py-3 sm:py-4 text-sm opacity-0 animate-fade-in-delay-2 btn-shine"
           >
             Auf die Warteliste
           </Button>
