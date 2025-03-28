@@ -23,8 +23,8 @@ export const EvervaultCard = ({
   const [randomString, setRandomString] = useState("");
 
   useEffect(() => {
-    // Erhöhte Menge an Text für vollständige Abdeckung
-    let str = generateRandomString(7000, customWords);
+    // Erhöhte Menge an Text für noch bessere Abdeckung
+    let str = generateRandomString(12000, customWords);
     setRandomString(str);
   }, [customWords]);
 
@@ -33,7 +33,7 @@ export const EvervaultCard = ({
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
 
-    const str = generateRandomString(7000, customWords);
+    const str = generateRandomString(12000, customWords);
     setRandomString(str);
   }
 
@@ -46,7 +46,7 @@ export const EvervaultCard = ({
     mouseX.set(touch.clientX - left);
     mouseY.set(touch.clientY - top);
     
-    const str = generateRandomString(7000, customWords);
+    const str = generateRandomString(12000, customWords);
     setRandomString(str);
   }
 
@@ -70,7 +70,7 @@ export const EvervaultCard = ({
         onMouseMove={onMouseMove}
         onTouchMove={onTouchMove}
         onTouchStart={onTouchStart}
-        className="group/card rounded-none w-full relative overflow-hidden bg-forest-950 flex items-center justify-center h-full"
+        className="group/card rounded-none w-full relative overflow-hidden bg-golden-950 flex items-center justify-center h-full"
       >
         <CardPattern
           mouseX={mouseX}
@@ -79,9 +79,9 @@ export const EvervaultCard = ({
           isTouch={isTouch}
         />
         <div className="relative z-10 flex items-center justify-center">
-          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center justify-center text-forest-800 font-bold">
+          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center justify-center text-golden-800 font-bold">
             <div className="absolute w-full h-full bg-white/[0.85] dark:bg-black/[0.8] blur-sm rounded-full" />
-            <span className="dark:text-white text-forest-800 z-20 font-serif">{text}</span>
+            <span className="dark:text-white text-golden-800 z-20 font-serif">{text}</span>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@ export function CardPattern({ mouseX, mouseY, randomString, isTouch }: any) {
     <div className="pointer-events-none">
       <div className="absolute inset-0 [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-forest-900 to-forest-950 opacity-100 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 bg-gradient-to-r from-golden-900 to-golden-950 opacity-100 backdrop-blur-xl transition duration-500"
         style={style}
       />
       <motion.div
@@ -122,7 +122,7 @@ export const generateRandomString = (length: number, customWords?: string[]) => 
     let result = "";
     while (result.length < length) {
       const randomWord = customWords[Math.floor(Math.random() * customWords.length)];
-      // Remove the bullet points (•) from the questions
+      // Remove the bullet points from the questions
       const cleanWord = randomWord.replace(" •", "");
       result += cleanWord + " ";
     }
