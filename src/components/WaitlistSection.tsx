@@ -152,7 +152,7 @@ const WaitlistSection = () => {
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+                    className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg shadow-md hover:shadow-lg transition-all duration-300 btn-shine"
                   >
                     Jetzt auf die Warteliste eintragen
                   </Button>

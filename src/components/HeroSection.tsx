@@ -78,7 +78,7 @@ const HeroSection = () => {
         <div className="flex justify-center w-full">
           <Button 
             onClick={() => scrollToSection('waitlist')} 
-            className="mt-4 bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg opacity-0 animate-fade-in-delay-2 btn-hover-effect rounded-full"
+            className="mt-4 bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg opacity-0 animate-fade-in-delay-2 btn-shine"
           >
             Auf die Warteliste
           </Button>

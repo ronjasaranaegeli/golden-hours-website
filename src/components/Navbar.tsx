@@ -97,7 +97,7 @@ const Navbar = () => {
           <li>
             <Button 
               onClick={() => scrollToSection('waitlist')} 
-              className="bg-golden-500 text-white hover:bg-golden-600 hover:scale-105 transform transition-all duration-300 shadow-md hover:shadow-lg"
+              className="bg-golden-500 text-white hover:bg-golden-600 hover:scale-105 transform transition-all duration-300 shadow-md hover:shadow-lg btn-shine"
             >
               Warteliste
             </Button>
@@ -151,7 +151,7 @@ const Navbar = () => {
             <li className="pt-2">
               <Button 
                 onClick={() => scrollToSection('waitlist')} 
-                className="w-full bg-golden-500 text-white hover:bg-golden-600 transition-colors shadow-sm"
+                className="w-full bg-golden-500 text-white hover:bg-golden-600 transition-colors shadow-sm btn-shine"
               >
                 Warteliste
               </Button>

@@ -170,7 +170,7 @@ const ProgramDetailsSection = () => {
             
             <Button 
               onClick={() => scrollToSection('waitlist')} 
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-6 btn-hover-effect"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-6 btn-shine shadow-md"
             >
               <span>Auf die Warteliste setzen</span>
               <ArrowRight className="ml-2 h-5 w-5" />
