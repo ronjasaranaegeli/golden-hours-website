@@ -117,7 +117,7 @@ const ImageMergeAnimation = () => {
           className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
             backgroundImage: `url("${rightImageUrl}")`,
-            backgroundPosition: isMobile ? '35% center' : 'left center',
+            backgroundPosition: isMobile ? '25% center' : 'left center', // Adjusted from 35% to 25% to show more of the right person
             backgroundSize: 'cover',
             width: '50%',
             transform: `translateX(${slidePercentage}%)`,
