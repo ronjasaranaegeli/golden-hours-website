@@ -38,27 +38,33 @@ const TransformationSection = () => {
   const transformationItems = [
     {
       title: "Tiefe Selbsterkenntnis",
-      description: "Entdecke die Schichten deines Selbst und erkenne deine wahren Bedürfnisse, Werte und Potenziale."
+      description: "Entdecke die Schichten deines Selbst und erkenne deine wahren Bedürfnisse, Werte und Potenziale.",
+      image: "/images/golden-hours-image-9.JPG"
     },
     {
       title: "Authentizität leben",
-      description: "Lerne, im Einklang mit deiner inneren Wahrheit zu leben und Entscheidungen zu treffen, die zu deinem höchsten Wohl sind."
+      description: "Lerne, im Einklang mit deiner inneren Wahrheit zu leben und Entscheidungen zu treffen, die zu deinem höchsten Wohl sind.",
+      image: "/images/golden-hours-image-10.JPG"
     },
     {
       title: "Innere Ruhe",
-      description: "Entwickle die Fähigkeit, inmitten äußerer Umstände deine innere Mitte zu finden und von dort zu handeln."
+      description: "Entwickle die Fähigkeit, inmitten äußerer Umstände deine innere Mitte zu finden und von dort zu handeln.",
+      image: "/images/golden-hours-image-11.JPG"
     },
     {
       title: "Berufliche Neuausrichtung",
-      description: "Erkenne, wie du deine Berufung in deinen Alltag integrieren kannst – sei es durch eine neue Karriere oder durch eine neue Haltung."
+      description: "Erkenne, wie du deine Berufung in deinen Alltag integrieren kannst – sei es durch eine neue Karriere oder durch eine neue Haltung.",
+      image: "/images/golden-hours-image-12.JPG"
     },
     {
       title: "Tiefere Beziehungen",
-      description: "Erlebe authentische Verbindungen zu anderen, basierend auf Präsenz, Klarheit und ehrlicher Kommunikation."
+      description: "Erlebe authentische Verbindungen zu anderen, basierend auf Präsenz, Klarheit und ehrlicher Kommunikation.",
+      image: "/images/golden-hours-image-13.JPG"
     },
     {
       title: "Freude am Sein",
-      description: "Spüre wieder die natürliche Freude des Seins, jenseits von äußeren Umständen und Bedingungen."
+      description: "Spüre wieder die natürliche Freude des Seins, jenseits von äußeren Umständen und Bedingungen.",
+      image: "/images/golden-hours-image-14.JPG"
     },
   ];
 
@@ -79,10 +85,17 @@ const TransformationSection = () => {
           {transformationItems.map((item, index) => (
             <div 
               key={index} 
-              className="elegant-card reveal"
+              className="elegant-card reveal overflow-hidden"
               ref={el => itemsRef.current[index] = el}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
+              <div className="aspect-video mb-6 overflow-hidden rounded-lg">
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
               <h3 className="font-serif text-xl font-medium mb-4 text-forest-800">{item.title}</h3>
               <p className="text-forest-600">{item.description}</p>
             </div>

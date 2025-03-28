@@ -77,8 +77,8 @@ const SolutionSection = () => {
           {/* Right Column: Image */}
           <div className="relative h-[500px] lg:h-[600px] rounded-xl overflow-hidden reveal" ref={rightColumnRef}>
             <img 
-              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2274&auto=format&fit=crop" 
-              alt="Foggy mountain summit symbolizing journey of transformation" 
+              src="/images/golden-hours-image-2.JPG" 
+              alt="Golden Hours Coaching - Transformative Reise" 
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>

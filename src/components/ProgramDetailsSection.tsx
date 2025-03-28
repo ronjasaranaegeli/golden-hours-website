@@ -2,6 +2,13 @@
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Clock, Landmark, Calendar, Users, Award, ArrowRight } from 'lucide-react';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious 
+} from '@/components/ui/carousel';
 
 const ProgramDetailsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,6 +43,15 @@ const ProgramDetailsSection = () => {
     }
   };
 
+  // Program images for carousel
+  const programImages = [
+    "/images/golden-hours-image-15.JPG",
+    "/images/golden-hours-image-16.JPG",
+    "/images/golden-hours-image-17.JPG",
+    "/images/golden-hours-image-18.JPG",
+    "/images/golden-hours-image-19.JPG",
+  ];
+
   return (
     <section id="program" className="py-24 md:py-32 bg-secondary/30" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-8">
@@ -48,6 +64,27 @@ const ProgramDetailsSection = () => {
             Das 3-monatige Golden Hours Coaching-Programm ist für Menschen, die bereit sind, 
             den nächsten Schritt in ihrer persönlichen Transformation zu gehen.
           </p>
+        </div>
+
+        {/* Program Image Carousel */}
+        <div className="mb-16 max-w-5xl mx-auto reveal">
+          <Carousel>
+            <CarouselContent>
+              {programImages.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="aspect-video overflow-hidden rounded-xl">
+                    <img 
+                      src={image} 
+                      alt={`Golden Hours Coaching Impression ${index + 1}`}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
         
         <div className="max-w-5xl mx-auto reveal" ref={contentRef}>

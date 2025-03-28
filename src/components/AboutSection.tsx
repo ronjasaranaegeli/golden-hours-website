@@ -72,7 +72,7 @@ const AboutSection = () => {
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-forest-100 rounded-xl -z-10"></div>
               <div className="relative h-[500px] rounded-xl overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1887&auto=format&fit=crop" 
+                  src="/images/golden-hours-image-3.JPG" 
                   alt="Coach Portrait" 
                   className="h-full w-full object-cover"
                 />

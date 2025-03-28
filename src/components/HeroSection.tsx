@@ -17,7 +17,7 @@ const HeroSection = () => {
         <div 
           className="h-full w-full bg-cover bg-center bg-no-repeat" 
           style={{ 
-            backgroundImage: 'url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop")', 
+            backgroundImage: 'url("/images/golden-hours-image-1.JPG")', 
             backgroundPosition: 'center',
             backgroundSize: 'cover'
           }}

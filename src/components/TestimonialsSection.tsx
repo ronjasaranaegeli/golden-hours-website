@@ -25,13 +25,13 @@ const TestimonialsSection = () => {
     };
   }, []);
 
-  // Placeholder testimonial videos data
+  // Testimonial videos data with images
   const testimonials = [
-    { name: "Marie S.", role: "Unternehmerin" },
-    { name: "Thomas K.", role: "Lehrer" },
-    { name: "Laura P.", role: "Marketing Managerin" },
-    { name: "David M.", role: "Coach" },
-    { name: "Sarah L.", role: "Kreative" },
+    { name: "Marie S.", role: "Unternehmerin", image: "/images/golden-hours-image-4.JPG" },
+    { name: "Thomas K.", role: "Lehrer", image: "/images/golden-hours-image-5.JPG" },
+    { name: "Laura P.", role: "Marketing Managerin", image: "/images/golden-hours-image-6.JPG" },
+    { name: "David M.", role: "Coach", image: "/images/golden-hours-image-7.JPG" },
+    { name: "Sarah L.", role: "Kreative", image: "/images/golden-hours-image-8.JPG" },
   ];
 
   return (
@@ -51,8 +51,15 @@ const TestimonialsSection = () => {
         <div className="mb-12">
           <div className="aspect-video max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-sm border border-golden-100">
             {activeVideo !== null ? (
-              <div className="h-full w-full flex items-center justify-center bg-golden-50">
-                <p className="text-forest-800 font-serif text-xl">Testimonial Video von {testimonials[activeVideo].name}</p>
+              <div className="h-full w-full flex items-center justify-center bg-golden-50 relative">
+                <img 
+                  src={testimonials[activeVideo].image} 
+                  alt={`Testimonial von ${testimonials[activeVideo].name}`}
+                  className="h-full w-full object-cover opacity-20"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <p className="text-forest-800 font-serif text-xl">Testimonial Video von {testimonials[activeVideo].name}</p>
+                </div>
               </div>
             ) : (
               <div className="h-full w-full flex items-center justify-center bg-golden-50">
@@ -72,9 +79,16 @@ const TestimonialsSection = () => {
               onClick={() => setActiveVideo(index)}
             >
               <div className="aspect-video bg-white rounded-lg mb-3 overflow-hidden shadow-sm border border-golden-100">
-                <div className="h-full w-full flex items-center justify-center bg-golden-50">
-                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center border border-golden-200">
-                    <div className="w-0 h-0 border-y-8 border-y-transparent border-l-10 border-l-forest-800 ml-1"></div>
+                <div className="h-full w-full relative">
+                  <img 
+                    src={testimonial.image} 
+                    alt={`Thumbnail von ${testimonial.name}`}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                    <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center border border-golden-200">
+                      <div className="w-0 h-0 border-y-8 border-y-transparent border-l-10 border-l-forest-800 ml-1"></div>
+                    </div>
                   </div>
                 </div>
               </div>

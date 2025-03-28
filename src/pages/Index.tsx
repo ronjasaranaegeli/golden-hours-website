@@ -17,9 +17,17 @@ const Index = () => {
     // Update document title
     document.title = "Golden Hours Coaching - Dein Sinn. Deine Wahrheit. Dein Leben.";
     
-    // Add the image to be used (uploaded through lovable)
-    const preloadImage = new Image();
-    preloadImage.src = "/lovable-uploads/eb0b21ad-45ca-41ac-8b1d-7493ea4dcbac.png";
+    // Preload key images
+    const imagesToPreload = [
+      "/images/golden-hours-image-1.JPG",
+      "/images/golden-hours-image-2.JPG",
+      "/images/golden-hours-image-3.JPG"
+    ];
+    
+    imagesToPreload.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
   return (
