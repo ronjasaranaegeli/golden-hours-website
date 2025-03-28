@@ -6,6 +6,7 @@ const ImageMergeAnimation = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [leftImageUrl, setLeftImageUrl] = useState('');
   const [rightImageUrl, setRightImageUrl] = useState('');
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     // Check if the split images are already in localStorage
@@ -44,8 +45,21 @@ const ImageMergeAnimation = () => {
     }
 
     const handleScroll = () => {
-      const currentPosition = window.scrollY;
-      setScrollPosition(currentPosition);
+      // Nur die Scroll-Position aktualisieren, wenn noch keine Animation stattgefunden hat
+      // oder wenn wir ganz nach oben scrollen (dann Animation zurücksetzen)
+      if (!hasAnimated || window.scrollY === 0) {
+        setScrollPosition(window.scrollY);
+        
+        // Animation als ausgeführt markieren, wenn wir ein wenig gescrollt haben
+        if (window.scrollY > 50 && !hasAnimated) {
+          setHasAnimated(true);
+        }
+        
+        // Animation zurücksetzen, wenn wir ganz nach oben scrollen
+        if (window.scrollY === 0) {
+          setHasAnimated(false);
+        }
+      }
     };
 
     // Set initial scroll position to trigger animation
@@ -54,7 +68,7 @@ const ImageMergeAnimation = () => {
     window.addEventListener("scroll", handleScroll);
     
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [hasAnimated]);
 
   // Calculate image position based on scroll
   // Lower value = more sensitivity to scroll
@@ -65,21 +79,19 @@ const ImageMergeAnimation = () => {
   // Minimum slide is 0% (completely visible)
   const slidePercentage = Math.max(0, Math.min(100, (scrollPosition / scrollFactor)));
   
-  // Background zoom effect
-  const backgroundScale = 1 + (scrollPosition / 1000);
-
-  console.log("Animation state:", { isLoaded, leftImageUrl, rightImageUrl, slidePercentage });
+  // Background zoom effect (limitiert auf maximal 1.1 um Überzoom zu vermeiden)
+  const backgroundScale = Math.min(1.1, 1 + (scrollPosition / 2000));
 
   return (
     <div className="absolute inset-0 overflow-hidden z-0">
       {/* Background image (zooms in on scroll) */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000"
         style={{ 
           backgroundImage: 'url("/images/golden-hours-image-1.JPG")',
           backgroundPosition: 'center 30%',
           transform: `scale(${backgroundScale})`,
-          transition: 'transform 0.5s ease-out'
+          transition: 'transform 1s ease-out'
         }}
       >
         <div className="absolute inset-0 bg-black/20"></div>
@@ -95,7 +107,7 @@ const ImageMergeAnimation = () => {
             backgroundSize: 'cover',
             width: '50%',
             transform: `translateX(-${slidePercentage}%)`,
-            transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+            transition: 'transform 1s ease-out, opacity 1s ease-out',
             zIndex: 5
           }}
         />
@@ -111,7 +123,7 @@ const ImageMergeAnimation = () => {
             backgroundSize: 'cover',
             width: '50%',
             transform: `translateX(${slidePercentage}%)`,
-            transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+            transition: 'transform 1s ease-out, opacity 1s ease-out',
             zIndex: 5
           }}
         />
