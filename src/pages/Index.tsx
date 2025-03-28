@@ -1,6 +1,5 @@
 
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ProblemSection from '@/components/ProblemSection';
@@ -12,7 +11,6 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import WaitlistSection from '@/components/WaitlistSection';
 import FooterSection from '@/components/FooterSection';
 import ScrollReveal from '@/components/ScrollReveal';
-import { Button } from '@/components/ui/button';
 
 const Index = () => {
   useEffect(() => {
@@ -38,13 +36,6 @@ const Index = () => {
       {/* Main content */}
       <main>
         <HeroSection />
-        <div className="container mx-auto px-4 py-8 flex justify-center">
-          <Link to="/animated-demo">
-            <Button variant="cream" className="btn-shine">
-              View Animated Demo
-            </Button>
-          </Link>
-        </div>
         <ProblemSection />
         <SolutionSection />
         <TransformationSection />
