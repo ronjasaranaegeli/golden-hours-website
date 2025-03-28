@@ -36,7 +36,7 @@ const ImageMergeAnimation = () => {
       <motion.div
         className="absolute inset-0 bg-cover bg-left bg-no-repeat"
         style={{ 
-          backgroundImage: 'url("/images/golden-hours-image-2.JPG")',
+          backgroundImage: 'url("/lovable-uploads/7f530417-8f71-4393-933b-096bbe45a69e.png")',
           clipPath: 'polygon(0 0, 50% 0, 50% 100%, 0 100%)'
         }}
         initial={{ x: -100, opacity: 0 }}
@@ -51,7 +51,7 @@ const ImageMergeAnimation = () => {
       <motion.div
         className="absolute inset-0 bg-cover bg-right bg-no-repeat"
         style={{ 
-          backgroundImage: 'url("/images/golden-hours-image-3.JPG")',
+          backgroundImage: 'url("/lovable-uploads/f07e6c66-dbb5-4609-909f-99904edf8d66.png")',
           clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 50% 100%)'
         }}
         initial={{ x: 100, opacity: 0 }}
