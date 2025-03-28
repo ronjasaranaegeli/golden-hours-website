@@ -24,7 +24,7 @@ export const EvervaultCard = ({
 
   useEffect(() => {
     // Erhöhte Menge an Text für noch bessere Abdeckung
-    let str = generateRandomString(12000, customWords);
+    let str = generateRandomString(15000, customWords);
     setRandomString(str);
   }, [customWords]);
 
@@ -33,7 +33,7 @@ export const EvervaultCard = ({
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
 
-    const str = generateRandomString(12000, customWords);
+    const str = generateRandomString(15000, customWords);
     setRandomString(str);
   }
 
@@ -46,7 +46,7 @@ export const EvervaultCard = ({
     mouseX.set(touch.clientX - left);
     mouseY.set(touch.clientY - top);
     
-    const str = generateRandomString(12000, customWords);
+    const str = generateRandomString(15000, customWords);
     setRandomString(str);
   }
 
@@ -70,7 +70,7 @@ export const EvervaultCard = ({
         onMouseMove={onMouseMove}
         onTouchMove={onTouchMove}
         onTouchStart={onTouchStart}
-        className="group/card rounded-none w-full relative overflow-hidden bg-[#2D2A24] flex items-center justify-center h-full"
+        className="group/card rounded-none w-full relative overflow-hidden bg-white flex items-center justify-center h-full"
       >
         <CardPattern
           mouseX={mouseX}
@@ -79,9 +79,9 @@ export const EvervaultCard = ({
           isTouch={isTouch}
         />
         <div className="relative z-10 flex items-center justify-center">
-          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center justify-center text-[#E6D7B9] font-bold">
-            <div className="absolute w-full h-full bg-[#2D2A24]/[0.85] dark:bg-black/[0.8] blur-sm rounded-full" />
-            <span className="dark:text-[#E6D7B9] text-[#E6D7B9] z-20 font-serif">{text}</span>
+          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center justify-center text-[#F3EAD9] font-bold">
+            <div className="absolute w-full h-full bg-white/[0.85] dark:bg-white/[0.9] blur-sm rounded-full" />
+            <span className="dark:text-[#F3EAD9] text-[#F3EAD9] z-20 font-serif">{text}</span>
           </div>
         </div>
       </div>
@@ -92,21 +92,21 @@ export const EvervaultCard = ({
 export function CardPattern({ mouseX, mouseY, randomString, isTouch }: any) {
   // Vergrößerter Maskierungsradius für bessere Abdeckung auf mobilen Geräten
   const maskSize = isTouch ? "350px" : "450px";
-  let maskImage = useMotionTemplate`radial-gradient(${maskSize} at ${mouseX}px ${mouseY}px, white, transparent)`;
+  let maskImage = useMotionTemplate`radial-gradient(${maskSize} at ${mouseX}px ${mouseY}px, rgba(234, 179, 8, 0.8), transparent)`;
   let style = { maskImage, WebkitMaskImage: maskImage };
 
   return (
     <div className="pointer-events-none">
       <div className="absolute inset-0 [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-[#2D2A24] to-[#3D3832] opacity-100 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 bg-gradient-to-r from-white to-white opacity-100 backdrop-blur-xl transition duration-500"
         style={style}
       />
       <motion.div
         className="absolute inset-0 opacity-0 mix-blend-overlay group-hover/card:opacity-100"
         style={style}
       >
-        <p className="absolute inset-x-0 inset-y-0 h-full w-full break-words whitespace-pre-wrap text-[#E6D7B9] font-['Courier_New'] transition duration-500 overflow-hidden text-xl md:text-2xl lg:text-3xl">
+        <p className="absolute inset-x-0 inset-y-0 h-full w-full break-words whitespace-pre-wrap text-[#F3EAD9] font-['Courier_New'] transition duration-500 overflow-hidden text-xl md:text-2xl lg:text-3xl">
           {randomString}
         </p>
       </motion.div>

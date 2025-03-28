@@ -62,7 +62,27 @@ const BewusstseinSection = () => {
     "Wie öffne ich mein Herz weiter?",
     "Was bringt meine Augen zum Leuchten?",
     "Wie gestalte ich meinen Tag bewusst?",
-    "Was ist mein schönster Beitrag?"
+    "Was ist mein schönster Beitrag?",
+    "Welche Wahrheit will gehört werden?",
+    "Was wächst in mir gerade heran?",
+    "Womit kann ich mich heute verbinden?",
+    "Was will meine Seele mir sagen?",
+    "Welche Grenzen darf ich sprengen?",
+    "Was heilt, wenn ich es zulasse?",
+    "Wie kann ich authentischer sein?",
+    "Was würde Liebe jetzt tun?",
+    "Welche Geschichte erzähle ich mir?",
+    "Wie kann ich mir selbst besser zuhören?",
+    "Was geschieht, wenn ich loslasse?",
+    "Welche Stimme in mir will gehört werden?",
+    "Was würde ich tun, wenn ich mutiger wäre?",
+    "Wie kann ich meinen Frieden finden?",
+    "Was möchte ich in die Welt bringen?",
+    "Welche Schönheit kann ich heute sehen?",
+    "Was braucht mein Geist zur Ruhe?",
+    "Wie kann ich besser in meiner Mitte sein?",
+    "Was bedeutet wahre Verbundenheit?",
+    "Wie kann ich mein Licht heller leuchten lassen?"
   ];
 
   // Parallax effect
@@ -112,29 +132,29 @@ const BewusstseinSection = () => {
   return (
     <section 
       id="bewusstsein" 
-      className="py-0 bg-[#F9F6F0] overflow-hidden relative h-screen flex items-center justify-center w-full"
+      className="py-0 bg-white overflow-hidden relative h-screen flex items-center justify-center w-full"
       ref={sectionRef}
     >
       {/* Top transition gradient - sanfter Verlauf */}
-      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background via-[#F3F0EA] to-[#F9F6F0] z-10"></div>
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background via-[#FFFAF5] to-white z-10"></div>
       
       <div 
         className="absolute inset-0 opacity-10 z-0" 
         style={{ 
           transform: `translateY(${scrollY * 0.15}px)`,
-          background: 'radial-gradient(circle at center, rgba(230, 215, 185, 0.3) 0%, rgba(255, 255, 255, 0) 70%)'
+          background: 'radial-gradient(circle at center, rgba(234, 179, 8, 0.2) 0%, rgba(255, 255, 255, 0) 70%)'
         }}
       ></div>
       
       <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
         <div className="max-w-3xl mx-auto text-center mb-4 md:mb-6 reveal" ref={titleRef}>
-          <h2 className="font-serif text-2xl md:text-4xl font-medium heading-underline inline-block text-[#2D2A24]">
+          <h2 className="font-serif text-2xl md:text-4xl font-medium heading-underline inline-block text-[#A68A64]">
             Die Reise zu deinem wahren Selbst
           </h2>
         </div>
 
         <div className="w-full h-full reveal flex items-center" ref={cardRef} style={{ transform: `translateY(${scrollY * -0.05}px)` }}>
-          <div className="h-full w-full overflow-hidden bg-[#2D2A24]">
+          <div className="h-full w-full overflow-hidden bg-white">
             <EvervaultCard 
               text={<h3 className="font-serif text-2xl md:text-3xl">A Journey of Self Discovery</h3>} 
               customWords={customQuestions}
@@ -145,7 +165,7 @@ const BewusstseinSection = () => {
       </div>
       
       {/* Bottom transition gradient - sanfter Verlauf */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-[#F3F0EA] to-[#F9F6F0] z-10"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-[#FFFAF5] to-white z-10"></div>
     </section>
   );
 };
