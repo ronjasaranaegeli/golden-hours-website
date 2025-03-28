@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -14,23 +13,60 @@ import ScrollReveal from '@/components/ScrollReveal';
 
 const Index = () => {
   useEffect(() => {
-    // Titel des Dokuments aktualisieren
+    // Update document title
     document.title = "Golden Hours Coaching - Dein Sinn. Deine Wahrheit. Dein Leben.";
     
-    // Wichtige Bilder vorladen
+    // Clear any stored split images to force using the new images
+    localStorage.removeItem('leftHalfImage');
+    localStorage.removeItem('rightHalfImage');
+    
+    // Preload key images
     const imagesToPreload = [
-      "/images/golden-hours-image-1.JPG", // Haupthintergrund
-      "/lovable-uploads/cf5693e3-5472-469d-95d7-ddb7891a10dc.png", // Linkes Bild
-      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png", // Rechtes Bild
-      "/lovable-uploads/30bd8eb6-93aa-49b7-b7c3-3af9787c1041.png", // Mobiles Bild
-      "/images/golden-hours-image-16.JPG"
+      "/images/golden-hours-image-1.JPG", // Main background
+      "/lovable-uploads/7e44dd91-112d-4cb4-a631-f7f48cf99571.png", // New left image without mustache
+      "/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png", // Mobile right image
+      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png" // Desktop right image
     ];
     
     imagesToPreload.forEach(src => {
       const img = new Image();
       img.src = src;
     });
+
+    // We'll use a simpler image selection method
+    createSplitImages();
   }, []);
+
+  // Simplified image selection function
+  const createSplitImages = () => {
+    console.log('Creating split images with cleaner source images...');
+    
+    const leftImage = new Image();
+    leftImage.crossOrigin = "anonymous";
+    leftImage.src = "/lovable-uploads/7e44dd91-112d-4cb4-a631-f7f48cf99571.png";
+    
+    const rightImage = new Image();
+    rightImage.crossOrigin = "anonymous";
+    rightImage.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png";
+    
+    leftImage.onload = () => {
+      console.log('Left image loaded, storing in localStorage');
+      try {
+        localStorage.setItem('leftHalfImage', leftImage.src);
+      } catch (error) {
+        console.error('Error storing left image:', error);
+      }
+    };
+    
+    rightImage.onload = () => {
+      console.log('Right image loaded, storing in localStorage');
+      try {
+        localStorage.setItem('rightHalfImage', rightImage.src);
+      } catch (error) {
+        console.error('Error storing right image:', error);
+      }
+    };
+  };
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background">
