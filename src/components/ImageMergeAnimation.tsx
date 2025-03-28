@@ -11,8 +11,8 @@ const ImageMergeAnimation = () => {
     const rightHalf = new Image();
     const background = new Image();
     
-    leftHalf.src = "/lovable-uploads/75089de6-acf0-48c1-acd5-5211c709345f-left.png";
-    rightHalf.src = "/lovable-uploads/75089de6-acf0-48c1-acd5-5211c709345f-right.png";
+    leftHalf.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png";
+    rightHalf.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png";
     background.src = "/images/golden-hours-image-1.JPG";
     
     let loadedCount = 0;
@@ -71,7 +71,7 @@ const ImageMergeAnimation = () => {
       <div 
         className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{ 
-          backgroundImage: 'url("/lovable-uploads/75089de6-acf0-48c1-acd5-5211c709345f-left.png")',
+          backgroundImage: 'url("/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png")',
           backgroundPosition: 'right center', 
           backgroundSize: 'cover',
           width: '50%',
@@ -85,7 +85,7 @@ const ImageMergeAnimation = () => {
       <div 
         className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{ 
-          backgroundImage: 'url("/lovable-uploads/75089de6-acf0-48c1-acd5-5211c709345f-right.png")',
+          backgroundImage: 'url("/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png")',
           backgroundPosition: 'left center',
           backgroundSize: 'cover',
           width: '50%',
