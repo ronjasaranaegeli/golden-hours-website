@@ -6,6 +6,7 @@ const ScrollReveal = () => {
     const revealElements = document.querySelectorAll('.reveal');
     
     const reveal = () => {
+      // Allgemeine Reveal-Animation für Elemente mit der Klasse 'reveal'
       revealElements.forEach((element) => {
         const windowHeight = window.innerHeight;
         const elementTop = element.getBoundingClientRect().top;
@@ -18,8 +19,6 @@ const ScrollReveal = () => {
     };
     
     window.addEventListener('scroll', reveal);
-    
-    // Ensure images are loaded before checking
     window.addEventListener('load', reveal);
     
     // Initial check

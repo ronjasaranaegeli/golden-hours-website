@@ -7,6 +7,8 @@ import ImageMergeAnimation from './ImageMergeAnimation';
 
 const HeroSection = () => {
   const [titleNumber, setTitleNumber] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  
   const titles = useMemo(
     () => ["Dein <i>Sein</i>", "<i>Wahrheit</i>", "Dein <i>Leben</i>"],
     []
@@ -20,7 +22,17 @@ const HeroSection = () => {
         setTitleNumber(titleNumber + 1);
       }
     }, 3000);
-    return () => clearTimeout(timeoutId);
+    
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 10);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [titleNumber, titles]);
 
   const scrollToSection = (sectionId: string) => {
@@ -34,7 +46,7 @@ const HeroSection = () => {
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       <ImageMergeAnimation />
 
-      <div className="relative z-10 container mx-auto px-6 md:px-8 text-white max-w-2xl flex flex-col items-center">
+      <div className={`relative z-10 container mx-auto px-6 md:px-8 text-white max-w-2xl flex flex-col items-center transition-opacity duration-500 ${hasScrolled ? 'opacity-75' : 'opacity-100'}`}>
         <div className="text-center mb-4">
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight tracking-wide">
             <div className="flex items-center justify-center">
