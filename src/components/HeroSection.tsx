@@ -1,7 +1,9 @@
+
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import AffirmationAnimation from '@/components/AffirmationAnimation';
 
 const HeroSection = () => {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -43,7 +45,9 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-6 md:px-8 text-white max-w-2xl flex flex-col items-center">
-        <div className="text-center mb-4">
+        <AffirmationAnimation />
+        
+        <div className="text-center mb-4 mt-6">
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight tracking-wide">
             <div className="flex items-center justify-center">
               <div className="relative h-[1.2em] w-[18rem] md:w-[22rem] lg:w-[26rem] overflow-hidden ml-3">
