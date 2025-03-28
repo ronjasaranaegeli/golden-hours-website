@@ -1,8 +1,7 @@
 
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
+import AnimatedNavbar from '@/components/AnimatedNavbar';
+import AnimatedHeroSection from '@/components/AnimatedHeroSection';
 import ProblemSection from '@/components/ProblemSection';
 import SolutionSection from '@/components/SolutionSection';
 import TransformationSection from '@/components/TransformationSection';
@@ -12,17 +11,15 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import WaitlistSection from '@/components/WaitlistSection';
 import FooterSection from '@/components/FooterSection';
 import ScrollReveal from '@/components/ScrollReveal';
-import { Button } from '@/components/ui/button';
 
-const Index = () => {
+const AnimatedDemo = () => {
   useEffect(() => {
     // Update document title
-    document.title = "Golden Hours Coaching - Dein Sinn. Deine Wahrheit. Dein Leben.";
+    document.title = "Animated Demo - Yogance Style";
     
     // Preload key images
     const imagesToPreload = [
-      "/images/golden-hours-image-1.JPG", // Main background
-      "/images/golden-hours-image-16.JPG"
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80",
     ];
     
     imagesToPreload.forEach(src => {
@@ -33,25 +30,20 @@ const Index = () => {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background">
-      <Navbar />
+      <AnimatedNavbar />
       
       {/* Main content */}
       <main>
-        <HeroSection />
-        <div className="container mx-auto px-4 py-8 flex justify-center">
-          <Link to="/animated-demo">
-            <Button variant="cream" className="btn-shine">
-              View Animated Demo
-            </Button>
-          </Link>
+        <AnimatedHeroSection />
+        <div className="mt-0 pt-20 bg-background">
+          <ProblemSection />
+          <SolutionSection />
+          <TransformationSection />
+          <AboutSection />
+          <ProgramDetailsSection />
+          <TestimonialsSection />
+          <WaitlistSection />
         </div>
-        <ProblemSection />
-        <SolutionSection />
-        <TransformationSection />
-        <AboutSection />
-        <ProgramDetailsSection />
-        <TestimonialsSection />
-        <WaitlistSection />
       </main>
       
       <FooterSection />
@@ -64,4 +56,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default AnimatedDemo;
