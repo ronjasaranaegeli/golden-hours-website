@@ -112,11 +112,11 @@ const BewusstseinSection = () => {
   return (
     <section 
       id="bewusstsein" 
-      className="py-0 bg-gradient-to-b from-golden-50 to-transparent overflow-hidden relative h-screen flex items-center justify-center w-full"
+      className="py-0 bg-gradient-to-b from-forest-950 to-forest-900 overflow-hidden relative h-screen flex items-center justify-center w-full"
       ref={sectionRef}
     >
       <div 
-        className="absolute inset-0 opacity-20 z-0" 
+        className="absolute inset-0 opacity-10 z-0" 
         style={{ 
           transform: `translateY(${scrollY * 0.15}px)`,
           background: 'radial-gradient(circle at center, rgba(209, 183, 128, 0.2) 0%, rgba(255, 255, 255, 0) 70%)'
@@ -125,13 +125,13 @@ const BewusstseinSection = () => {
       
       <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
         <div className="max-w-3xl mx-auto text-center mb-4 md:mb-6 reveal" ref={titleRef}>
-          <h2 className="font-serif text-2xl md:text-4xl font-medium heading-underline inline-block">
+          <h2 className="font-serif text-2xl md:text-4xl font-medium heading-underline inline-block text-golden-200">
             Die Reise zu deinem wahren Selbst
           </h2>
         </div>
 
         <div className="w-full h-full reveal flex items-center" ref={cardRef} style={{ transform: `translateY(${scrollY * -0.05}px)` }}>
-          <div className="h-full w-full overflow-hidden bg-gradient-to-br from-golden-100 to-golden-50">
+          <div className="h-full w-full overflow-hidden bg-forest-950">
             <EvervaultCard 
               text={<h3 className="font-serif text-2xl md:text-3xl">A Journey of Self Discovery</h3>} 
               customWords={customQuestions}
