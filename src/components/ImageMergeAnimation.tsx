@@ -18,16 +18,16 @@ const ImageMergeAnimation = () => {
       setIsLoaded(true);
     } else {
       // If not in localStorage, use the direct image paths
-      setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
-      setRightImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
+      setLeftImageUrl('/lovable-uploads/fd2f67e3-46fb-4053-ae36-34ab9f926ba7-left.png');
+      setRightImageUrl('/lovable-uploads/fd2f67e3-46fb-4053-ae36-34ab9f926ba7-right.png');
       
       // Preload images
       const leftHalf = new Image();
       const rightHalf = new Image();
       const background = new Image();
       
-      leftHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png';
-      rightHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png';
+      leftHalf.src = '/lovable-uploads/fd2f67e3-46fb-4053-ae36-34ab9f926ba7-left.png';
+      rightHalf.src = '/lovable-uploads/fd2f67e3-46fb-4053-ae36-34ab9f926ba7-right.png';
       background.src = '/images/golden-hours-image-1.JPG';
       
       let loadedCount = 0;
@@ -82,7 +82,8 @@ const ImageMergeAnimation = () => {
           transition: 'transform 0.5s ease-out'
         }}
       >
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* Semi-transparent overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Left half of the image - slide from left */}
@@ -116,6 +117,18 @@ const ImageMergeAnimation = () => {
           }}
         />
       )}
+
+      {/* New conversation image overlay */}
+      <div 
+        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        style={{ 
+          backgroundImage: 'url("/lovable-uploads/fd2f67e3-46fb-4053-ae36-34ab9f926ba7.png")',
+          opacity: Math.max(0, 0.8 - (scrollPosition / 400)),
+          zIndex: 3
+        }}
+      >
+        <div className="absolute inset-0 bg-black/10"></div>
+      </div>
 
       {/* Add a check to visualize loaded state */}
       {!isLoaded && (
