@@ -30,7 +30,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div 
@@ -40,16 +40,16 @@ const HeroSection = () => {
             backgroundPosition: 'center 30%',
           }}
         >
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 md:px-8 text-white max-w-4xl flex flex-col items-center">
-        <div className="text-center mb-6">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight tracking-tight">
+      <div className="relative z-10 container mx-auto px-6 md:px-8 text-white max-w-3xl flex flex-col items-center">
+        <div className="text-center mb-5">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight">
             <div className="flex items-center justify-center">
-              <div className="relative h-[1.2em] w-[24rem] md:w-[28rem] lg:w-[32rem] overflow-hidden ml-3">
+              <div className="relative h-[1.2em] w-[20rem] md:w-[24rem] lg:w-[28rem] overflow-hidden ml-3">
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
@@ -71,13 +71,13 @@ const HeroSection = () => {
             </div>
           </h1>
         </div>
-        <p className="text-xl md:text-2xl mb-10 opacity-0 animate-fade-in-delay-1 font-light leading-relaxed max-w-2xl text-center">
+        <p className="text-lg md:text-xl mb-8 opacity-0 animate-fade-in-delay-1 font-light leading-relaxed max-w-xl text-center">
           Ist dein Bewusstsein bereit für dein Potenzial?
         </p>
         <div className="flex justify-center w-full">
           <Button 
             onClick={() => scrollToSection('waitlist')} 
-            className="mt-4 bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg opacity-0 animate-fade-in-delay-2 btn-shine"
+            className="mt-2 bg-primary hover:bg-primary/90 text-white px-5 sm:px-7 py-4 sm:py-5 text-base opacity-0 animate-fade-in-delay-2 btn-shine"
           >
             Auf die Warteliste
           </Button>
@@ -85,10 +85,10 @@ const HeroSection = () => {
       </div>
 
       {/* Elegant scroll indicator - centered for mobile and desktop */}
-      <div className="absolute bottom-12 left-0 right-0 mx-auto w-full max-w-xs z-20 opacity-0 animate-fade-in-delay-3 flex flex-col items-center">
-        <p className="text-white text-sm mb-2 tracking-widest font-light text-center">ENTDECKE MEHR</p>
+      <div className="absolute bottom-8 left-0 right-0 mx-auto w-full max-w-xs z-20 opacity-0 animate-fade-in-delay-3 flex flex-col items-center">
+        <p className="text-white text-xs mb-1 tracking-widest font-light text-center">ENTDECKE MEHR</p>
         <ChevronDown 
-          className="text-white w-10 h-10 animate-bounce cursor-pointer mx-auto" 
+          className="text-white w-8 h-8 animate-bounce cursor-pointer mx-auto" 
           onClick={() => scrollToSection('problem')}
         />
       </div>
