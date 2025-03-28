@@ -20,8 +20,8 @@ const Index = () => {
     // Preload key images
     const imagesToPreload = [
       "/images/golden-hours-image-1.JPG", // Main background
-      "/lovable-uploads/6ec88932-855c-4ad3-ab49-1fb4a8d3cd1a.png", // Left curtain
-      "/lovable-uploads/08073b01-c182-4752-9faa-6d1484816c80.png", // Right curtain
+      "/lovable-uploads/565b6923-2224-4cb4-b3a4-17590505c554.png", // Left curtain
+      "/lovable-uploads/ee7e5774-a3eb-4af4-9d4b-ae15e1b58b67.png", // Right curtain
       "/images/golden-hours-image-16.JPG"
     ];
     
