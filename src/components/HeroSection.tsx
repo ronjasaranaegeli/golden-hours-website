@@ -1,8 +1,27 @@
 
+import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
+  const [titleNumber, setTitleNumber] = useState(0);
+  const titles = useMemo(
+    () => ["Sinn", "Wahrheit", "Leben"],
+    []
+  );
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (titleNumber === titles.length - 1) {
+        setTitleNumber(0);
+      } else {
+        setTitleNumber(titleNumber + 1);
+      }
+    }, 3000);
+    return () => clearTimeout(timeoutId);
+  }, [titleNumber, titles]);
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -27,8 +46,31 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-8 text-white max-w-4xl flex flex-col items-center">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium mb-6 opacity-0 animate-fade-in leading-tight tracking-tight text-center">
-          Dein Sinn. Deine Wahrheit. Dein Leben.
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium mb-6 leading-tight tracking-tight text-center">
+          <span className="opacity-0 animate-fade-in">Dein</span>
+          <span className="relative flex w-full justify-center overflow-hidden h-[1.2em] mx-2">
+            {titles.map((title, index) => (
+              <motion.span
+                key={index}
+                className="absolute font-semibold opacity-0 animate-fade-in"
+                initial={{ opacity: 0, y: 40 }}
+                transition={{ type: "spring", stiffness: 50 }}
+                animate={
+                  titleNumber === index
+                    ? {
+                        y: 0,
+                        opacity: 1,
+                      }
+                    : {
+                        y: titleNumber > index ? -60 : 60,
+                        opacity: 0,
+                      }
+                }
+              >
+                {title}.
+              </motion.span>
+            ))}
+          </span>
         </h1>
         <p className="text-xl md:text-2xl mb-10 opacity-0 animate-fade-in-delay-1 font-light leading-relaxed max-w-2xl text-center">
           Ist dein Bewusstsein bereit für dein Potenzial?
