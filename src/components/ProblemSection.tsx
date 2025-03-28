@@ -35,7 +35,7 @@ const ProblemSection = () => {
           {/* Left Column - Content */}
           <div className="reveal" ref={contentRef}>
             <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">
-              Zwischen dem Leben das du führst und dem Leben das in dir ruft
+              Zwischen dem Leben, das du führt, und dem Leben, das in dir ruft
             </h2>
             
             <p className="text-lg leading-relaxed mb-6">
