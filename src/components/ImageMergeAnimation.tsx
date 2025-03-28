@@ -73,24 +73,22 @@ const ImageMergeAnimation = () => {
 
       {/* Left curtain */}
       <div 
-        className={`absolute inset-0 w-1/2 h-full bg-cover bg-right bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
+        className={`absolute top-0 bottom-0 left-0 w-1/2 h-full bg-cover bg-right bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
         style={{ 
           backgroundImage: 'url("/images/golden-hours-image-6.JPG")',
           transform: `translateX(-${100 - curtainOffset}%)`,
-          right: '50%',
-          left: 0,
+          width: '50.1%', // Slightly wider to ensure overlap at center
           transition: 'transform 0.5s ease-out'
         }}
       />
 
       {/* Right curtain */}
       <div 
-        className={`absolute inset-0 w-1/2 h-full bg-cover bg-left bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
+        className={`absolute top-0 bottom-0 right-0 w-1/2 h-full bg-cover bg-left bg-no-repeat transition-transform duration-500 ${isLoaded ? '' : 'opacity-0'}`}
         style={{ 
           backgroundImage: 'url("/images/golden-hours-image-7.JPG")',
           transform: `translateX(${100 - curtainOffset}%)`,
-          left: '50%',
-          right: 0,
+          width: '50.1%', // Slightly wider to ensure overlap at center
           transition: 'transform 0.5s ease-out'
         }}
       />
