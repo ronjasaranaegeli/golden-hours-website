@@ -11,6 +11,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import WaitlistSection from '@/components/WaitlistSection';
 import FooterSection from '@/components/FooterSection';
 import ScrollReveal from '@/components/ScrollReveal';
+import BewusstseinSection from '@/components/BewusstseinSection';
 
 const Index = () => {
   useEffect(() => {
@@ -152,6 +153,7 @@ const Index = () => {
         <div className="relative bg-background">
           <ProblemSection />
           <SolutionSection />
+          <BewusstseinSection />
           <TransformationSection />
           <AboutSection />
           <ProgramDetailsSection />
