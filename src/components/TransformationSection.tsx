@@ -1,8 +1,12 @@
+
 import { useEffect, useRef } from 'react';
+
 const TransformationSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const circleRef = useRef<HTMLDivElement>(null);
+  const keywordsRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -13,76 +17,89 @@ const TransformationSection = () => {
     }, {
       threshold: 0.2
     });
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    if (headerRef.current) {
-      observer.observe(headerRef.current);
+    
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
     }
-    itemsRef.current.forEach(item => {
-      if (item) observer.observe(item);
-    });
+    
+    if (circleRef.current) {
+      observer.observe(circleRef.current);
+    }
+    
+    if (keywordsRef.current) {
+      observer.observe(keywordsRef.current);
+    }
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
-      if (headerRef.current) {
-        observer.unobserve(headerRef.current);
+      
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
       }
-      itemsRef.current.forEach(item => {
-        if (item) observer.unobserve(item);
-      });
+      
+      if (circleRef.current) {
+        observer.unobserve(circleRef.current);
+      }
+      
+      if (keywordsRef.current) {
+        observer.unobserve(keywordsRef.current);
+      }
     };
   }, []);
-  const transformationItems = [{
-    title: "Tiefe Selbsterkenntnis",
-    description: "Entdecke die Schichten deines Selbst und erkenne deine wahren Bedürfnisse, Werte und Potenziale.",
-    image: "/images/golden-hours-image-9.JPG"
-  }, {
-    title: "Authentizität leben",
-    description: "Lerne, im Einklang mit deiner inneren Wahrheit zu leben und Entscheidungen zu treffen, die zu deinem höchsten Wohl sind.",
-    image: "/images/golden-hours-image-10.JPG"
-  }, {
-    title: "Innere Ruhe",
-    description: "Entwickle die Fähigkeit, inmitten äußerer Umstände deine innere Mitte zu finden und von dort zu handeln.",
-    image: "/images/golden-hours-image-11.JPG"
-  }, {
-    title: "Berufliche Neuausrichtung",
-    description: "Erkenne, wie du deine Berufung in deinen Alltag integrieren kannst – sei es durch eine neue Karriere oder durch eine neue Haltung.",
-    image: "/images/golden-hours-image-12.JPG"
-  }, {
-    title: "Tiefere Beziehungen",
-    description: "Erlebe authentische Verbindungen zu anderen, basierend auf Präsenz, Klarheit und ehrlicher Kommunikation.",
-    image: "/images/golden-hours-image-13.JPG"
-  }, {
-    title: "Freude am Sein",
-    description: "Spüre wieder die natürliche Freude des Seins, jenseits von äußeren Umständen und Bedingungen.",
-    image: "/images/golden-hours-image-14.JPG"
-  }];
-  return <section id="transformation" className="py-24 md:py-32" ref={sectionRef}>
+
+  return (
+    <section id="transformation" className="py-24 md:py-32 relative" ref={sectionRef}>
       <div className="container mx-auto px-6 md:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16 reveal" ref={headerRef}>
-          <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">
-            Transformation, die dein Leben verändert
-          </h2>
+        <div className="relative min-h-[500px] md:min-h-[600px] overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 bg-golden-50/20 rounded-3xl">
+            <img 
+              src="/lovable-uploads/f01e45f7-0f90-4617-afd2-566fe3948074.png" 
+              alt="Background" 
+              className="w-full h-full object-cover opacity-20" 
+            />
+          </div>
           
-          <p className="text-lg leading-relaxed">Was während unserer gemeinsamen Reise geschieht, ist nicht nur eine äussere Veränderung, sondern eine tiefgreifende innere Transformation:</p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {transformationItems.map((item, index) => <div key={index} className="group bg-white rounded-xl shadow-sm overflow-hidden border border-golden-100 hover:shadow-md transition-all duration-300 reveal" ref={el => itemsRef.current[index] = el} style={{
-          animationDelay: `${index * 0.1}s`
-        }}>
-              <div className="aspect-video overflow-hidden">
-                <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div className="p-6">
-                <h3 className="font-serif text-xl font-medium mb-3 text-forest-800 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
-                <p className="text-forest-600">{item.description}</p>
-              </div>
-            </div>)}
+          {/* Journey Title - Top Left */}
+          <div 
+            ref={titleRef} 
+            className="absolute top-10 left-10 text-forest-800 reveal"
+            style={{ animationDelay: '0.2s' }}
+          >
+            <h3 className="font-serif text-xl md:text-2xl lg:text-3xl italic opacity-80">A Journey of</h3>
+            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-medium mt-1">Self Discovery</h2>
+          </div>
+          
+          {/* Circle - Center */}
+          <div 
+            ref={circleRef} 
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 reveal"
+          >
+            <div className="w-[250px] h-[250px] md:w-[350px] md:h-[350px] rounded-full border-2 border-forest-600/40 flex items-center justify-center">
+              <div className="w-[220px] h-[220px] md:w-[320px] md:h-[320px] rounded-full border border-forest-600/60"></div>
+            </div>
+          </div>
+          
+          {/* Keywords - Bottom Right */}
+          <div 
+            ref={keywordsRef} 
+            className="absolute bottom-10 right-10 text-right text-forest-800 reveal"
+            style={{ animationDelay: '0.4s' }}
+          >
+            <p className="font-serif text-lg md:text-xl opacity-80 mb-1">Bewusstseinserweiterung</p>
+            <p className="font-serif text-lg md:text-xl opacity-80 mb-1">Persönlichkeitsentwicklung</p>
+            <p className="font-serif text-lg md:text-xl opacity-80">Selbstheilungsaktivierung</p>
+          </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default TransformationSection;
