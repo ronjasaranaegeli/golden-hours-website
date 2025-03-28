@@ -14,13 +14,19 @@ import ScrollReveal from '@/components/ScrollReveal';
 
 const Index = () => {
   useEffect(() => {
-    // Update document title
+    // Titel des Dokuments aktualisieren
     document.title = "Golden Hours Coaching - Dein Sinn. Deine Wahrheit. Dein Leben.";
     
-    // Preload key images
+    // localStorage leeren, um sicherzustellen, dass wir die neuen Bilder ohne Schnurrbart verwenden
+    localStorage.removeItem('leftHalfImage');
+    localStorage.removeItem('rightHalfImage');
+    
+    // Wichtige Bilder vorladen
     const imagesToPreload = [
-      "/images/golden-hours-image-1.JPG", // Main background
-      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png", // Full image
+      "/images/golden-hours-image-1.JPG", // Haupthintergrund
+      "/lovable-uploads/7e44dd91-112d-4cb4-a631-f7f48cf99571.png", // Linkes Bild ohne Schnurrbart
+      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png", // Rechte Hälfte
+      "/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png", // Mobiles Bild
       "/images/golden-hours-image-16.JPG"
     ];
     
@@ -28,113 +34,7 @@ const Index = () => {
       const img = new Image();
       img.src = src;
     });
-
-    // Create split images from the uploaded image
-    createSplitImages();
   }, []);
-
-  // Function to split the image into left and right halves
-  const createSplitImages = () => {
-    // Check if we already have the split images stored
-    if (localStorage.getItem('leftHalfImage') && localStorage.getItem('rightHalfImage')) {
-      console.log('Split images already exist in localStorage');
-      return;
-    }
-
-    console.log('Creating split images...');
-    
-    const fullImage = new Image();
-    fullImage.crossOrigin = "anonymous";
-    fullImage.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png";
-    
-    fullImage.onload = () => {
-      console.log('Full image loaded, dimensions:', fullImage.width, 'x', fullImage.height);
-      
-      // Create canvas for the left half
-      const leftCanvas = document.createElement('canvas');
-      leftCanvas.width = fullImage.width / 2;
-      leftCanvas.height = fullImage.height;
-      const leftCtx = leftCanvas.getContext('2d');
-      
-      // Create canvas for the right half
-      const rightCanvas = document.createElement('canvas');
-      rightCanvas.width = fullImage.width / 2;
-      rightCanvas.height = fullImage.height;
-      const rightCtx = rightCanvas.getContext('2d');
-      
-      if (leftCtx && rightCtx) {
-        // Draw left half
-        leftCtx.drawImage(
-          fullImage, 
-          0, 0, fullImage.width / 2, fullImage.height,
-          0, 0, fullImage.width / 2, fullImage.height
-        );
-        
-        // Draw right half
-        rightCtx.drawImage(
-          fullImage, 
-          fullImage.width / 2, 0, fullImage.width / 2, fullImage.height,
-          0, 0, fullImage.width / 2, fullImage.height
-        );
-        
-        // Create URLs for the split images
-        try {
-          // Save left half to file and set URL
-          const leftUrl = leftCanvas.toDataURL('image/png');
-          localStorage.setItem('leftHalfImage', leftUrl);
-          console.log('Left half image created');
-          
-          // Create a physical image to test loading
-          const leftImg = new Image();
-          leftImg.src = leftUrl;
-          
-          // Save right half to file and set URL
-          const rightUrl = rightCanvas.toDataURL('image/png');
-          localStorage.setItem('rightHalfImage', rightUrl);
-          console.log('Right half image created');
-          
-          // Create a physical image to test loading
-          const rightImg = new Image();
-          rightImg.src = rightUrl;
-          
-          // Create static versions of the split images for fallback
-          fetch('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png')
-            .catch(() => {
-              console.log('Creating static left half image as fallback');
-              // If the file doesn't exist, create it
-              leftCanvas.toBlob((blob) => {
-                if (blob) {
-                  const formData = new FormData();
-                  formData.append('image', blob, '24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
-                  // Here you would typically upload the image to your server
-                  // For now we'll just use the localStorage version
-                }
-              });
-            });
-          
-          fetch('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png')
-            .catch(() => {
-              console.log('Creating static right half image as fallback');
-              // If the file doesn't exist, create it
-              rightCanvas.toBlob((blob) => {
-                if (blob) {
-                  const formData = new FormData();
-                  formData.append('image', blob, '24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
-                  // Here you would typically upload the image to your server
-                  // For now we'll just use the localStorage version
-                }
-              });
-            });
-        } catch (error) {
-          console.error('Error creating split images:', error);
-        }
-      }
-    };
-    
-    fullImage.onerror = (err) => {
-      console.error('Error loading full image:', err);
-    };
-  };
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background">
