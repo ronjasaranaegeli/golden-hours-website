@@ -1,4 +1,3 @@
-
 "use client";
 import { useMotionValue } from "framer-motion";
 import React, { useState, useEffect, ReactNode } from "react";
@@ -23,7 +22,6 @@ export const EvervaultCard = ({
   const [randomString, setRandomString] = useState("");
 
   useEffect(() => {
-    // Erhöhte Menge an Text für noch bessere Abdeckung
     let str = generateRandomString(12000, customWords);
     setRandomString(str);
   }, [customWords]);
@@ -37,7 +35,6 @@ export const EvervaultCard = ({
     setRandomString(str);
   }
 
-  // Handle touch events for mobile
   function onTouchMove(e: React.TouchEvent) {
     if (!isTouch) setIsTouch(true);
     const touch = e.touches[0];
@@ -70,7 +67,7 @@ export const EvervaultCard = ({
         onMouseMove={onMouseMove}
         onTouchMove={onTouchMove}
         onTouchStart={onTouchStart}
-        className="group/card rounded-none w-full relative overflow-hidden bg-golden-950 flex items-center justify-center h-full"
+        className="group/card rounded-none w-full relative overflow-hidden bg-golden-50 flex items-center justify-center h-full"
       >
         <CardPattern
           mouseX={mouseX}
@@ -79,9 +76,9 @@ export const EvervaultCard = ({
           isTouch={isTouch}
         />
         <div className="relative z-10 flex items-center justify-center">
-          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center justify-center text-golden-800 font-bold">
+          <div className="relative px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center justify-center text-gray-700 font-bold">
             <div className="absolute w-full h-full bg-white/[0.85] dark:bg-black/[0.8] blur-sm rounded-full" />
-            <span className="dark:text-white text-golden-800 z-20 font-serif">{text}</span>
+            <span className="dark:text-gray-800 text-gray-700 z-20 font-serif">{text}</span>
           </div>
         </div>
       </div>
@@ -90,7 +87,6 @@ export const EvervaultCard = ({
 };
 
 export function CardPattern({ mouseX, mouseY, randomString, isTouch }: any) {
-  // Vergrößerter Maskierungsradius für bessere Abdeckung auf mobilen Geräten
   const maskSize = isTouch ? "350px" : "450px";
   let maskImage = useMotionTemplate`radial-gradient(${maskSize} at ${mouseX}px ${mouseY}px, white, transparent)`;
   let style = { maskImage, WebkitMaskImage: maskImage };
@@ -99,14 +95,14 @@ export function CardPattern({ mouseX, mouseY, randomString, isTouch }: any) {
     <div className="pointer-events-none">
       <div className="absolute inset-0 [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-golden-900 to-golden-950 opacity-100 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 bg-gradient-to-r from-golden-100 to-golden-200 opacity-100 backdrop-blur-xl transition duration-500"
         style={style}
       />
       <motion.div
         className="absolute inset-0 opacity-0 mix-blend-overlay group-hover/card:opacity-100"
         style={style}
       >
-        <p className="absolute inset-x-0 inset-y-0 h-full w-full break-words whitespace-pre-wrap text-golden-200 font-['Courier_New'] transition duration-500 overflow-hidden text-xl md:text-2xl lg:text-3xl">
+        <p className="absolute inset-x-0 inset-y-0 h-full w-full break-words whitespace-pre-wrap text-golden-800 font-['Courier_New'] transition duration-500 overflow-hidden text-xl md:text-2xl lg:text-3xl">
           {randomString}
         </p>
       </motion.div>
@@ -122,7 +118,6 @@ export const generateRandomString = (length: number, customWords?: string[]) => 
     let result = "";
     while (result.length < length) {
       const randomWord = customWords[Math.floor(Math.random() * customWords.length)];
-      // Remove the bullet points from the questions
       const cleanWord = randomWord.replace(" •", "");
       result += cleanWord + " ";
     }
