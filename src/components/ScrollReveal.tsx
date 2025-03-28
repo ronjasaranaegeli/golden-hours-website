@@ -19,11 +19,15 @@ const ScrollReveal = () => {
     
     window.addEventListener('scroll', reveal);
     
+    // Ensure images are loaded before checking
+    window.addEventListener('load', reveal);
+    
     // Initial check
-    reveal();
+    setTimeout(reveal, 100);
     
     return () => {
       window.removeEventListener('scroll', reveal);
+      window.removeEventListener('load', reveal);
     };
   }, []);
   

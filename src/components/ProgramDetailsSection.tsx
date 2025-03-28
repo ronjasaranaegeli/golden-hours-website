@@ -37,12 +37,11 @@ const ProgramDetailsSection = () => {
   };
 
   return (
-    <section id="program" className="py-20 md:py-28 bg-forest-50" ref={sectionRef}>
+    <section id="program" className="py-24 md:py-32 bg-secondary/30" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16 reveal" ref={headerRef}>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 relative inline-block">
-            <span className="relative z-10">Programm Details</span>
-            <span className="absolute bottom-0 left-0 h-3 w-full bg-forest-200 -z-0"></span>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 heading-underline inline-block">
+            Programm Details
           </h2>
           
           <p className="text-lg md:text-xl leading-relaxed mb-0 max-w-3xl mx-auto">
@@ -106,14 +105,14 @@ const ProgramDetailsSection = () => {
             </div>
           </div>
           
-          <div className="bg-white p-8 rounded-xl shadow-sm border border-golden-100 text-center">
+          <div className="elegant-card text-center">
             <h3 className="font-serif text-2xl mb-6">Ist dies das richtige Programm für dich?</h3>
             
-            <p className="text-lg mb-6">
+            <p className="text-lg mb-8">
               Golden Hours ist ideal für dich, wenn du:
             </p>
             
-            <ul className="space-y-3 text-left max-w-xl mx-auto mb-8">
+            <ul className="space-y-4 text-left max-w-xl mx-auto mb-10">
               <li className="flex items-start">
                 <CheckCircle className="text-primary w-5 h-5 mr-3 mt-1 flex-shrink-0" />
                 <p>Am Anfang deines bewussten Erwachens stehst und nach deinem authentischen Weg suchst</p>
@@ -134,7 +133,7 @@ const ProgramDetailsSection = () => {
             
             <Button 
               onClick={() => scrollToSection('waitlist')} 
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-6"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-6 btn-hover-effect"
             >
               <span>Auf die Warteliste setzen</span>
               <ArrowRight className="ml-2 h-5 w-5" />

@@ -62,64 +62,64 @@ const WaitlistSection = () => {
   };
 
   return (
-    <section id="waitlist" className="py-20 md:py-28 bg-forest-900 text-white" ref={sectionRef}>
+    <section id="waitlist" className="py-24 md:py-32 bg-primary/10" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column: Form */}
-          <div className="reveal" ref={formRef}>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-8">
+          <div className="reveal order-2 lg:order-1" ref={formRef}>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-8 heading-underline">
               Sicher dir deinen Platz
             </h2>
             
-            <p className="text-lg mb-8 text-forest-100">
+            <p className="text-lg mb-8">
               Melde dich jetzt für die Warteliste an und erhalte als eine(r) der Ersten Zugang zum Golden Hours Coaching-Programm, das im Oktober 2024 startet.
             </p>
             
             {formSubmitted ? (
-              <div className="p-8 bg-forest-800 rounded-xl">
-                <h3 className="font-serif text-2xl mb-4">Vielen Dank!</h3>
+              <div className="elegant-card">
+                <h3 className="font-serif text-2xl mb-4 text-primary">Vielen Dank!</h3>
                 <p className="mb-6">
                   Deine Anfrage wurde erfolgreich übermittelt. Ich werde mich in Kürze bei dir melden, um den nächsten Schritt zu besprechen.
                 </p>
-                <p className="text-forest-200">
+                <p className="text-forest-600">
                   In der Zwischenzeit kannst du mir gerne auf Instagram folgen oder meinen Podcast anhören, um mehr über meine Arbeit zu erfahren.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 elegant-card">
                 <div>
-                  <Label htmlFor="name" className="text-forest-100">Name *</Label>
+                  <Label htmlFor="name" className="text-foreground">Name *</Label>
                   <Input 
                     id="name" 
                     value={name} 
                     onChange={(e) => setName(e.target.value)} 
-                    className="bg-forest-800 border-forest-700 text-white placeholder:text-forest-400"
+                    className="bg-white border-golden-200 text-foreground placeholder:text-forest-400 mt-2"
                     placeholder="Dein Name"
                     required
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="email" className="text-forest-100">Email *</Label>
+                  <Label htmlFor="email" className="text-foreground">Email *</Label>
                   <Input 
                     id="email" 
                     type="email" 
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
-                    className="bg-forest-800 border-forest-700 text-white placeholder:text-forest-400"
+                    className="bg-white border-golden-200 text-foreground placeholder:text-forest-400 mt-2"
                     placeholder="deine@email.com"
                     required
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="message" className="text-forest-100">Nachricht (optional)</Label>
+                  <Label htmlFor="message" className="text-foreground">Nachricht (optional)</Label>
                   <textarea 
                     id="message" 
                     rows={4} 
                     value={message} 
                     onChange={(e) => setMessage(e.target.value)} 
-                    className="w-full rounded-md bg-forest-800 border border-forest-700 text-white placeholder:text-forest-400 p-2"
+                    className="w-full rounded-md bg-white border border-golden-200 text-foreground placeholder:text-forest-400 p-3 mt-2"
                     placeholder="Wieso interessierst du dich für das Coaching? Was erhoffst du dir?"
                   />
                 </div>
@@ -131,7 +131,7 @@ const WaitlistSection = () => {
                     onCheckedChange={(checked) => setAgreed(checked === true)} 
                     className="mt-1 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                   />
-                  <Label htmlFor="terms" className="text-sm text-forest-200">
+                  <Label htmlFor="terms" className="text-sm text-forest-600">
                     Ich stimme zu, dass meine Daten für die Bearbeitung meiner Anfrage gespeichert werden. 
                     Weitere Informationen in der Datenschutzerklärung. *
                   </Label>
@@ -139,7 +139,7 @@ const WaitlistSection = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg"
+                  className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg btn-hover-effect"
                 >
                   Jetzt auf die Warteliste eintragen
                 </Button>
@@ -148,21 +148,21 @@ const WaitlistSection = () => {
           </div>
           
           {/* Right Column: Image */}
-          <div className="flex items-center justify-center reveal" ref={imageRef}>
+          <div className="flex items-center justify-center reveal order-1 lg:order-2" ref={imageRef}>
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-forest-800 rounded-xl -z-10"></div>
-              <div className="relative h-[500px] w-full rounded-xl overflow-hidden">
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-golden-100 rounded-xl -z-10"></div>
+              <div className="relative h-[500px] w-full rounded-xl overflow-hidden shadow-md">
                 <img 
                   src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=2103&auto=format&fit=crop" 
                   alt="Cozy coaching environment" 
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-forest-800 rounded-xl -z-10"></div>
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-primary/10 rounded-xl -z-10"></div>
               
-              <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/70 backdrop-blur-sm rounded-lg">
-                <p className="font-serif text-xl mb-2">Oktober 2024</p>
-                <p className="text-sm opacity-90">Start des nächsten 3-monatigen Golden Hours Coaching-Programms</p>
+              <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/95 backdrop-blur-sm rounded-lg shadow-md">
+                <p className="font-serif text-xl mb-2 text-primary">Oktober 2024</p>
+                <p className="text-forest-800">Start des nächsten 3-monatigen Golden Hours Coaching-Programms</p>
               </div>
             </div>
           </div>

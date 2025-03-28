@@ -63,12 +63,11 @@ const TransformationSection = () => {
   ];
 
   return (
-    <section id="transformation" className="py-20 md:py-28 bg-gradient-to-b from-forest-50 to-golden-50" ref={sectionRef}>
+    <section id="transformation" className="py-24 md:py-32 bg-secondary/30" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto text-center mb-16 reveal">
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 relative inline-block">
-            <span className="relative z-10">Deine Transformation</span>
-            <span className="absolute bottom-0 left-0 h-3 w-full bg-forest-200 -z-0"></span>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 heading-underline inline-block">
+            Deine Transformation
           </h2>
           
           <p className="text-lg md:text-xl leading-relaxed mb-0 max-w-3xl mx-auto">
@@ -80,7 +79,7 @@ const TransformationSection = () => {
           {transformationItems.map((item, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 rounded-xl shadow-sm border border-golden-100 reveal"
+              className="elegant-card reveal"
               ref={el => itemsRef.current[index] = el}
               style={{ animationDelay: `${index * 0.1}s` }}
             >

@@ -3,10 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap');
+
 @layer base {
   :root {
-    --background: 36 33% 97%;
-    --foreground: 20 10% 10%;
+    --background: 36 33% 97%; /* Light cream/beige */
+    --foreground: 20 10% 10%; /* Dark gray for text */
 
     --card: 0 0% 100%;
     --card-foreground: 20 10% 10%;
@@ -14,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 20 10% 10%;
 
-    --primary: 162 59% 35%;
+    --primary: 162 59% 35%; /* Deep muted green */
     --primary-foreground: 36 33% 97%;
 
     --secondary: 36 33% 94%;
@@ -81,6 +83,17 @@
   }
 }
 
+/* Decorative underline for headings */
+.heading-underline {
+  @apply relative inline-block;
+}
+
+.heading-underline::after {
+  content: '';
+  @apply absolute bottom-0 left-0 h-3 w-full bg-forest-200 -z-10;
+}
+
+/* Animation classes */
 .vertical-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -98,6 +111,58 @@
   transform: translateY(0);
 }
 
+/* Decorative elements */
+.circle-decoration {
+  @apply absolute rounded-full bg-golden-100 opacity-50;
+}
+
+.wavy-line {
+  @apply absolute bg-no-repeat bg-contain opacity-40;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Decorative lines */
+.decorative-line {
+  height: 1px;
+  @apply bg-golden-300 my-8 opacity-40;
+}
+
+/* Card styles */
+.elegant-card {
+  @apply bg-white rounded-lg border border-golden-100 shadow-sm p-8 transition-all duration-300;
+}
+
+.elegant-card:hover {
+  @apply shadow-md border-golden-200;
+}
+
+/* Image styles */
+.img-frame {
+  @apply rounded-lg overflow-hidden relative;
+}
+
+.img-frame::before {
+  content: '';
+  @apply absolute -z-10 bg-forest-100 rounded-lg;
+  top: -10px;
+  left: -10px;
+  right: 10px;
+  bottom: 10px;
+}
+
+/* Button hover effects */
+.btn-hover-effect {
+  @apply relative overflow-hidden;
+}
+
+.btn-hover-effect::after {
+  content: '';
+  @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+}
+
+.btn-hover-effect:hover::after {
+  @apply opacity-20;
 }
