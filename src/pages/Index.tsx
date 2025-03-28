@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -10,6 +11,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import WaitlistSection from '@/components/WaitlistSection';
 import FooterSection from '@/components/FooterSection';
 import ScrollReveal from '@/components/ScrollReveal';
+import ImageMergeAnimation from '@/components/ImageMergeAnimation';
 
 const Index = () => {
   useEffect(() => {
@@ -136,19 +138,26 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background">
+    <div className="min-h-screen overflow-x-hidden bg-background relative">
+      {/* Fixed background image that stays in place while content scrolls over it */}
+      <ImageMergeAnimation />
+      
       <Navbar />
       
-      {/* Main content */}
-      <main>
+      {/* Main content with higher z-index to overlap the fixed background */}
+      <main className="relative z-10">
         <HeroSection />
-        <ProblemSection />
-        <SolutionSection />
-        <TransformationSection />
-        <AboutSection />
-        <ProgramDetailsSection />
-        <TestimonialsSection />
-        <WaitlistSection />
+        
+        {/* Content sections with background to cover the fixed hero image */}
+        <div className="bg-background relative z-20">
+          <ProblemSection />
+          <SolutionSection />
+          <TransformationSection />
+          <AboutSection />
+          <ProgramDetailsSection />
+          <TestimonialsSection />
+          <WaitlistSection />
+        </div>
       </main>
       
       <FooterSection />

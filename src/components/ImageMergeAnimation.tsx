@@ -91,10 +91,8 @@ const ImageMergeAnimation = () => {
   // Apply a smooth transition to background zoom
   const backgroundScale = hasAnimated ? maxZoom : zoomFactor;
 
-  console.log("Animation state:", { isLoaded, leftImageUrl, rightImageUrl, slidePercentage });
-
   return (
-    <div className="absolute inset-0 overflow-hidden z-0">
+    <div className="fixed inset-0 overflow-hidden z-0">
       {/* Background image (zooms in on scroll, but only up to a point) */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

@@ -44,9 +44,8 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      <ImageMergeAnimation />
-
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden z-10">
+      {/* The content is now positioned with z-10 to appear above the fixed background */}
       <div className={`relative z-10 container mx-auto px-6 md:px-8 text-white max-w-2xl flex flex-col items-center transition-opacity duration-500 ${hasScrolled ? 'opacity-75' : 'opacity-100'}`}>
         <div className="text-center mb-4">
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight tracking-wide">
