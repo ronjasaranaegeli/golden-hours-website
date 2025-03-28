@@ -48,13 +48,13 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 md:px-8 text-white max-w-4xl flex flex-col items-center">
         <div className="text-center mb-6">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight tracking-tight">
-            <div className="flex flex-wrap justify-center items-center">
-              <span className="mr-2">Dein</span>
-              <div className="relative inline-block h-[1.2em] w-[6rem] md:w-[8rem] lg:w-[10rem] overflow-hidden">
+            <div className="flex items-center justify-center">
+              <span>Dein</span>
+              <div className="relative h-[1.2em] w-[8rem] md:w-[10rem] lg:w-[12rem] overflow-hidden ml-3">
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute left-0 top-0 w-full text-center font-semibold"
+                    className="absolute left-0 top-0 w-full"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{
                       opacity: titleNumber === index ? 1 : 0,
@@ -66,7 +66,7 @@ const HeroSection = () => {
                       duration: 0.6
                     }}
                   >
-                    {title}.
+                    {title === "Wahrheit" ? "Deine " : ""}{title}.
                   </motion.span>
                 ))}
               </div>
