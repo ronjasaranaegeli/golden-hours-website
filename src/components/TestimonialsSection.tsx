@@ -1,5 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
+import { Play } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -35,34 +36,40 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-white" ref={sectionRef}>
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="testimonials" className="py-24 md:py-32 bg-golden-50/50" ref={sectionRef}>
+      <div className="container mx-auto px-6 md:px-8">
         <div className="text-center mb-16 reveal" ref={headerRef}>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 heading-underline inline-block">
-            Erfahrungen
+          <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">
+            Stimmen der Transformation
           </h2>
           
-          <p className="text-lg md:text-xl leading-relaxed mb-0 max-w-3xl mx-auto">
+          <p className="text-lg leading-relaxed max-w-3xl mx-auto">
             Höre, wie Golden Hours das Leben dieser Menschen verändert hat
           </p>
         </div>
         
         {/* Active Video Display */}
-        <div className="mb-12">
-          <div className="aspect-video max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-sm border border-golden-100">
+        <div className="mb-16">
+          <div className="aspect-video max-w-4xl mx-auto bg-white rounded-xl overflow-hidden shadow-md border border-golden-100">
             {activeVideo !== null ? (
-              <div className="h-full w-full flex items-center justify-center bg-golden-50 relative">
+              <div className="h-full w-full flex items-center justify-center bg-forest-50 relative">
                 <img 
                   src={testimonials[activeVideo].image} 
                   alt={`Testimonial von ${testimonials[activeVideo].name}`}
                   className="h-full w-full object-cover opacity-20"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-forest-800 font-serif text-xl">Testimonial Video von {testimonials[activeVideo].name}</p>
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center border border-golden-200 mb-4 mx-auto cursor-pointer hover:bg-white transition-colors duration-300">
+                      <Play className="w-8 h-8 text-forest-800 ml-1" />
+                    </div>
+                    <p className="text-forest-800 font-serif text-2xl mb-2">{testimonials[activeVideo].name}</p>
+                    <p className="text-forest-600">{testimonials[activeVideo].role}</p>
+                  </div>
                 </div>
               </div>
             ) : (
-              <div className="h-full w-full flex items-center justify-center bg-golden-50">
+              <div className="h-full w-full flex items-center justify-center bg-forest-50">
                 <p className="text-forest-800 font-serif text-xl">Wähle ein Testimonial unten aus</p>
               </div>
             )}
@@ -74,20 +81,20 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className={`cursor-pointer transition-all duration-300 reveal ${activeVideo === index ? 'ring-2 ring-primary scale-105' : 'hover:scale-105'}`}
+              className={`cursor-pointer transition-all duration-300 reveal ${activeVideo === index ? 'scale-105' : 'hover:scale-105'}`}
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => setActiveVideo(index)}
             >
-              <div className="aspect-video bg-white rounded-lg mb-3 overflow-hidden shadow-sm border border-golden-100">
+              <div className={`aspect-video bg-white rounded-xl mb-3 overflow-hidden shadow-sm ${activeVideo === index ? 'ring-2 ring-primary' : 'border border-golden-100'}`}>
                 <div className="h-full w-full relative">
                   <img 
                     src={testimonial.image} 
                     alt={`Thumbnail von ${testimonial.name}`}
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-300 hover:bg-black/30">
                     <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center border border-golden-200">
-                      <div className="w-0 h-0 border-y-8 border-y-transparent border-l-10 border-l-forest-800 ml-1"></div>
+                      <Play className="w-5 h-5 text-forest-800 ml-0.5" />
                     </div>
                   </div>
                 </div>

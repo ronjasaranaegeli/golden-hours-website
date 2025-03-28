@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 
 const TransformationSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -21,6 +22,10 @@ const TransformationSection = () => {
       observer.observe(sectionRef.current);
     }
 
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
     itemsRef.current.forEach((item) => {
       if (item) observer.observe(item);
     });
@@ -28,6 +33,9 @@ const TransformationSection = () => {
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
+      }
+      if (headerRef.current) {
+        observer.unobserve(headerRef.current);
       }
       itemsRef.current.forEach((item) => {
         if (item) observer.unobserve(item);
@@ -69,14 +77,14 @@ const TransformationSection = () => {
   ];
 
   return (
-    <section id="transformation" className="py-24 md:py-32 bg-secondary/30" ref={sectionRef}>
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-5xl mx-auto text-center mb-16 reveal">
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 heading-underline inline-block">
-            Deine Transformation
+    <section id="transformation" className="py-24 md:py-32" ref={sectionRef}>
+      <div className="container mx-auto px-6 md:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-16 reveal" ref={headerRef}>
+          <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">
+            Transformation, die dein Leben verändert
           </h2>
           
-          <p className="text-lg md:text-xl leading-relaxed mb-0 max-w-3xl mx-auto">
+          <p className="text-lg leading-relaxed">
             Was während unserer gemeinsamen Reise geschieht, ist nicht nur eine äußere Veränderung, sondern eine tiefgreifende innere Transformation:
           </p>
         </div>
@@ -85,19 +93,21 @@ const TransformationSection = () => {
           {transformationItems.map((item, index) => (
             <div 
               key={index} 
-              className="elegant-card reveal overflow-hidden"
+              className="group bg-white rounded-xl shadow-sm overflow-hidden border border-golden-100 hover:shadow-md transition-all duration-300 reveal"
               ref={el => itemsRef.current[index] = el}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="aspect-video mb-6 overflow-hidden rounded-lg">
+              <div className="aspect-video overflow-hidden">
                 <img 
                   src={item.image} 
                   alt={item.title} 
-                  className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <h3 className="font-serif text-xl font-medium mb-4 text-forest-800">{item.title}</h3>
-              <p className="text-forest-600">{item.description}</p>
+              <div className="p-6">
+                <h3 className="font-serif text-xl font-medium mb-3 text-forest-800 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
+                <p className="text-forest-600">{item.description}</p>
+              </div>
             </div>
           ))}
         </div>
