@@ -12,15 +12,57 @@ const BewusstseinSection = () => {
   const isMobile = useIsMobile();
 
   // List of custom words for the hover effect
-  const customWords = [
-    "Herzenswärme", "Mitgefühl", "Verbundenheit", "Empathie", "Freundlichkeit", 
-    "Güte", "Wohlwollen", "Zuneigung", "Akzeptanz", "Wertschätzung", 
-    "Innere Harmonie", "Klarheit", "Erkenntnis", "Wachheit", "Achtsamkeit", 
-    "Intuition", "Weisheit", "Präsenz", "Innerer Frieden", "Selbstreflexion", 
-    "Tiefe", "Verständnis", "Authentizität", "Potenzial", "Einzigartigkeit", 
-    "Selbstfindung", "Selbstvertrauen", "Selbstwert", "Identität", "Wahre Essenz", 
-    "Innere Stärke", "Selbstermächtigung", "Transformation", "Entfaltung", "Wachstum", 
-    "Sinnhaftigkeit", "Lebensfreude", "Erfüllung", "Ganzheitlich", "Inspiration"
+  const customQuestions = [
+    "Wer bin ich, wenn es dunkel ist? •",
+    "Was sind meine tiefsten Wünsche? •",
+    "Wer ist meine Version 2.0? •",
+    "Weshalb bin ich hier auf der Erde? •",
+    "Wie geht es meinem inneren Kind? •",
+    "Was entfacht meine Leidenschaft? •",
+    "Wo finde ich wahre Freude? •",
+    "Was lässt mein Herz singen? •",
+    "Wie kann ich heute wachsen? •",
+    "Welche Gabe habe ich zu teilen? •",
+    "Was möchte in mir gelebt werden? •",
+    "Wie sieht mein Traumleben aus? •",
+    "Was nährt meine Seele wirklich? •",
+    "Welcher Schritt bringt mich näher? •",
+    "Was will ich heute erschaffen? •",
+    "Wie drücke ich meine Liebe aus? •",
+    "Was macht mich einzigartig? •",
+    "Wo ruft mein Potenzial mich hin? •",
+    "Wie finde ich Mut für Neues? •",
+    "Was kann ich heute loslassen? •",
+    "Wie finde ich meine innere Stärke? •",
+    "Was bedeutet Fülle für mich? •",
+    "Wie kann ich tiefer vertrauen? •",
+    "Welches Wunder wartet heute? •",
+    "Was inspiriert mich zutiefst? •",
+    "Wie diene ich der Welt am besten? •",
+    "Was brauche ich jetzt wirklich? •",
+    "Wie verbinde ich mich tiefer? •",
+    "Was ist meine Superkraft? •",
+    "Wie feiere ich mich selbst? •",
+    "Was lernt mein Herz gerade? •",
+    "Wo fühle ich mich am lebendigsten? •",
+    "Wie kann ich Grenzen sprengen? •",
+    "Was heilt in diesem Moment? •",
+    "Wie lebe ich meine Wahrheit? •",
+    "Welchen Samen möchte ich pflanzen? •",
+    "Was sagt meine Intuition mir? •",
+    "Wie bringe ich mehr Licht? •",
+    "Was bedeutet Erfolg für mein Herz? •",
+    "Wie bleibe ich mir selbst treu? •",
+    "Welcher Traum wartet noch? •",
+    "Was macht mein Leben magisch? •",
+    "Wie gehe ich liebevoller mit mir um? •",
+    "Was kann ich heute wertschätzen? •",
+    "Wie erschaffe ich mehr Harmonie? •",
+    "Was ist mein nächster mutiger Schritt? •",
+    "Wie öffne ich mein Herz weiter? •",
+    "Was bringt meine Augen zum Leuchten? •",
+    "Wie gestalte ich meinen Tag bewusst? •",
+    "Was ist mein schönster Beitrag? •"
   ];
 
   // Parallax effect
@@ -92,7 +134,7 @@ const BewusstseinSection = () => {
           <div className="h-full w-full overflow-hidden bg-gradient-to-br from-golden-100 to-golden-50">
             <EvervaultCard 
               text={<h3 className="font-serif text-2xl md:text-3xl">A Journey of Self Discovery</h3>} 
-              customWords={customWords}
+              customWords={customQuestions}
               className="hover:scale-[1.02] transition-transform duration-500 h-full" 
             />
           </div>
