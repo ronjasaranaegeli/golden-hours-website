@@ -20,6 +20,8 @@ const Index = () => {
     // Preload key images
     const imagesToPreload = [
       "/images/golden-hours-image-1.JPG", // Main background
+      "/images/golden-hours-image-6.JPG", // Left curtain
+      "/images/golden-hours-image-7.JPG", // Right curtain
       "/images/golden-hours-image-16.JPG"
     ];
     
