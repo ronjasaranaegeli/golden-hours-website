@@ -1,7 +1,5 @@
 
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ProblemSection from '@/components/ProblemSection';
@@ -45,15 +43,6 @@ const Index = () => {
         <ProgramDetailsSection />
         <TestimonialsSection />
         <WaitlistSection />
-        
-        {/* Link to Animated Demo */}
-        <div className="py-8 text-center">
-          <Link to="/animated-demo">
-            <Button variant="outline" className="animate-pulse">
-              View Animated Demo
-            </Button>
-          </Link>
-        </div>
       </main>
       
       <FooterSection />

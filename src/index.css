@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -263,28 +264,4 @@ html {
 
 .btn-shine:hover::after {
   transform: rotate(30deg) translateX(100%);
-}
-
-/* Marquee animation for the animated demo page */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquee {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee 20s linear infinite;
-}
-
-.marquee-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.marquee-content {
-  display: inline-block;
-  white-space: nowrap;
-  padding-left: 100%;
-  animation: marquee 20s linear infinite;
 }
