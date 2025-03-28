@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 
 const TransformationSection = () => {
@@ -56,15 +55,7 @@ const TransformationSection = () => {
   return (
     <section id="transformation" className="py-24 md:py-32 relative" ref={sectionRef}>
       <div className="container mx-auto px-6 md:px-8">
-        <div className="relative min-h-[500px] md:min-h-[600px] overflow-hidden">
-          {/* Background Image */}
-          <div className="absolute inset-0 bg-golden-50/20 rounded-3xl">
-            <img 
-              src="/lovable-uploads/f01e45f7-0f90-4617-afd2-566fe3948074.png" 
-              alt="Background" 
-              className="w-full h-full object-cover opacity-20" 
-            />
-          </div>
+        <div className="relative min-h-[500px] md:min-h-[600px] bg-background/50 rounded-3xl border border-golden-100/20">
           
           {/* Journey Title - Top Left */}
           <div 
