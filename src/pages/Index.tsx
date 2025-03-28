@@ -17,16 +17,12 @@ const Index = () => {
     // Titel des Dokuments aktualisieren
     document.title = "Golden Hours Coaching - Dein Sinn. Deine Wahrheit. Dein Leben.";
     
-    // localStorage leeren, um sicherzustellen, dass wir die neuen Bilder ohne Schnurrbart verwenden
-    localStorage.removeItem('leftHalfImage');
-    localStorage.removeItem('rightHalfImage');
-    
     // Wichtige Bilder vorladen
     const imagesToPreload = [
       "/images/golden-hours-image-1.JPG", // Haupthintergrund
-      "/lovable-uploads/7e44dd91-112d-4cb4-a631-f7f48cf99571.png", // Linkes Bild ohne Schnurrbart
-      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png", // Rechte Hälfte
-      "/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png", // Mobiles Bild
+      "/lovable-uploads/cf5693e3-5472-469d-95d7-ddb7891a10dc.png", // Linkes Bild
+      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png", // Rechtes Bild
+      "/lovable-uploads/30bd8eb6-93aa-49b7-b7c3-3af9787c1041.png", // Mobiles Bild
       "/images/golden-hours-image-16.JPG"
     ];
     

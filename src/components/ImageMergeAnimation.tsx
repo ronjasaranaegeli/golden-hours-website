@@ -10,24 +10,25 @@ const ImageMergeAnimation = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Wir verwenden keine localStorage-Bilder mehr, um sicherzustellen, dass wir immer die neuesten Bilder laden
-    // Stattdessen verwenden wir vorhandene hochgeladene Bilder ohne Schnurrbart
-
-    // Bessere Bilder auswählen
-    setLeftImageUrl('/lovable-uploads/7e44dd91-112d-4cb4-a631-f7f48cf99571.png');
+    // Bilder aus dem localStorage holen oder Standardbilder verwenden
+    const storedLeftImage = localStorage.getItem('leftHalfImage');
+    const storedRightImage = localStorage.getItem('rightHalfImage');
+    
+    // Standardbilder setzen, falls keine im localStorage sind
+    setLeftImageUrl(storedLeftImage || '/lovable-uploads/cf5693e3-5472-469d-95d7-ddb7891a10dc.png');
     setRightImageUrl(isMobile 
-      ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png' 
-      : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
+      ? '/lovable-uploads/30bd8eb6-93aa-49b7-b7c3-3af9787c1041.png' 
+      : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png');
     
     // Bilder vorladen
     const leftHalf = new Image();
     const rightHalf = new Image();
     const background = new Image();
     
-    leftHalf.src = '/lovable-uploads/7e44dd91-112d-4cb4-a631-f7f48cf99571.png';
+    leftHalf.src = storedLeftImage || '/lovable-uploads/cf5693e3-5472-469d-95d7-ddb7891a10dc.png';
     rightHalf.src = isMobile 
-      ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png'
-      : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png';
+      ? '/lovable-uploads/30bd8eb6-93aa-49b7-b7c3-3af9787c1041.png'
+      : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png';
     background.src = '/images/golden-hours-image-1.JPG';
     
     let loadedCount = 0;
