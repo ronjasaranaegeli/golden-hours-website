@@ -20,7 +20,7 @@ const Index = () => {
     // Preload key images
     const imagesToPreload = [
       "/images/golden-hours-image-1.JPG", // Main background
-      "/lovable-uploads/fd2f67e3-46fb-4053-ae36-34ab9f926ba7.png", // Conversation image
+      "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png", // Full image
       "/images/golden-hours-image-16.JPG"
     ];
     
@@ -45,7 +45,7 @@ const Index = () => {
     
     const fullImage = new Image();
     fullImage.crossOrigin = "anonymous";
-    fullImage.src = "/lovable-uploads/fd2f67e3-46fb-4053-ae36-34ab9f926ba7.png";
+    fullImage.src = "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png";
     
     fullImage.onload = () => {
       console.log('Full image loaded, dimensions:', fullImage.width, 'x', fullImage.height);
@@ -98,28 +98,28 @@ const Index = () => {
           rightImg.src = rightUrl;
           
           // Create static versions of the split images for fallback
-          fetch('/lovable-uploads/fd2f67e3-46fb-4053-ae36-34ab9f926ba7-left.png')
+          fetch('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png')
             .catch(() => {
               console.log('Creating static left half image as fallback');
               // If the file doesn't exist, create it
               leftCanvas.toBlob((blob) => {
                 if (blob) {
                   const formData = new FormData();
-                  formData.append('image', blob, 'fd2f67e3-46fb-4053-ae36-34ab9f926ba7-left.png');
+                  formData.append('image', blob, '24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
                   // Here you would typically upload the image to your server
                   // For now we'll just use the localStorage version
                 }
               });
             });
           
-          fetch('/lovable-uploads/fd2f67e3-46fb-4053-ae36-34ab9f926ba7-right.png')
+          fetch('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png')
             .catch(() => {
               console.log('Creating static right half image as fallback');
               // If the file doesn't exist, create it
               rightCanvas.toBlob((blob) => {
                 if (blob) {
                   const formData = new FormData();
-                  formData.append('image', blob, 'fd2f67e3-46fb-4053-ae36-34ab9f926ba7-right.png');
+                  formData.append('image', blob, '24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
                   // Here you would typically upload the image to your server
                   // For now we'll just use the localStorage version
                 }
