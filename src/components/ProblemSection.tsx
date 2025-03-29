@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Separator } from '@/components/ui/separator';
 
@@ -52,15 +51,9 @@ const ProblemSection = () => {
               Du spürst diese Ahnung tief in dir – dein Leben könnte mehr sein als der tägliche Trott von 9-to-5. Eine Stimme fragt, ob das wirklich alles ist.
             </p>
             
+            {/* Simple Line Divider */}
             <div className="my-8 w-full flex justify-center">
-              <div className="w-full relative" style={{ maxWidth: "100%" }}>
-                <img 
-                  src="/lovable-uploads/0da51bc5-877d-4b86-a658-0c8c1b62b9f5.png" 
-                  alt="Dekorativer Divider" 
-                  className="w-full object-contain opacity-80"
-                  style={{ maxHeight: "100px" }}
-                />
-              </div>
+              <div className="h-px w-1/2 bg-[#2b2621] opacity-50"></div>
             </div>
             
             <p className="text-lg leading-relaxed mb-6 font-serif italic">

@@ -59,8 +59,20 @@ const TransformationSection = () => {
     description: "Spüre wieder die natürliche Freude des Seins, jenseits von äußeren Umständen und Bedingungen.",
     image: "/images/golden-hours-image-14.JPG"
   }];
-  return <section id="transformation" className="py-24 md:py-32" ref={sectionRef}>
-      <div className="container mx-auto px-6 md:px-8">
+  return <section 
+      id="transformation" 
+      className="py-24 md:py-32 relative" 
+      ref={sectionRef}
+    >
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-no-repeat bg-cover bg-right lg:bg-right z-0"
+        style={{ 
+          backgroundImage: "url('/lovable-uploads/plant-leaves-shadow-background-mirrored.jpg')"
+        }}
+      ></div>
+
+      <div className="container mx-auto px-6 md:px-8 relative z-10"> 
         <div className="max-w-3xl mx-auto text-center mb-16 reveal" ref={headerRef}>
           <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">
             Transformation, die dein Leben verändert
