@@ -142,22 +142,19 @@ const Index = () => {
       {/* Hero section (fixed) */}
       <HeroSection />
       
-      {/* Main content (scrolls over the Hero) */}
-      <main className="relative z-10">
-        {/* Spacer to push content below the viewport height */}
-        <div className="h-screen w-full"></div>
-        
-        {/* Content sections */}
-        <div className="relative bg-background">
-          <ProblemSection />
-          <SolutionSection />
-          <TransformationSection />
-          <AboutSection />
-          <ProgramDetailsSection />
-          <TestimonialsSection />
-          <WaitlistSection />
-          <FooterSection />
-        </div>
+      {/* Main content area - scrolls behind hero initially */}
+      <main 
+        className="relative"
+      >
+        {/* Content sections - will be elevated individually */}
+        <ProblemSection />
+        <SolutionSection />
+        <TransformationSection />
+        <AboutSection />
+        <ProgramDetailsSection />
+        <TestimonialsSection />
+        <WaitlistSection />
+        <FooterSection />
       </main>
       
       <ScrollReveal />

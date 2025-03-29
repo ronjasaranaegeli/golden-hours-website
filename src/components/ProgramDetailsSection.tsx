@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Clock, Landmark, Calendar, Users, Award, ArrowRight } from 'lucide-react';
@@ -53,7 +52,11 @@ const ProgramDetailsSection = () => {
   ];
 
   return (
-    <section id="program" className="py-24 md:py-32 bg-secondary/30" ref={sectionRef}>
+    <section 
+      id="program" 
+      className="py-24 md:py-32 bg-secondary/30 relative z-20" 
+      ref={sectionRef}
+    >
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16 reveal" ref={headerRef}>
           <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 heading-underline inline-block">

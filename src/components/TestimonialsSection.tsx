@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Play } from 'lucide-react';
 
@@ -36,7 +35,11 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-golden-50/50" ref={sectionRef}>
+    <section 
+      id="testimonials" 
+      className="py-24 md:py-32 bg-golden-50/50 relative z-20" 
+      ref={sectionRef}
+    >
       <div className="container mx-auto px-6 md:px-8">
         <div className="text-center mb-16 reveal" ref={headerRef}>
           <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">

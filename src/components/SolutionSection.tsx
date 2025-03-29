@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 
 const SolutionSection = () => {
@@ -29,7 +28,11 @@ const SolutionSection = () => {
   }, []);
 
   return (
-    <section id="solution" className="py-24 md:py-32 bg-golden-50/50" ref={sectionRef}>
+    <section 
+      id="solution" 
+      className="py-24 md:py-32 bg-golden-50/50 relative z-20" 
+      ref={sectionRef}
+    >
       <div className="container mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Image */}

@@ -61,7 +61,7 @@ const TransformationSection = () => {
   }];
   return <section 
       id="transformation" 
-      className="py-24 md:py-32 relative" 
+      className="py-24 md:py-32 relative z-20" 
       ref={sectionRef}
     >
       {/* Background image */}

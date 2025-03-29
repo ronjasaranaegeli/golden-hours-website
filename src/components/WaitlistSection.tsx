@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import WaitlistForm from './waitlist/WaitlistForm';
 import PricingDetails from './waitlist/PricingDetails';
@@ -37,7 +36,11 @@ const WaitlistSection = () => {
   };
 
   return (
-    <section id="waitlist" className="py-24 md:py-32 relative" ref={sectionRef}>
+    <section 
+      id="waitlist" 
+      className="py-24 md:py-32 relative z-20" 
+      ref={sectionRef}
+    >
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <div 
