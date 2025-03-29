@@ -30,13 +30,17 @@ const ProblemSection = () => {
   return (
     <section 
       id="problem" 
-      className="py-24 md:py-32 relative shadow-section" 
+      className="py-24 md:py-32 relative" 
       ref={sectionRef}
     >
-      {/* Shadow overlay */}
-      <div className="absolute inset-0 bg-no-repeat bg-cover bg-center opacity-50 z-0"
-           style={{ backgroundImage: "url('/lovable-uploads/9a3b369c-8265-4f0b-9c01-eec859650bff.png')" }}>
-      </div>
+      {/* Background image - making sure it's visible */}
+      <div 
+        className="absolute inset-0 bg-no-repeat bg-cover bg-center z-0"
+        style={{ 
+          backgroundImage: "url('/lovable-uploads/9a3b369c-8265-4f0b-9c01-eec859650bff.png')",
+          opacity: 0.9
+        }}
+      ></div>
 
       <div className="container mx-auto px-6 md:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

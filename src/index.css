@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -162,22 +163,6 @@ html {
 
 .btn-hover-effect:hover::after {
   @apply opacity-20;
-}
-
-.shadow-section {
-  position: relative;
-  isolation: isolate;
-}
-
-.shadow-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: url('/lovable-uploads/9a3b369c-8265-4f0b-9c01-eec859650bff.png');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.7;
 }
 
 /* New button styles */
