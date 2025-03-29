@@ -57,7 +57,8 @@ const ProblemSection = () => {
               <img 
                 src="/lovable-uploads/0da51bc5-877d-4b86-a658-0c8c1b62b9f5.png" 
                 alt="Dekorativer Divider" 
-                className="h-6 w-auto opacity-70"
+                className="w-full max-w-full h-auto opacity-80"
+                style={{ maxHeight: "100px" }}
               />
             </div>
             
