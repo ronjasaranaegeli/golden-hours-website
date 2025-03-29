@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import WaitlistForm from './waitlist/WaitlistForm';
 import PricingDetails from './waitlist/PricingDetails';

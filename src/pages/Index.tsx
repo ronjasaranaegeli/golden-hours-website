@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -30,6 +31,9 @@ const Index = () => {
 
     // Create split images from the uploaded image
     createSplitImages();
+    
+    // Log to ensure latest code is running
+    console.log('Index component loaded with latest code version');
   }, []);
 
   // Function to split the image into left and right halves
