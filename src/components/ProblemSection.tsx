@@ -45,7 +45,7 @@ const ProblemSection = () => {
       <div className="container mx-auto px-6 md:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
-          <div className="reveal backdrop-blur-sm bg-background/70 p-8 rounded-xl" ref={contentRef}>
+          <div className="reveal" ref={contentRef}>
             <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">Zwischen dem Leben, das du führst, und dem Leben, das in dir ruht</h2>
             
             <p className="text-lg leading-relaxed mb-6">
