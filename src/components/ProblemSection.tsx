@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Separator } from '@/components/ui/separator';
 
@@ -52,11 +53,11 @@ const ProblemSection = () => {
               Du spürst diese Ahnung tief in dir – dein Leben könnte mehr sein als der tägliche Trott von 9-to-5. Eine Stimme fragt, ob das wirklich alles ist.
             </p>
             
-            <div className="my-12 w-full flex justify-center">
+            <div className="my-8 w-full flex justify-center">
               <img 
-                src="/lovable-uploads/d76479f1-5938-4017-b2df-70f463d26b15.png" 
+                src="/lovable-uploads/0da51bc5-877d-4b86-a658-0c8c1b62b9f5.png" 
                 alt="Dekorativer Divider" 
-                className="h-24 w-auto opacity-50"
+                className="h-6 w-auto opacity-70"
               />
             </div>
             
