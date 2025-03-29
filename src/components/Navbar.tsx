@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -55,43 +54,34 @@ const Navbar = () => {
           <li>
             <button 
               onClick={() => scrollToSection('about')} 
-              className={`relative text-sm transition-colors py-1 font-medium group ${
+              className={`relative text-sm transition-colors py-1 px-3 font-medium group ${
                 scrolled ? 'text-foreground' : 'text-white'
               }`}
             >
               <span className="relative z-10">Über mich</span>
               <span className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-              <span className={`absolute bottom-0 left-0 w-full h-0.5 ${
-                scrolled ? 'bg-golden-400' : 'bg-golden-300'
-              } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
             </button>
           </li>
           <li>
             <button 
               onClick={() => scrollToSection('program')} 
-              className={`relative text-sm transition-colors py-1 font-medium group ${
+              className={`relative text-sm transition-colors py-1 px-3 font-medium group ${
                 scrolled ? 'text-foreground' : 'text-white'
               }`}
             >
               <span className="relative z-10">Programm</span>
               <span className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-              <span className={`absolute bottom-0 left-0 w-full h-0.5 ${
-                scrolled ? 'bg-golden-400' : 'bg-golden-300'
-              } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
             </button>
           </li>
           <li>
             <button 
               onClick={() => scrollToSection('testimonials')} 
-              className={`relative text-sm transition-colors py-1 font-medium group ${
+              className={`relative text-sm transition-colors py-1 px-3 font-medium group ${
                 scrolled ? 'text-foreground' : 'text-white'
               }`}
             >
               <span className="relative z-10">Erfahrungen</span>
               <span className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></span>
-              <span className={`absolute bottom-0 left-0 w-full h-0.5 ${
-                scrolled ? 'bg-golden-400' : 'bg-golden-300'
-              } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
             </button>
           </li>
           <li>

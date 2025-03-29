@@ -129,13 +129,6 @@ const ImageMergeAnimation = () => {
           }}
         />
       )}
-
-      {/* Add a check to visualize loaded state */}
-      {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center text-white bg-black/50 z-10">
-          <div className="animate-pulse">Bilder werden geladen...</div>
-        </div>
-      )}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
@@ -82,7 +81,7 @@ const HeroSection = () => {
             variant="cream"
             className="mt-2 px-4 sm:px-6 py-3 sm:py-4 text-sm btn-shine"
           >
-            Auf die Warteliste
+            Ich will Veränderung
           </Button>
         </div>
       </div>
