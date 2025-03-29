@@ -17,7 +17,7 @@ const HeroSection = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (titleNumber === titles.length - 1) {
-        setTitleNumber(0);
+       setTitleNumber(0);
       } else {
         setTitleNumber(titleNumber + 1);
       }
@@ -74,7 +74,7 @@ const HeroSection = () => {
           </h1>
         </div>
         <p className="text-base md:text-lg mb-6 font-extralight leading-relaxed max-w-lg text-center">
-          Ist dein Bewusstsein bereit dein \nvollstes Potenzial zu entfalten?
+          Ist dein Bewusstsein bereit dein vollstes Potenzial zu entfalten?
         </p>
         <div className="flex justify-center w-full">
           <Button 
