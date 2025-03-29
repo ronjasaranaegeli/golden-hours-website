@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { Separator } from '@/components/ui/separator';
 
 const ProblemSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -33,7 +34,7 @@ const ProblemSection = () => {
       className="py-24 md:py-32 relative" 
       ref={sectionRef}
     >
-      {/* Background image - making sure it's visible */}
+      {/* Background image */}
       <div 
         className="absolute inset-0 bg-no-repeat bg-cover bg-center z-0"
         style={{ 
@@ -49,36 +50,34 @@ const ProblemSection = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">Zwischen dem Leben, das du führst, und dem Leben, das in dir ruft</h2>
             
             <p className="text-lg leading-relaxed mb-6">
-              Du spürst es tief in dir – die Ahnung, dass dein Leben mehr sein könnte als der tägliche Trott von 9-to-5. Eine leise Stimme, die fragt, ob das wirklich alles ist.
+              Du spürst diese Ahnung tief in dir – dein Leben könnte mehr sein als der tägliche Trott von 9-to-5. Eine Stimme fragt, ob das wirklich alles ist.
             </p>
             
-            <p className="text-lg leading-relaxed mb-6">
-              Vielleicht hast du bereits erste Schritte auf deinem spirituellen Weg unternommen. Meditation, Achtsamkeit, Yoga – du kennst die Werkzeuge. Und doch fühlst du dich manchmal verloren in der Fülle der Informationen und Praktiken.
-            </p>
-            
-            <div className="w-16 h-[1px] bg-forest-300 my-8"></div>
+            <div className="my-8 w-full flex justify-center">
+              <img 
+                src="/lovable-uploads/0da51bc5-877d-4b86-a658-0c8c1b62b9f5.png" 
+                alt="Dekorativer Divider" 
+                className="h-6 w-auto opacity-70"
+              />
+            </div>
             
             <p className="text-lg leading-relaxed mb-6 font-serif italic">
-              Die Fragen werden drängender:
+              Die Fragen, die dich beschäftigen:
             </p>
             
             <ul className="space-y-4 mb-8">
               <li className="flex items-start">
                 <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <p className="text-lg italic text-forest-900">"Wie finde ich meinen eigenen, authentischen Weg?"</p>
+                <p className="text-lg italic text-forest-900">"Wie finde ich meinen authentischen Weg?"</p>
               </li>
               <li className="flex items-start">
                 <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <p className="text-lg italic text-forest-900">"Wie kann ich mein spirituelles Erwachen mit meinem Alltag vereinbaren?"</p>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <p className="text-lg italic text-forest-900">&quot;Woher weiss ich, dass ich den richtigen Schritt mache?&quot;</p>
+                <p className="text-lg italic text-forest-900">"Wie verbinde ich spirituelles Erwachen mit meinem Alltag?"</p>
               </li>
             </ul>
             
             <p className="text-lg leading-relaxed font-medium">
-              Diese Unsicherheit und das Gefühl des "Dazwischen-Seins" – zwischen dem alten Leben und dem neuen Potenzial – ist genau der Punkt, an dem Transformation beginnen kann.
+              Dieses Gefühl des "Dazwischen-Seins" ist genau der Punkt, an dem wahre Transformation beginnen kann.
             </p>
           </div>
           
