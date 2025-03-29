@@ -36,10 +36,9 @@ const ProblemSection = () => {
     >
       {/* Background image */}
       <div 
-        className="absolute inset-0 bg-no-repeat bg-cover bg-center z-0"
+        className="absolute inset-0 bg-no-repeat bg-cover bg-left lg:bg-center z-0"
         style={{ 
-          backgroundImage: "url('/lovable-uploads/9a3b369c-8265-4f0b-9c01-eec859650bff.png')",
-          opacity: 0.9
+          backgroundImage: "url('/lovable-uploads/plant-leaves-shadow-background.jpg')"
         }}
       ></div>
 
@@ -47,7 +46,7 @@ const ProblemSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="reveal backdrop-blur-sm bg-background/70 p-8 rounded-xl" ref={contentRef}>
-            <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">Zwischen dem Leben, das du führst, und dem Leben, das in dir ruft</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">Zwischen dem Leben, das du führst, und dem Leben, das in dir ruht</h2>
             
             <p className="text-lg leading-relaxed mb-6">
               Du spürst diese Ahnung tief in dir – dein Leben könnte mehr sein als der tägliche Trott von 9-to-5. Eine Stimme fragt, ob das wirklich alles ist.
