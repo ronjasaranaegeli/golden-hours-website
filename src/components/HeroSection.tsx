@@ -74,7 +74,7 @@ const HeroSection = () => {
           </h1>
         </div>
         <p className="text-base md:text-lg mb-6 font-extralight leading-relaxed max-w-lg text-center">
-          Ist dein Bewusstsein bereit dein vollstes Potenzial zu entfalten?
+          Ist dein Bewusstsein bereit dein \nvollstes Potenzial zu entfalten?
         </p>
         <div className="flex justify-center w-full">
           <Button 
