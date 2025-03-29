@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -21,8 +20,7 @@ const Index = () => {
     const imagesToPreload = [
       "/images/golden-hours-image-1.JPG", // Main background
       "/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png", // Full image
-      "/images/golden-hours-image-16.JPG",
-      "/lovable-uploads/d39b1a7e-1369-48cd-8665-68fa56a63dd7.png" // Shadow background
+      "/images/golden-hours-image-16.JPG"
     ];
     
     imagesToPreload.forEach(src => {
@@ -138,17 +136,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background shadow-background">
-      {/* Shadow Background Overlay */}
-      <div 
-        className="fixed inset-0 w-full h-full z-0 bg-cover bg-center opacity-90" 
-        style={{ 
-          backgroundImage: 'url("/lovable-uploads/d39b1a7e-1369-48cd-8665-68fa56a63dd7.png")',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover'
-        }}
-      />
-      
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <Navbar />
       
       {/* Hero section (fixed) */}
@@ -160,7 +148,7 @@ const Index = () => {
         <div className="h-screen w-full"></div>
         
         {/* Content sections */}
-        <div className="relative">
+        <div className="relative bg-background">
           <ProblemSection />
           <SolutionSection />
           <TransformationSection />
@@ -174,9 +162,9 @@ const Index = () => {
       
       <ScrollReveal />
       
-      {/* Decorative elements - adjusted opacity to be subtle with new background */}
-      <div className="fixed top-[20%] right-[5%] circle-decoration w-64 h-64 opacity-5 blur-2xl bg-forest-200 -z-10 float"></div>
-      <div className="fixed bottom-[30%] left-[5%] circle-decoration w-80 h-80 opacity-5 blur-2xl bg-golden-200 -z-10 float" style={{ animationDelay: '1s' }}></div>
+      {/* Decorative elements */}
+      <div className="fixed top-[20%] right-[5%] circle-decoration w-64 h-64 opacity-10 blur-2xl bg-forest-200 -z-10 float"></div>
+      <div className="fixed bottom-[30%] left-[5%] circle-decoration w-80 h-80 opacity-10 blur-2xl bg-golden-200 -z-10 float" style={{ animationDelay: '1s' }}></div>
     </div>
   );
 };
