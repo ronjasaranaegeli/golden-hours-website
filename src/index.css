@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -76,6 +77,22 @@ body {
   @apply bg-background text-foreground font-sans;
 }
 
+/* Neue Klasse für den Schatteneffekt-Hintergrund */
+.shadow-background {
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(5px);
+}
+
+/* Anpassung der Kartenelemente für bessere Lesbarkeit mit Schattenhintergrund */
+.elegant-card {
+  @apply bg-white/90 backdrop-blur-sm rounded-xl border border-golden-100 shadow-sm p-8 transition-all duration-300;
+}
+
+.elegant-card:hover {
+  @apply shadow-md border-golden-200 bg-white/95;
+}
+
+/* Restliche CSS-Definitionen bleiben unverändert */
 h1, h2, h3, h4, h5, h6 {
   @apply font-serif;
 }
@@ -128,14 +145,6 @@ html {
 .decorative-line {
   height: 1px;
   @apply bg-golden-300 my-8 opacity-40;
-}
-
-.elegant-card {
-  @apply bg-white rounded-xl border border-golden-100 shadow-sm p-8 transition-all duration-300;
-}
-
-.elegant-card:hover {
-  @apply shadow-md border-golden-200;
 }
 
 .img-frame {
