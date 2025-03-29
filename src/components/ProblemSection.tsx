@@ -54,12 +54,14 @@ const ProblemSection = () => {
             </p>
             
             <div className="my-8 w-full flex justify-center">
-              <img 
-                src="/lovable-uploads/0da51bc5-877d-4b86-a658-0c8c1b62b9f5.png" 
-                alt="Dekorativer Divider" 
-                className="w-full max-w-full h-auto opacity-80"
-                style={{ maxHeight: "100px" }}
-              />
+              <div className="w-full relative" style={{ maxWidth: "100%" }}>
+                <img 
+                  src="/lovable-uploads/0da51bc5-877d-4b86-a658-0c8c1b62b9f5.png" 
+                  alt="Dekorativer Divider" 
+                  className="w-full object-contain opacity-80"
+                  style={{ maxHeight: "100px" }}
+                />
+              </div>
             </div>
             
             <p className="text-lg leading-relaxed mb-6 font-serif italic">
