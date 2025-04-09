@@ -45,10 +45,10 @@ const ProblemSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="reveal" ref={contentRef}>
-            <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">Zwischen dem Leben, das du führst, und dem Leben, das in dir ruft</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">Zwischen dem Leben, das du führst, und dem Leben, das in dir ruht</h2>
             
             <p className="text-lg leading-relaxed mb-6">
-              Du spürst die leise Stimme, die mehr will als den gewohnten Alltag. Sie stellt die wichtigen Fragen:
+              Du spürst die leise Stimme, die mehr will als den gewohnten Alltag.
             </p>
             
             {/* Simple Line Divider */}
@@ -57,22 +57,26 @@ const ProblemSection = () => {
             </div>
             
             <p className="text-lg leading-relaxed mb-6 font-serif italic">
-              Die Fragen, die dich beschäftigen:
+              Sie stellt die wichtigen Fragen:
             </p>
             
             <ul className="space-y-4 mb-8">
               <li className="flex items-start">
                 <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <p className="text-lg italic text-forest-900">"Wie finde ich meinen authentischen Weg?"</p>
+                <p className="text-lg italic text-forest-900">"Wer bin ich wirklich?"</p>
               </li>
               <li className="flex items-start">
                 <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <p className="text-lg italic text-forest-900">"Wie verbinde ich spirituelles Erwachen mit meinem Alltag?"</p>
+                <p className="text-lg italic text-forest-900">"Was ist mein Lebenszweck auf dieser Erde?"</p>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
+                <p className="text-lg italic text-forest-900">"Wie finde ich meinen ureigenen, authentischen Weg?"</p>
               </li>
             </ul>
             
             <p className="text-lg leading-relaxed font-medium">
-              Dieses Gefühl des "Dazwischen-Seins" ist genau der Punkt, an dem wahre Transformation beginnen kann.
+              Dieses innere Wissen ist der Startpunkt deiner Reise zur wahren Transformation.
             </p>
           </div>
           
