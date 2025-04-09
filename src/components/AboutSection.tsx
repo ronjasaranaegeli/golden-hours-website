@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 
 const AboutSection = () => {
@@ -38,15 +39,15 @@ const AboutSection = () => {
           {/* Left Column: Image */}
           <div className="lg:col-span-2 order-1 lg:order-1 reveal" ref={imageRef}>
             <div className="relative">
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-forest-100 rounded-xl -z-10"></div>
-              <div className="relative h-[500px] rounded-xl overflow-hidden">
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-forest-100 rounded-sm -z-10"></div>
+              <div className="relative h-[500px] rounded-sm overflow-hidden">
                 <img 
                   src="/images/golden-hours-image-3.JPG" 
                   alt="Coach Portrait" 
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-golden-100 rounded-xl -z-10"></div>
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-golden-100 rounded-sm -z-10"></div>
             </div>
           </div>
           

@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Separator } from '@/components/ui/separator';
 
@@ -77,7 +78,7 @@ const ProblemSection = () => {
           </div>
           
           {/* Right Column - Image */}
-          <div className="relative h-[500px] lg:h-[600px] reveal overflow-hidden rounded-2xl shadow-xl" ref={imageRef}>
+          <div className="relative h-[500px] lg:h-[600px] reveal overflow-hidden rounded-sm shadow-xl" ref={imageRef}>
             <img alt="Golden Hours Coaching - Transformative Reise" className="h-full w-full object-cover" src="/lovable-uploads/f93d3155-6044-4692-b6f1-0de291f53779.jpg" />
           </div>
         </div>

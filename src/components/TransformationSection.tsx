@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 const TransformationSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -82,7 +83,7 @@ const TransformationSection = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {transformationItems.map((item, index) => <div key={index} className="group bg-white rounded-xl shadow-sm overflow-hidden border border-golden-100 hover:shadow-md transition-all duration-300 reveal" ref={el => itemsRef.current[index] = el} style={{
+          {transformationItems.map((item, index) => <div key={index} className="group bg-white rounded-sm shadow-sm overflow-hidden border border-golden-100 hover:shadow-md transition-all duration-300 reveal" ref={el => itemsRef.current[index] = el} style={{
           animationDelay: `${index * 0.1}s`
         }}>
               <div className="aspect-video overflow-hidden">

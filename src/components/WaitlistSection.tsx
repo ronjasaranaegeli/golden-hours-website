@@ -55,7 +55,7 @@ const WaitlistSection = () => {
       </div>
       
       <div className="container mx-auto px-6 md:px-8 relative z-10">
-        <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-sm rounded-sm shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left Column: Form */}
             <div className="p-8 md:p-12 reveal" ref={formRef}>

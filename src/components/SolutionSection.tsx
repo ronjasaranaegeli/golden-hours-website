@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 
 const SolutionSection = () => {
@@ -36,7 +37,7 @@ const SolutionSection = () => {
       <div className="container mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Image */}
-          <div className="relative h-[500px] lg:h-[600px] reveal overflow-hidden rounded-2xl order-2 lg:order-1" ref={imageRef}>
+          <div className="relative h-[500px] lg:h-[600px] reveal overflow-hidden rounded-sm order-2 lg:order-1" ref={imageRef}>
             <img 
               src="/images/golden-hours-image-2.JPG" 
               alt="Golden Hours Coaching - Transformative Reise" 
