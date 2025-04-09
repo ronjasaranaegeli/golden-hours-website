@@ -57,9 +57,20 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-golden-200 border border-golden-300 p-2" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-serif text-forest-500 font-medium">
+              <motion.h3 
+                style={{
+                  translateY: useTransform(
+                    scrollYProgress, 
+                    // Scrollwerte individuell für jede Überschrift anpassen
+                    [index / data.length, (index + 0.6) / data.length], 
+                    // Bewegung von 0px bis 30px nach oben
+                    [0, -30]
+                  )
+                }}
+                className="hidden md:block text-xl md:pl-20 md:text-5xl font-serif text-forest-500 font-medium"
+              >
                 {item.title}
-              </h3>
+              </motion.h3>
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
