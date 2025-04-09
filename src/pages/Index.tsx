@@ -1,10 +1,10 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ProblemSection from '@/components/ProblemSection';
 import SolutionSection from '@/components/SolutionSection';
 import TransformationSection from '@/components/TransformationSection';
+import JourneySection from '@/components/JourneySection';
 import AboutSection from '@/components/AboutSection';
 import ProgramDetailsSection from '@/components/ProgramDetailsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -154,6 +154,7 @@ const Index = () => {
         <ProblemSection />
         <SolutionSection />
         <TransformationSection />
+        <JourneySection />
         <AboutSection />
         <ProgramDetailsSection />
         <TestimonialsSection />
