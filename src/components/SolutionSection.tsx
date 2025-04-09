@@ -1,5 +1,11 @@
 
 import { useEffect, useRef } from 'react';
+import { 
+  Tooltip, 
+  TooltipContent, 
+  TooltipProvider, 
+  TooltipTrigger 
+} from "@/components/ui/tooltip";
 
 const SolutionSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -72,7 +78,21 @@ const SolutionSection = () => {
             <ul className="space-y-4 mb-6">
               <li className="flex items-start">
                 <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <p className="text-lg">Ganzheitliche Sessions mit Yoga, Meditation und EFT</p>
+                <p className="text-lg">Ganzheitliche Sessions mit Yoga, Meditation und 
+                  <TooltipProvider>
+                    <Tooltip delayDuration={300}>
+                      <TooltipTrigger asChild>
+                        <span className="border-dotted border-b-2 border-primary/70 cursor-help ml-1">EFT</span>
+                      </TooltipTrigger>
+                      <TooltipContent 
+                        className="bg-white/95 backdrop-blur-sm text-forest-800 p-3 max-w-[280px] rounded-sm border border-golden-200 shadow-lg text-sm"
+                        side="top"
+                      >
+                        <p>Emotional Freedom Techniques (EFT) ist eine psychologische Akupressur-Technik, die durch sanftes Klopfen auf bestimmte Körperpunkte emotionale Blockaden löst und tiefe Heilung ermöglicht.</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </p>
               </li>
               <li className="flex items-start">
                 <span className="text-primary font-serif text-lg mr-3">&bull;</span>
