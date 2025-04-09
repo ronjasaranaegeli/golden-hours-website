@@ -55,38 +55,38 @@ const SolutionSection = () => {
               Golden Hours
             </h2>
             
-            <p className="text-lg leading-relaxed mb-6">
-              Golden Hours ist ein intensives, maßgeschneidertes 3-monatiges 1:1 Coaching-Programm, das dich auf deinem Weg zu mehr Klarheit, Authentizität und innerer Führung begleitet.
-            </p>
+            <h3 className="text-xl font-serif mb-6 text-forest-800">Deine 3-Monats-Reise zur Essenz</h3>
             
             <p className="text-lg leading-relaxed mb-6">
-              Anders als standardisierte Programme, die dir einen vorgegebenen Weg auferlegen, integriert Golden Hours verschiedene Methoden und passt sie individuell an deine Bedürfnisse an:
+              Ein intensiver, massgeschneiderter 1:1 Raum, in dem Persönlichkeitsentwicklung auf Bewusstseinserweiterung trifft.
             </p>
             
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <p className="text-lg">Tiefgreifende 1:1 Coaching-Sessions, die exakt dort ansetzen, wo du gerade stehst</p>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <p className="text-lg">Integration verschiedener Methoden wie Meditation, Yoga, EFT und Atem­arbeit</p>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <p className="text-lg">Täglicher Support per WhatsApp für unmittelbare Fragen und Heraus­forderungen</p>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <p className="text-lg">Persönliche Rituale und Praktiken, die deinen individuellen Weg unter­stützen</p>
-              </li>
-            </ul>
-            
-            <div className="p-6 rounded-xl bg-forest-50 border-l-4 border-primary mt-8">
-              <p className="text-lg leading-relaxed italic font-serif text-forest-800">
-                "Mein Ansatz ist es, nicht nur Wissen zu vermitteln, sondern einen sicheren Raum zu schaffen, in dem du deine eigene innere Führung stärken kannst."
+            <div className="p-5 rounded-sm bg-forest-50 border-l-4 border-primary my-6">
+              <p className="text-lg leading-relaxed italic font-serif">
+                "Ich schaffe einen sicheren, heiligen Raum, damit du deine innere Weisheit aktivierst und deiner Wahrheit folgst."
               </p>
             </div>
+            
+            <p className="text-lg mb-4">Was dich erwartet:</p>
+            
+            <ul className="space-y-4 mb-6">
+              <li className="flex items-start">
+                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
+                <p className="text-lg">Ganzheitliche Sessions mit Yoga, Meditation und EFT</p>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
+                <p className="text-lg">Tiefgreifendes Workbook zur nachhaltigen Selbstreflexion</p>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
+                <p className="text-lg">Täglicher Support via Circle App (Mo-Fr)</p>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
+                <p className="text-lg">Massgeschneiderte spirituelle Praktiken für deinen Alltag</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
