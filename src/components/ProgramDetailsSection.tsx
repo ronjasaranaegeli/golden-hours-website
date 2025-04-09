@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Clock, Landmark, Calendar, Users, Award, ArrowRight } from 'lucide-react';
@@ -75,7 +76,7 @@ const ProgramDetailsSection = () => {
             <CarouselContent>
               {programImages.map((image, index) => (
                 <CarouselItem key={index}>
-                  <div className="aspect-video overflow-hidden rounded-xl">
+                  <div className="aspect-video overflow-hidden rounded-sm">
                     <img 
                       src={image} 
                       alt={`Golden Hours Coaching Impression ${index + 1}`}
@@ -186,3 +187,4 @@ const ProgramDetailsSection = () => {
 };
 
 export default ProgramDetailsSection;
+
