@@ -1,5 +1,5 @@
-
 import { useEffect, useRef } from 'react';
+import { TooltipComponent } from './ui/TooltipComponent';
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -42,7 +42,7 @@ const AboutSection = () => {
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-forest-100 rounded-sm -z-10"></div>
               <div className="relative h-[500px] rounded-sm overflow-hidden">
                 <img 
-                  src="/images/golden-hours-image-3.JPG" 
+                  src="/images/golden-hours-image-5-hochformat.JPG" 
                   alt="Coach Portrait" 
                   className="h-full w-full object-cover"
                 />
@@ -54,26 +54,20 @@ const AboutSection = () => {
           {/* Right Column: Content */}
           <div className="lg:col-span-3 order-2 lg:order-2 reveal" ref={contentRef}>
             <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">
-              Über mich — Mein Weg zu Golden Hours
+              Mein Weg zu Golden Hours – Vom Suchen zum Sein
             </h2>
             
             <div className="space-y-6">
               <p className="text-lg leading-relaxed">
-                Mein Weg führte mich von einer erfolgreichen Karriere in der Unternehmensberatung zu einem tiefgreifenden spirituellen Erwachen. Nach Jahren des Funktionierens im "System", erlebte ich einen Zusammenbruch, der sich letztlich als Durchbruch herausstellte.
+                Kennst du das Gefühl, dass mehr in dir steckt? Auch ich stand vor Jahren an diesem Punkt, fragte mich "Soll das alles sein?". Ein Job, der nicht erfüllte, persönliche Krisen – ich fühlte mich festgefahren, tief im <TooltipComponent trigger="Schatten" content="Die unterdrückten, unbewussten Anteile unseres Selbst, mit denen wir uns nicht identifizieren wollen" />. Dann kam der Weckruf, der mutige Schritt: Ich entschied mich, meiner eigenen Wahrheit ins Auge zu blicken.
               </p>
               
               <p className="text-lg leading-relaxed">
-                Heute verbinde ich meine analytischen Fähigkeiten mit meiner intuitiven Gabe und begleite Menschen auf ihrem Weg des bewussten Erwachens – durch meinen Podcast "Generation Om", Workshops und vor allem durch tiefgreifende 1:1 Coachings.
+                Das war der Anfang meiner <TooltipComponent trigger="Transformation" content="Ein tiefgreifender Wandlungsprozess, der über oberflächliche Veränderungen hinausgeht und unser ganzes Sein umfasst" />: Ich kündigte, reiste, vertiefte mich in Yoga & Tanz, gründete mein eigenes Wirken mit Kursen, Workshops, meinem Podcast <a href="https://open.spotify.com/show/5UhLT3NQwHcN4ZRaFtrqRg" target="_blank" rel="noopener noreferrer" className="text-forest-600 hover:text-forest-700 font-medium transition-colors underline">{"\"Generation Om\""}</a>. Die Natur wurde mein Zuhause und Anker, mein Körper, mein Tempel und <TooltipComponent trigger="Kompass" content="Ein inneres Navigationssystem, das uns durch Intuition und Körperweisheit führt" />, die Liebe zum Leben, mein Glaube und grösster Lehrer.
               </p>
               
               <p className="text-lg leading-relaxed">
-                Meine Ausbildung in verschiedenen Coaching-Methoden, Yoga und spirituellen Praktiken gibt mir das Handwerkszeug – doch meine eigene Transformationsreise gibt mir das Verständnis für die Herausforderungen und die Schönheit dieses Weges.
-              </p>
-              
-              <div className="w-16 h-[1px] bg-forest-300 my-8"></div>
-              
-              <p className="text-lg leading-relaxed font-serif italic text-forest-800">
-                Ich glaube an die kraftvolle Einfachheit der Wahrheit und an die Fähigkeit jedes Menschen, sein authentisches Selbst zu leben – besonders in einer Zeit, die nach neuen Wegen des Seins ruft.
+                Diese gelebte Erfahrung, die Höhen und Tiefen, ist das Herz und die Essenz von Golden Hours. Sie erlaubt mir, dich einfühlsam dabei zu unterstützen, deinen eigenen inneren Kompass wiederzufinden und zu aktivieren – und deiner Wahrheit zu folgen.
               </p>
             </div>
             
