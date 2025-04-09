@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Separator } from '@/components/ui/separator';
 
@@ -46,10 +45,10 @@ const ProblemSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="reveal" ref={contentRef}>
-            <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">Zwischen dem Leben, das du führst, und dem Leben, das in dir ruht</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block">Zwischen dem Leben, das du führst, und dem Leben, das in dir ruft</h2>
             
             <p className="text-lg leading-relaxed mb-6">
-              Du spürst diese Ahnung tief in dir – dein Leben könnte mehr sein als der tägliche Trott von 9-to-5. Eine Stimme fragt, ob das wirklich alles ist.
+              Du spürst die leise Stimme, die mehr will als den gewohnten Alltag. Sie stellt die wichtigen Fragen:
             </p>
             
             {/* Simple Line Divider */}
@@ -78,7 +77,7 @@ const ProblemSection = () => {
           </div>
           
           {/* Right Column - Image */}
-          <div className="relative h-[500px] lg:h-[600px] reveal overflow-hidden rounded-sm shadow-xl" ref={imageRef}>
+          <div className="relative h-[500px] lg:h-[600px] reveal overflow-hidden rounded-2xl shadow-xl" ref={imageRef}>
             <img alt="Golden Hours Coaching - Transformative Reise" className="h-full w-full object-cover" src="/lovable-uploads/f93d3155-6044-4692-b6f1-0de291f53779.jpg" />
           </div>
         </div>
