@@ -56,46 +56,73 @@ const SolutionSection = () => {
               Golden Hours
             </h2>
             
-            <h3 className="text-xl font-serif mb-6 text-forest-800">Deine 3-Monats-Reise zur Essenz</h3>
+            <h3 className="text-xl font-serif mb-6 text-forest-800">
+              Deine 3-Monats-Reise zur Essenz
+            </h3>
             
-            <p className="text-lg leading-relaxed mb-6">
+            <p className="text-lg leading-relaxed mb-8">
               Ein intensiver, massgeschneiderter 1:1 Raum, in dem Persönlichkeitsentwicklung auf Bewusstseinserweiterung trifft.
             </p>
             
-            <div className="p-5 rounded-sm bg-forest-500/10 border-l-4 border-primary my-6">
+            <div className="p-6 rounded-sm bg-forest-500/10 border-l-4 border-primary my-8">
               <p className="text-lg leading-relaxed italic font-serif">
                 "Ich schaffe einen sicheren, heiligen Raum, damit du deine innere Weisheit aktivierst und deiner Wahrheit folgst."
               </p>
             </div>
             
-            <p className="text-lg mb-4">Was dich erwartet:</p>
-            
-            <ul className="space-y-4 mb-6">
-              <li className="flex items-start">
-                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <div className="text-lg">
-                  Ganzheitliche Sessions mit Yoga, Meditation und 
-                  <span className="inline-block ml-1">
-                    <TooltipComponent
-                      trigger={<span className="border-dotted border-b-2 border-primary/70 cursor-help">EFT</span>}
-                      content="Emotional Freedom Techniques (EFT) ist eine psychologische Akupressur-Technik, die durch sanftes Klopfen auf bestimmte Körperpunkte emotionale Blockaden löst und tiefe Heilung ermöglicht."
-                    />
-                  </span>
+            <div className="space-y-8">
+              <h4 className="text-xl font-serif text-forest-800">Was dich erwartet:</h4>
+              
+              <div className="grid gap-6">
+                <div className="p-5 rounded-sm bg-white/80 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div className="flex items-start">
+                    <span className="text-primary font-serif text-2xl mr-4">&bull;</span>
+                    <div>
+                      <h5 className="text-lg font-medium mb-2">Ganzheitliche Sessions</h5>
+                      <p className="text-forest-700">
+                        mit Yoga, Meditation und 
+                        <span className="inline-block ml-1">
+                          <TooltipComponent
+                            trigger={<span className="border-dotted border-b-2 border-primary/70 cursor-help">EFT</span>}
+                            content="Emotional Freedom Techniques (EFT) ist eine psychologische Akupressur-Technik, die durch sanftes Klopfen auf bestimmte Körperpunkte emotionale Blockaden löst und tiefe Heilung ermöglicht."
+                          />
+                        </span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <div className="text-lg">Tiefgreifendes Workbook zur nachhaltigen Selbstreflexion</div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <div className="text-lg">Täglicher Support via Circle App (Mo-Fr)</div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary font-serif text-lg mr-3">&bull;</span>
-                <div className="text-lg">Massgeschneiderte spirituelle Praktiken für deinen Alltag</div>
-              </li>
-            </ul>
+
+                <div className="p-5 rounded-sm bg-white/80 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div className="flex items-start">
+                    <span className="text-primary font-serif text-2xl mr-4">&bull;</span>
+                    <div>
+                      <h5 className="text-lg font-medium mb-2">Tiefgreifendes Workbook</h5>
+                      <p className="text-forest-700">zur nachhaltigen Selbstreflexion</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-5 rounded-sm bg-white/80 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div className="flex items-start">
+                    <span className="text-primary font-serif text-2xl mr-4">&bull;</span>
+                    <div>
+                      <h5 className="text-lg font-medium mb-2">Täglicher Support</h5>
+                      <p className="text-forest-700">via Circle App (Mo-Fr)</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-5 rounded-sm bg-white/80 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div className="flex items-start">
+                    <span className="text-primary font-serif text-2xl mr-4">&bull;</span>
+                    <div>
+                      <h5 className="text-lg font-medium mb-2">Spirituelle Praktiken</h5>
+                      <p className="text-forest-700">Massgeschneidert für deinen Alltag</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
