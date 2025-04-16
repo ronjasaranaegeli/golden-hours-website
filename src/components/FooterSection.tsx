@@ -1,6 +1,4 @@
-
 import { Instagram, Podcast, Mail, ArrowUp } from 'lucide-react';
-
 const FooterSection = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -8,18 +6,12 @@ const FooterSection = () => {
       behavior: 'smooth'
     });
   };
-
-  return (
-    <footer className="py-16 bg-white border-t border-golden-100">
+  return <footer className="py-16 bg-white border-t border-golden-100">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & Description */}
           <div className="space-y-4">
-            <img 
-              src="/lovable-uploads/2a2fa4d3-c1e3-4889-b3f7-d82ededb0533.png" 
-              alt="Golden Hours Logo" 
-              className="h-10"
-            />
+            <img src="/lovable-uploads/2a2fa4d3-c1e3-4889-b3f7-d82ededb0533.png" alt="Golden Hours Logo" className="h-10" />
             <p className="text-forest-600 text-sm mt-4">
               Transformatives Coaching für Menschen am Anfang ihres bewussten Erwachens.
             </p>
@@ -77,9 +69,7 @@ const FooterSection = () => {
                 <Mail size={20} />
               </a>
             </div>
-            <p className="text-forest-600 text-sm">
-              kontakt@goldenhours.com
-            </p>
+            <p className="text-forest-600 text-sm">ronja@golden-hours.ch</p>
           </div>
         </div>
         
@@ -88,17 +78,12 @@ const FooterSection = () => {
             © {new Date().getFullYear()} Golden Hours Coaching. Alle Rechte vorbehalten.
           </p>
           
-          <button 
-            onClick={scrollToTop}
-            className="mt-4 md:mt-0 flex items-center text-forest-600 hover:text-primary transition-colors"
-          >
+          <button onClick={scrollToTop} className="mt-4 md:mt-0 flex items-center text-forest-600 hover:text-primary transition-colors">
             <span className="mr-2">Nach oben</span>
             <ArrowUp size={16} />
           </button>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default FooterSection;
