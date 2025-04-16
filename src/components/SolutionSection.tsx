@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { TooltipComponent } from '@/components/ui/TooltipComponent';
 
@@ -61,7 +62,7 @@ const SolutionSection = () => {
               Ein intensiver, massgeschneiderter 1:1 Raum, in dem Persönlichkeitsentwicklung auf Bewusstseinserweiterung trifft.
             </p>
             
-            <div className="p-5 rounded-sm bg-forest-50 border-l-4 border-primary my-6">
+            <div className="p-5 rounded-sm bg-forest-500/10 border-l-4 border-primary my-6">
               <p className="text-lg leading-relaxed italic font-serif">
                 "Ich schaffe einen sicheren, heiligen Raum, damit du deine innere Weisheit aktivierst und deiner Wahrheit folgst."
               </p>

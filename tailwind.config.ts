@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -76,12 +77,12 @@ export default {
           950: '#382316',
         },
         forest: {
-          50: '#f0f4f3',
-          100: '#dce5e3',
+          50: '#f0f7f6',  // Changed to a more greenish tint to match #4F6663 theme
+          100: '#dceae8',
           200: '#bfcfcc',
           300: '#9ab3af',
           400: '#7c9894',
-          500: '#4F6663',
+          500: '#4F6663', // Main forest color
           600: '#435553',
           700: '#384443',
           800: '#2f3837',
