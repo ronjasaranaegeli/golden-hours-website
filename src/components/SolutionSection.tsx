@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { TooltipComponent } from '@/components/ui/TooltipComponent';
 import { Card } from '@/components/ui/card';
@@ -37,9 +36,8 @@ const SolutionSection = () => {
       ref={sectionRef}
     >
       <div className="container mx-auto px-6 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-          {/* Image Column */}
-          <div className="sticky top-24 lg:h-[600px] reveal overflow-hidden rounded-sm order-2 lg:order-1" ref={imageRef}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="relative lg:h-[700px] reveal overflow-hidden rounded-sm order-2 lg:order-1" ref={imageRef}>
             <img 
               src="/images/golden-hours-image-2.JPG" 
               alt="Golden Hours Coaching - Transformative Reise" 
@@ -51,8 +49,7 @@ const SolutionSection = () => {
             </div>
           </div>
           
-          {/* Content Column */}
-          <div className="reveal space-y-6 order-1 lg:order-2" ref={contentRef}>
+          <div className="reveal space-y-8 order-1 lg:order-2" ref={contentRef}>
             <div className="space-y-4">
               <h2 className="font-serif text-3xl md:text-4xl font-medium heading-underline inline-block">
                 Golden Hours
@@ -73,56 +70,36 @@ const SolutionSection = () => {
               </p>
             </div>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               <h4 className="text-xl font-serif text-forest-800">Was dich erwartet:</h4>
               
-              <div className="grid gap-3">
-                <Card className="p-4 hover:shadow-lg transition-all duration-300 bg-white/80">
-                  <div className="flex items-start gap-4">
-                    <div className="min-w-2 h-12 bg-golden-200/50 rounded-sm"></div>
-                    <div>
-                      <h5 className="text-lg font-medium font-serif">Ganzheitliche Sessions</h5>
-                      <p className="text-forest-700 mt-1">
-                        mit Yoga, Meditation und 
-                        <span className="inline-block ml-1">
-                          <TooltipComponent
-                            trigger={<span className="border-dotted border-b-2 border-primary/70 cursor-help">EFT</span>}
-                            content="Emotional Freedom Techniques (EFT) ist eine psychologische Akupressur-Technik, die durch sanftes Klopfen auf bestimmte Körperpunkte emotionale Blockaden löst und tiefe Heilung ermöglicht."
-                          />
-                        </span>
-                      </p>
-                    </div>
-                  </div>
+              <div className="grid gap-4">
+                <Card className="p-4 transition-all duration-300 hover:shadow-md bg-white/80">
+                  <h5 className="text-lg font-medium mb-2 font-serif">Ganzheitliche Sessions</h5>
+                  <p className="text-forest-700">
+                    mit Yoga, Meditation und 
+                    <span className="inline-block ml-1">
+                      <TooltipComponent
+                        trigger={<span className="border-dotted border-b-2 border-primary/70 cursor-help">EFT</span>}
+                        content="Emotional Freedom Techniques (EFT) ist eine psychologische Akupressur-Technik, die durch sanftes Klopfen auf bestimmte Körperpunkte emotionale Blockaden löst und tiefe Heilung ermöglicht."
+                      />
+                    </span>
+                  </p>
                 </Card>
 
-                <Card className="p-4 hover:shadow-lg transition-all duration-300 bg-white/80">
-                  <div className="flex items-start gap-4">
-                    <div className="min-w-2 h-12 bg-golden-200/50 rounded-sm"></div>
-                    <div>
-                      <h5 className="text-lg font-medium font-serif">Tiefgreifendes Workbook</h5>
-                      <p className="text-forest-700 mt-1">zur nachhaltigen Selbstreflexion</p>
-                    </div>
-                  </div>
+                <Card className="p-4 transition-all duration-300 hover:shadow-md bg-white/80">
+                  <h5 className="text-lg font-medium mb-2 font-serif">Tiefgreifendes Workbook</h5>
+                  <p className="text-forest-700">zur nachhaltigen Selbstreflexion</p>
                 </Card>
 
-                <Card className="p-4 hover:shadow-lg transition-all duration-300 bg-white/80">
-                  <div className="flex items-start gap-4">
-                    <div className="min-w-2 h-12 bg-golden-200/50 rounded-sm"></div>
-                    <div>
-                      <h5 className="text-lg font-medium font-serif">Täglicher Support</h5>
-                      <p className="text-forest-700 mt-1">via Circle App (Mo-Fr)</p>
-                    </div>
-                  </div>
+                <Card className="p-4 transition-all duration-300 hover:shadow-md bg-white/80">
+                  <h5 className="text-lg font-medium mb-2 font-serif">Täglicher Support</h5>
+                  <p className="text-forest-700">via Circle App (Mo-Fr)</p>
                 </Card>
 
-                <Card className="p-4 hover:shadow-lg transition-all duration-300 bg-white/80">
-                  <div className="flex items-start gap-4">
-                    <div className="min-w-2 h-12 bg-golden-200/50 rounded-sm"></div>
-                    <div>
-                      <h5 className="text-lg font-medium font-serif">Spirituelle Praktiken</h5>
-                      <p className="text-forest-700 mt-1">Massgeschneidert für deinen Alltag</p>
-                    </div>
-                  </div>
+                <Card className="p-4 transition-all duration-300 hover:shadow-md bg-white/80">
+                  <h5 className="text-lg font-medium mb-2 font-serif">Spirituelle Praktiken</h5>
+                  <p className="text-forest-700">Massgeschneidert für deinen Alltag</p>
                 </Card>
               </div>
             </div>
