@@ -1,6 +1,7 @@
 import React from 'react';
 import { Timeline } from '@/components/ui/timeline';
 import { TooltipComponent } from '@/components/ui/TooltipComponent';
+import { motion } from 'framer-motion';
 
 const TimelineSection = () => {
   const timelineData = [
@@ -205,6 +206,15 @@ const TimelineSection = () => {
           className="w-[30rem] md:w-[34rem] lg:w-[40rem] h-auto opacity-5 pointer-events-none ml-auto"
         />
       </div>
+
+      {/* Top left palm leaf */}
+      <div className="absolute top-48 left-8 overflow-hidden w-64 md:w-72 lg:w-96 z-0">
+        <img 
+          src="/images/palm-leaf-h-left-bottom.png" 
+          alt=""
+          className="w-[30rem] md:w-[34rem] lg:w-[40rem] h-auto opacity-5 pointer-events-none"
+        />
+      </div>
       
       {/* Between Phase 1 and Phase 2 - left side */}
       <div className="absolute top-[35%] left-0 overflow-hidden w-64 md:w-72 lg:w-96 z-0">
@@ -224,6 +234,15 @@ const TimelineSection = () => {
         />
       </div>
       
+      {/* Mid-lower left leaf (Medium) */}
+      <div className="absolute top-[70%] left-16 overflow-hidden w-32 md:w-40 lg:w-48 z-0">
+        <img 
+          src="/images/palm-leaf-v-up-left.png" 
+          alt=""
+          className="w-[20rem] md:w-[24rem] lg:w-[28rem] h-auto opacity-5 pointer-events-none"
+        />
+      </div>
+      
       {/* Bottom left - near Phase 3 */}
       <div className="absolute bottom-32 left-20 overflow-hidden w-64 md:w-72 lg:w-96 z-0">
         <img 
@@ -232,11 +251,35 @@ const TimelineSection = () => {
           className="w-[30rem] md:w-[34rem] lg:w-[40rem] h-auto opacity-5 pointer-events-none"
         />
       </div>
+
+      {/* Bottom offset right leaf (Small) */}
+      <div className="absolute bottom-10 right-1/4 overflow-hidden w-36 md:w-44 lg:w-52 z-0">
+        <img 
+          src="/images/palm-leaf-h-right.png" 
+          alt=""
+          className="w-[16rem] md:w-[20rem] lg:w-[24rem] h-auto opacity-5 pointer-events-none ml-auto"
+        />
+      </div>
+      
+      {/* Bottom right palm leaf */}
+      <div className="absolute bottom-16 right-20 overflow-hidden w-48 md:w-56 lg:w-64 z-0">
+        <img 
+          src="/images/palm-leaf-v-up-left.png" 
+          alt=""
+          className="w-[30rem] md:w-[34rem] lg:w-[40rem] h-auto opacity-5 pointer-events-none ml-auto"
+        />
+      </div>
       
       <div className="container mx-auto">
-        <div className="relative z-20">
+        <motion.div 
+          className="relative z-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.1 }} // Adjust amount as needed
+        >
           <Timeline data={timelineData} />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

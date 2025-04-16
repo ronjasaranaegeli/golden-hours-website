@@ -31,10 +31,18 @@ const AboutSection = () => {
   return (
     <section 
       id="about" 
-      className="py-24 md:py-32 bg-golden-50/50 relative z-20" 
+      className="py-24 md:py-32 relative z-20" 
       ref={sectionRef}
     >
-      <div className="container mx-auto px-6 md:px-8">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-no-repeat bg-cover bg-left lg:bg-center z-0"
+        style={{ 
+          backgroundImage: "url('/lovable-uploads/plant-leaves-shadow-background-mirrored.jpg')"
+        }}
+      ></div>
+
+      <div className="container mx-auto px-6 md:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
           {/* Left Column: Image */}
           <div className="lg:col-span-2 order-1 lg:order-1 reveal" ref={imageRef}>

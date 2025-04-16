@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Clock, Landmark, Calendar, Users, Award, ArrowRight } from 'lucide-react';
@@ -9,6 +8,8 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from '@/components/ui/carousel';
+import { TooltipComponent } from '@/components/ui/TooltipComponent';
+import { FaqSection } from '@/components/ui/faq-section';
 
 const ProgramDetailsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,11 +46,11 @@ const ProgramDetailsSection = () => {
 
   // Program images for carousel
   const programImages = [
-    "/images/golden-hours-image-15.JPG",
-    "/images/golden-hours-image-16.JPG",
-    "/images/golden-hours-image-17.JPG",
     "/images/golden-hours-image-18.JPG",
-    "/images/golden-hours-image-19.JPG",
+    "/images/golden-hours-image-21.JPG",
+    "/images/golden-hours-image-8.JPG",
+    "/images/golden-hours-image-23.JPG",
+    "/images/golden-hours-image-14.JPG",
   ];
 
   return (
@@ -98,7 +99,7 @@ const ProgramDetailsSection = () => {
                 <Clock className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-serif text-xl font-medium mb-2">12 Wochen Transformation</h3>
-                  <p className="text-forest-700">Intensives 3-monatiges Coaching mit wöchentlichen 90-minütigen 1:1 Sessions (insgesamt 12 Sessions)</p>
+                  <p className="text-forest-700">Intensives 3-monatiges Online-Coaching mit wöchentlichen 90-minütigen 1:1 Sessions (insgesamt 12 Sessions)</p>
                 </div>
               </div>
               
@@ -130,9 +131,24 @@ const ProgramDetailsSection = () => {
               
               <div className="flex items-start">
                 <Landmark className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-serif text-xl font-medium mb-2">Investment</h3>
-                  <p className="text-forest-700">CHF 3.900 (Einmalzahlung) oder flexible Ratenzahlung (3 x CHF 1.350)</p>
+                <div className="w-full">
+                  <h3 className="font-serif text-xl font-medium mb-3">Investment</h3>
+                  <div className="space-y-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center">
+                      <span className="font-medium text-primary min-w-[140px]">Online-Coaching:</span>
+                      <div className="mt-1 sm:mt-0">
+                        <span className="text-forest-700 font-medium">CHF 3.900</span>
+                        <span className="text-forest-600 text-sm ml-2">(Einmalzahlung oder 3 x CHF 1.350)</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center">
+                      <span className="font-medium text-primary min-w-[140px]">Vor-Ort-Coaching:</span>
+                      <div className="mt-1 sm:mt-0">
+                        <span className="text-forest-700 font-medium">CHF 5.490</span>
+                        <span className="text-forest-600 text-sm ml-2">(im Umkreis von 70km ab Baden, AG)</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               
@@ -140,38 +156,69 @@ const ProgramDetailsSection = () => {
                 <Calendar className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-serif text-xl font-medium mb-2">Limitierte Plätze</h3>
-                  <p className="text-forest-700">Nur 6 Plätze verfügbar, Start im Oktober 2024</p>
+                  <p className="text-forest-700">Nur 6 Plätze verfügbar, Start im Oktober 2025</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="elegant-card text-center">
-            <h3 className="font-serif text-2xl mb-6">Ist dies das richtige Programm für dich?</h3>
-            
-            <p className="text-lg mb-8">
-              Golden Hours ist ideal für dich, wenn du:
-            </p>
-            
-            <ul className="space-y-4 text-left max-w-xl mx-auto mb-10">
-              <li className="flex items-start">
-                <CheckCircle className="text-primary w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                <p>Am Anfang deines bewussten Erwachens stehst und nach deinem authentischen Weg suchst</p>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="text-primary w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                <p>Dich in einem Übergang befindest und Klarheit für deine nächsten Schritte suchst</p>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="text-primary w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                <p>Bereit bist, tiefer in deine innere Arbeit einzutauchen und alte Muster zu transformieren</p>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="text-primary w-5 h-5 mr-3 mt-1 flex-shrink-0" />
-                <p>Eine individuelle, auf dich zugeschnittene Begleitung mehr schätzt als ein standardisiertes Programm</p>
-              </li>
-            </ul>
-            
+          <FaqSection
+            title="Ist Golden Hours wirklich das Richtige für DICH?"
+            description="Golden Hours ist eine tiefgreifende, transformative Reise – und sie ist nicht für jeden geeignet. Dieses Programm ist wahrscheinlich nichts für dich, wenn du:"
+            className="elegant-card text-center bg-white p-4 sm:p-8 rounded-sm shadow-md"
+            items={[
+              {
+                question: "Schnelle Lösungen suchst",
+                answer: (
+                  <p className="text-forest-700">
+                    Echte Veränderung braucht Zeit, Commitment und die Bereitschaft, wirklich hinzuschauen – nicht nur an der <TooltipComponent trigger="Oberfläche" content="Oberflächliche Veränderungen führen selten zu tiefgreifenden und langfristigen Transformationen" /> zu kratzen.
+                  </p>
+                )
+              },
+              {
+                question: "Starre Programme erwartest",
+                answer: (
+                  <p className="text-forest-700">
+                    Wir folgen DEINEM einzigartigen Weg und deiner <TooltipComponent trigger="Intuition" content="Die innere Stimme und Weisheit, die oft ohne bewusste Analyse zu tieferen Erkenntnissen führt" />, nicht einem festen Schema F. Wenn du eine vorgefertigte <span className="text-primary">Formel</span> bevorzugst, passen wir nicht zusammen.
+                  </p>
+                )
+              },
+              {
+                question: "Dich Schatten nicht stellen willst",
+                answer: (
+                  <p className="text-forest-700">
+                    Wahre <TooltipComponent trigger="Transformation" content="Ein tiefgreifender Wandlungsprozess, der über oberflächliche Veränderungen hinausgeht und unser ganzes Sein umfasst" /> beinhaltet auch die liebevolle Auseinandersetzung mit dem, was herausfordernd ist. Wir gehen tief – dazu braucht es Mut.
+                  </p>
+                )
+              },
+              {
+                question: "Verantwortung im Aussen suchst",
+                answer: (
+                  <p className="text-forest-700">
+                    Dieses Programm stärkt DEINE innere Führung und <TooltipComponent trigger="Selbstermächtigung" content="Der Prozess, die eigene Kraft zu erkennen und zu nutzen, um selbstbestimmt zu handeln und zu leben" />. Es erfordert die Bereitschaft, aktiv Verantwortung für deinen Prozess zu übernehmen.
+                  </p>
+                )
+              },
+              {
+                question: "Körperarbeit vermeiden willst",
+                answer: (
+                  <p className="text-forest-700">
+                    In diesem Coaching arbeiten wir <TooltipComponent trigger="ganzheitlich" content="Ein Ansatz, der Körper, Geist und Seele als untrennbare Einheit betrachtet" /> – Körper, Geist und Seele sind untrennbar verbunden. Transformation geschieht nicht nur im Kopf, sondern muss verkörpert werden.
+                  </p>
+                )
+              },
+              {
+                question: "Nur Theorie ohne Praxis suchst",
+                answer: (
+                  <p className="text-forest-700">
+                    Golden Hours lebt von der <TooltipComponent trigger="Integration" content="Der Prozess, neue Erkenntnisse in das tägliche Leben einzubinden und zu verkörpern" /> und Verkörperung neuer Erkenntnisse im Alltag.
+                  </p>
+                )
+              }
+            ]}
+          />
+          
+          <div className="text-center mt-10">
             <Button 
               onClick={() => scrollToSection('waitlist')} 
               className="bg-primary hover:bg-primary/90 text-white px-8 py-6 btn-shine shadow-md"
@@ -187,4 +234,3 @@ const ProgramDetailsSection = () => {
 };
 
 export default ProgramDetailsSection;
-
