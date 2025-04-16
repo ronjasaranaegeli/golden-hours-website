@@ -44,9 +44,9 @@ const TimelineSection = () => {
             </ul>
           </div>
           
-          <div className="w-full h-96 md:h-[30rem] rounded-lg overflow-hidden shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
+          <div className="w-full h-[32rem] md:h-[36rem] rounded-lg overflow-hidden shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
             <div 
-              className="w-full h-full bg-cover bg-top"
+              className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url('/images/golden-hours-image-20.JPG')` }}
               aria-label="Fundament & Standortbestimmung"
             ></div>
@@ -124,9 +124,9 @@ const TimelineSection = () => {
             </ul>
           </div>
           
-          <div className="w-full h-96 md:h-[30rem] rounded-lg overflow-hidden shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
+          <div className="w-full h-[32rem] md:h-[36rem] rounded-lg overflow-hidden shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
             <div 
-              className="w-full h-full bg-cover bg-top"
+              className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url('/images/golden-hours-image-24.JPG')` }}
               aria-label="Vertiefung & Kernpraktiken"
             ></div>
@@ -183,9 +183,9 @@ const TimelineSection = () => {
             </ul>
           </div>
           
-          <div className="w-full h-96 md:h-[30rem] rounded-lg overflow-hidden shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
+          <div className="w-full h-[32rem] md:h-[36rem] rounded-lg overflow-hidden shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]">
             <div 
-              className="w-full h-full bg-cover bg-top"
+              className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url('/images/golden-hours-image-12.JPG')` }}
               aria-label="Integration & Verkörperung"
             ></div>
@@ -196,9 +196,45 @@ const TimelineSection = () => {
   ];
 
   return (
-    <section className="relative py-8 bg-white overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-white">
+      {/* Top right palm leaf */}
+      <div className="absolute top-12 right-0 overflow-hidden w-64 md:w-72 lg:w-96 z-0">
+        <img 
+          src="/images/palm-leaf-h-left.png" 
+          alt=""
+          className="w-[30rem] md:w-[34rem] lg:w-[40rem] h-auto opacity-5 pointer-events-none ml-auto"
+        />
+      </div>
+      
+      {/* Between Phase 1 and Phase 2 - left side */}
+      <div className="absolute top-[35%] left-0 overflow-hidden w-64 md:w-72 lg:w-96 z-0">
+        <img 
+          src="/images/palm-leaf-h-right.png" 
+          alt=""
+          className="w-[30rem] md:w-[34rem] lg:w-[40rem] h-auto opacity-5 pointer-events-none"
+        />
+      </div>
+      
+      {/* Near Phase 2 - right side */}
+      <div className="absolute top-[55%] right-8 overflow-hidden w-48 md:w-56 lg:w-64 z-0">
+        <img 
+          src="/images/palm-leaf-v-up-right.png" 
+          alt=""
+          className="w-[30rem] md:w-[34rem] lg:w-[40rem] h-auto opacity-5 pointer-events-none ml-auto"
+        />
+      </div>
+      
+      {/* Bottom left - near Phase 3 */}
+      <div className="absolute bottom-32 left-20 overflow-hidden w-64 md:w-72 lg:w-96 z-0">
+        <img 
+          src="/images/palm-leaf-h-right-bottom.png" 
+          alt=""
+          className="w-[30rem] md:w-[34rem] lg:w-[40rem] h-auto opacity-5 pointer-events-none"
+        />
+      </div>
+      
       <div className="container mx-auto">
-        <div className="reveal">
+        <div className="relative z-20">
           <Timeline data={timelineData} />
         </div>
       </div>
