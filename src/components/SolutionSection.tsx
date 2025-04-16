@@ -36,8 +36,8 @@ const SolutionSection = () => {
       ref={sectionRef}
     >
       <div className="container mx-auto px-6 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="relative lg:h-[700px] reveal overflow-hidden rounded-sm order-2 lg:order-1" ref={imageRef}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="relative lg:h-[700px] reveal overflow-hidden rounded-sm order-2 lg:order-1 lg:sticky lg:top-24" ref={imageRef}>
             <img 
               src="/images/golden-hours-image-2.JPG" 
               alt="Golden Hours Coaching - Transformative Reise" 
