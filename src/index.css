@@ -197,4 +197,19 @@ html {
   transform-origin: left;
 }
 
+/* Animation for the balance graphic */
+.animate-fade-in {
+  opacity: 1 !important;
+}
+
+/* SVG animations */
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 /* ... keep existing code (animations and other utility styles) */
