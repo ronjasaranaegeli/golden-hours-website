@@ -1,5 +1,7 @@
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import InfoBox from '@/components/ui/InfoBox';
 
 const WaitlistCTABanner = () => {
   const scrollToWaitlist = () => {

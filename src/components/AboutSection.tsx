@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { TooltipComponent } from './ui/TooltipComponent';
 
@@ -74,9 +75,12 @@ const AboutSection = () => {
                 Das war der Anfang meiner <TooltipComponent trigger="Transformation" content="Ein tiefgreifender Wandlungsprozess, der über oberflächliche Veränderungen hinausgeht und unser ganzes Sein umfasst" />: Ich kündigte, reiste, vertiefte mich in Yoga & Tanz, gründete mein eigenes Wirken mit Kursen, Workshops, meinem Podcast <a href="https://open.spotify.com/show/5UhLT3NQwHcN4ZRaFtrqRg" target="_blank" rel="noopener noreferrer" className="text-forest-600 hover:text-forest-700 font-medium transition-colors underline">{"\"Generation Om\""}</a>. Die Natur wurde mein Zuhause und Anker, mein Körper, mein Tempel und <TooltipComponent trigger="Kompass" content="Ein inneres Navigationssystem, das uns durch Intuition und Körperweisheit führt" />, die Liebe zum Leben, mein Glaube und grösster Lehrer.
               </p>
               
-              <p className="text-lg leading-relaxed">
-                Diese gelebte Erfahrung, die Höhen und Tiefen, ist das Herz und die Essenz von Golden Hours. Sie erlaubt mir, dich einfühlsam dabei zu unterstützen, deinen eigenen inneren Kompass wiederzufinden und zu aktivieren – und deiner Wahrheit zu folgen.
-              </p>
+              <div className="relative pl-6 py-4 pr-5 bg-[#F1F0FB] rounded-sm">
+                <div className="absolute top-0 left-0 h-full w-1.5 bg-golden-400"></div>
+                <p className="text-lg leading-relaxed italic text-forest-700">
+                  Diese gelebte Erfahrung, die Höhen und Tiefen, ist das Herz und die Essenz von Golden Hours. Sie erlaubt mir, dich einfühlsam dabei zu unterstützen, deinen eigenen inneren Kompass wiederzufinden und zu aktivieren – und deiner Wahrheit zu folgen.
+                </p>
+              </div>
             </div>
             
             {/* Video Placeholder with improved styling */}

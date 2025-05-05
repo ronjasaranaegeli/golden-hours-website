@@ -64,8 +64,9 @@ const WaitlistSection = () => {
               </div>
               
               <div className="mt-auto pt-12 pb-4 relative">
-                {/* Info box with cream background */}
-                <div className="p-6 rounded-lg bg-[#f9f6f0] border border-[#f2e8d0] mb-8 relative">
+                {/* Info box with new design */}
+                <div className="relative pl-6 py-4 pr-5 mb-8 bg-[#F1F0FB] rounded-sm">
+                  <div className="absolute top-0 left-0 h-full w-1.5 bg-golden-400"></div>
                   <p className="text-forest-700">
                     Starte den ersten Schritt zu deinem ausgeglichenen Leben – finde heraus, ob Golden Hours das richtige Coaching für dich ist.
                   </p>

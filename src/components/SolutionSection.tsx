@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { TooltipComponent } from '@/components/ui/TooltipComponent';
 import { Card } from '@/components/ui/card';
@@ -64,8 +65,10 @@ const SolutionSection = () => {
               </p>
             </div>
             
-            <div className="p-5 rounded-sm bg-forest-500/10 border-l-4 border-primary">
-              <p className="text-lg leading-relaxed italic font-serif">
+            {/* Quote box with new design */}
+            <div className="relative pl-6 py-4 pr-5 bg-[#F1F0FB] rounded-sm">
+              <div className="absolute top-0 left-0 h-full w-1.5 bg-golden-400"></div>
+              <p className="text-lg leading-relaxed italic font-serif text-forest-700">
                 "Ich schaffe einen sicheren, heiligen Raum, damit du deine innere Weisheit aktivierst und deiner Wahrheit folgst."
               </p>
             </div>
