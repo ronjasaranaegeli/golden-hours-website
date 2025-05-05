@@ -1,4 +1,5 @@
-import { Instagram, Podcast, Mail, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
+import { SiTiktok, SiLinktree, SiInstagram } from 'react-icons/si';
 const FooterSection = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -44,13 +45,10 @@ const FooterSection = () => {
             <h3 className="font-serif text-lg mb-4 text-forest-800">Rechtliches</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-forest-600 hover:text-primary transition-colors">Impressum</a>
+                <a href="/impressum" className="text-forest-600 hover:text-primary transition-colors">Impressum</a>
               </li>
               <li>
-                <a href="#" className="text-forest-600 hover:text-primary transition-colors">Datenschutz</a>
-              </li>
-              <li>
-                <a href="#" className="text-forest-600 hover:text-primary transition-colors">AGB</a>
+                <a href="/datenschutz" className="text-forest-600 hover:text-primary transition-colors">Datenschutz</a>
               </li>
             </ul>
           </div>
@@ -59,14 +57,14 @@ const FooterSection = () => {
           <div>
             <h3 className="font-serif text-lg mb-4 text-forest-800">Kontakt & Social</h3>
             <div className="flex space-x-4 mb-4">
-              <a href="#" className="text-forest-600 hover:text-primary transition-colors">
-                <Instagram size={20} />
+              <a href="https://www.instagram.com/ronjasaraa/profilecard/?igsh=c3hweG96cG5rMTRk" aria-label="Instagram" className="text-forest-600 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                <SiInstagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-forest-600 hover:text-primary transition-colors">
-                <Podcast size={20} />
+              <a href="https://www.tiktok.com/@ronjasaraa?_t=ZN-8w6Zl53Pmsw&_r=1" aria-label="TikTok" className="text-forest-600 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                <SiTiktok className="h-6 w-6" />
               </a>
-              <a href="mailto:kontakt@goldenhours.com" className="text-forest-600 hover:text-primary transition-colors">
-                <Mail size={20} />
+              <a href="https://linktr.ee/AllInOne.byRonja" aria-label="Linktree" className="text-forest-600 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                <SiLinktree className="h-6 w-6" />
               </a>
             </div>
             <p className="text-forest-600 text-sm">ronja@golden-hours.ch</p>

@@ -42,12 +42,12 @@ const WaitlistSection = () => {
       className="py-24 md:py-32 relative z-20" 
       ref={sectionRef}
     >
-      {/* Background image with overlay */}
+      {/* Jungle background image with overlay - same as BalanceGraphic */}
       <div className="absolute inset-0 z-0">
         <div 
           className="h-full w-full bg-cover bg-center bg-no-repeat" 
           style={{ 
-            backgroundImage: 'url("/images/golden-hours-image-16.JPG")',
+            backgroundImage: 'url("/images/jungle.webp")',
           }}
         >
           <div className="absolute inset-0 bg-black/60"></div>
