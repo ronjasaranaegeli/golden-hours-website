@@ -1,11 +1,9 @@
 
-import { useState, useEffect, useRef } from 'react';
-import WaitlistForm from './waitlist/WaitlistForm';
+import { useEffect, useRef } from 'react';
+import { Button } from '@/components/ui/button';
 import PricingDetails from './waitlist/PricingDetails';
-import ThankYouMessage from './waitlist/ThankYouMessage';
 
 const WaitlistSection = () => {
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -32,10 +30,6 @@ const WaitlistSection = () => {
     };
   }, []);
 
-  const handleFormSuccess = () => {
-    setFormSubmitted(true);
-  };
-
   return (
     <section 
       id="waitlist" 
@@ -58,24 +52,48 @@ const WaitlistSection = () => {
         <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-sm rounded-sm shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left Column: Form */}
-            <div className="p-8 md:p-12 reveal" ref={formRef}>
-              <h2 className="font-serif text-3xl md:text-4xl font-medium mb-8 heading-underline inline-block text-forest-800">
-                Sei bereit für deine Transformation
-              </h2>
+            <div className="p-8 md:p-12 reveal flex flex-col justify-between" ref={formRef}>
+              <div>
+                <h2 className="font-serif text-3xl md:text-4xl font-medium mb-6 heading-underline inline-block text-forest-800">
+                  Wähle dein Leben. Deine Wahrheit. Dein Sein.
+                </h2>
+                
+                <p className="text-lg mb-6 text-forest-600">
+                  Melde dich jetzt für die Warteliste an und erhalte als eine(r) der Ersten Zugang zum Golden Hours Coaching-Programm, das im Oktober 2025 startet.
+                </p>
+              </div>
               
-              <p className="text-lg mb-8 text-forest-600">
-                Melde dich jetzt für die Warteliste an und erhalte als eine(r) der Ersten Zugang zum Golden Hours Coaching-Programm, das im Oktober 2025 startet.
-              </p>
-              
-              {formSubmitted ? (
-                <ThankYouMessage />
-              ) : (
-                <WaitlistForm onSubmitSuccess={handleFormSuccess} />
-              )}
+              <div className="mt-auto pt-12 pb-4 relative">
+                {/* Info box with cream background */}
+                <div className="p-6 rounded-lg bg-[#f9f6f0] border border-[#f2e8d0] mb-8 relative">
+                  <p className="text-forest-700">
+                    Starte den ersten Schritt zu deinem ausgeglichenen Leben – finde heraus, ob Golden Hours das richtige Coaching für dich ist.
+                  </p>
+                </div>
+                
+                {/* Button styled to match the image */}
+                <Button 
+                  asChild
+                  className="w-auto px-8 py-3 bg-[#c7964c] hover:bg-[#b3873d] text-white font-medium" 
+                  size="default"
+                >
+                  <a
+                    href="https://form.jotform.com/251244295429056"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center"
+                  >
+                    <span>Passt Golden Hours? Finde es heraus</span>
+                    <svg className="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                </Button>
+              </div>
             </div>
             
             {/* Right Column: Pricing Details */}
-            <div className="reveal bg-golden-50 flex items-center justify-center p-8 md:p-12" ref={imageRef}>
+            <div className="reveal bg-golden-50 flex items-center justify-center p-8 md:p-12 border-l border-golden-100" ref={imageRef}>
               <PricingDetails />
             </div>
           </div>
