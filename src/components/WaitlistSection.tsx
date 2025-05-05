@@ -1,7 +1,7 @@
-
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import PricingDetails from './waitlist/PricingDetails';
+import InfoBox from './ui/InfoBox';
 
 const WaitlistSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -65,12 +65,11 @@ const WaitlistSection = () => {
               
               <div className="mt-auto pt-12 pb-4 relative">
                 {/* Info box with new design */}
-                <div className="relative pl-6 py-4 pr-5 mb-8 bg-[#F1F0FB] rounded-sm">
-                  <div className="absolute top-0 left-0 h-full w-1.5 bg-golden-400"></div>
+                <InfoBox className="mb-8">
                   <p className="text-forest-700">
                     Starte den ersten Schritt zu deinem ausgeglichenen Leben – finde heraus, ob Golden Hours das richtige Coaching für dich ist.
                   </p>
-                </div>
+                </InfoBox>
                 
                 {/* Button styled to match the image */}
                 <Button 

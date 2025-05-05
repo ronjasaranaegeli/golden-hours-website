@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Laptop, MapPin, Check } from 'lucide-react';
+import InfoBox from '../ui/InfoBox';
 
 const PricingDetails = () => {
   return (
@@ -69,10 +70,9 @@ const PricingDetails = () => {
           </li>
         </ul>
         
-        <div className="relative pl-6 py-4 pr-5 bg-[#F1F0FB] rounded-sm">
-          <div className="absolute top-0 left-0 h-full w-1.5 bg-golden-400"></div>
-          <p className="text-forest-700 text-sm">Begrenzte Teilnehmerzahl: Nur 6 Plätze pro Quartal verfügbar.</p>
-        </div>
+        <InfoBox>
+          <p className="text-sm">Begrenzte Teilnehmerzahl: Nur 6 Plätze pro Quartal verfügbar.</p>
+        </InfoBox>
       </div>
     </div>
   );
