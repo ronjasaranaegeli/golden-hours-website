@@ -49,21 +49,28 @@ const ImageMergeAnimation = () => {
     }
 
     const handleScroll = () => {
-      const currentPosition = window.scrollY;
-      setScrollPosition(currentPosition);
+      // Use requestAnimationFrame for smoother performance, especially on iOS
+      window.requestAnimationFrame(() => {
+        const currentPosition = window.scrollY;
+        setScrollPosition(currentPosition);
+      });
     };
 
     // Set initial scroll position to trigger animation
     setScrollPosition(window.scrollY);
 
-    window.addEventListener("scroll", handleScroll);
+    // Use passive:true for better scroll performance on mobile
+    window.addEventListener("scroll", handleScroll, { passive: true });
     
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll, { passive: true });
   }, [isMobile]);
 
   // Calculate image position based on scroll
   // Lower value = more sensitivity to scroll
-  const scrollFactor = 3;
+  // Use a more sensitive scrollFactor for iOS Safari
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const scrollFactor = isIOS && isSafari ? 1.5 : 3; // More sensitive for iOS Safari
   
   // Left image slides in from left, right image slides in from right
   // Maximum slide is 100% (completely off-screen)
@@ -108,8 +115,10 @@ const ImageMergeAnimation = () => {
             backgroundSize: 'cover',
             width: '50%',
             transform: `translateX(-${slidePercentage}%)`,
-            transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
-            zIndex: 5
+            transition: isIOS && isSafari ? 'transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.5s ease-out' : 'transform 0.5s ease-out, opacity 0.5s ease-out',
+            zIndex: 5,
+            WebkitTransform: `translateX(-${slidePercentage}%)`, // Safari iOS hardware acceleration
+            WebkitBackfaceVisibility: 'hidden', // Safari iOS optimization
           }}
         />
       )}
@@ -124,8 +133,10 @@ const ImageMergeAnimation = () => {
             backgroundSize: 'cover',
             width: '50%',
             transform: `translateX(${slidePercentage}%)`,
-            transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
-            zIndex: 5
+            transition: isIOS && isSafari ? 'transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.5s ease-out' : 'transform 0.5s ease-out, opacity 0.5s ease-out',
+            zIndex: 5,
+            WebkitTransform: `translateX(${slidePercentage}%)`, // Safari iOS hardware acceleration
+            WebkitBackfaceVisibility: 'hidden', // Safari iOS optimization
           }}
         />
       )}
