@@ -7,6 +7,9 @@ import TransformationSection from '@/components/TransformationSection';
 import TimelineSection from '@/components/TimelineSection';
 import AboutSection from '@/components/AboutSection';
 import ProgramDetailsSection from '@/components/ProgramDetailsSection';
+import InvestmentPanel from '@/components/InvestmentPanel';
+import WaitlistCTABanner from '@/components/WaitlistCTABanner';
+import StickyWaitlistBanner from '@/components/StickyWaitlistBanner';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import WaitlistSection from '@/components/WaitlistSection';
 import FooterSection from '@/components/FooterSection';
@@ -157,7 +160,10 @@ const Index = () => {
         <TimelineSection />
         <AboutSection />
         <ProgramDetailsSection />
+        <InvestmentPanel />
+        <WaitlistCTABanner />
         <TestimonialsSection />
+        <StickyWaitlistBanner />
         <WaitlistSection />
         <FooterSection />
       </main>
