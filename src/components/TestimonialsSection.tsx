@@ -29,7 +29,7 @@ const TestimonialsSection = () => {
 
   // Testimonial videos data with images and video URLs
   const testimonials = [
-    { name: "Marie S.", role: "Unternehmerin", image: "/images/golden-hours-image-4.JPG", videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+    { name: "Marie S.", role: "Unternehmerin", image: "/images/golden-hours-image-4.JPG", videoUrl: "https://www.youtube.com/embed/bgYzcPxxjfc" }, // Aktualisierter Link
     { name: "Thomas K.", role: "Lehrer", image: "/images/golden-hours-image-5.JPG", videoUrl: "https://www.youtube.com/embed/rokGy0huYEA" },
     { name: "Laura P.", role: "Marketing Managerin", image: "/images/golden-hours-image-6.JPG", videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3" }, // Ersetze VIDEO_ID_3 mit einer echten YouTube Video ID
     { name: "David M.", role: "Coach", image: "/images/golden-hours-image-7.JPG", videoUrl: "https://www.youtube.com/embed/VIDEO_ID_4" }, // Ersetze VIDEO_ID_4 mit einer echten YouTube Video ID
@@ -134,3 +134,4 @@ const TestimonialsSection = () => {
 };
 
 export default TestimonialsSection;
+
