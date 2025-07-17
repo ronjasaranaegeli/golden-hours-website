@@ -20,9 +20,7 @@ const ImageMergeAnimation = () => {
     } else {
       // Update right image URL for mobile
       setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
-      setRightImageUrl(isMobile 
-        ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png' 
-        : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
+      setRightImageUrl('/src/assets/ronja-full-head-portrait.jpg');
       
       // Preload images
       const leftHalf = new Image();
@@ -30,9 +28,7 @@ const ImageMergeAnimation = () => {
       const background = new Image();
       
       leftHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png';
-      rightHalf.src = isMobile 
-        ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png'
-        : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png';
+      rightHalf.src = '/src/assets/ronja-full-head-portrait.jpg';
       background.src = '/images/golden-hours-image-1.JPG';
       
       let loadedCount = 0;
@@ -60,15 +56,15 @@ const ImageMergeAnimation = () => {
     setScrollPosition(window.scrollY);
 
     // Use passive:true for better scroll performance on mobile
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, true);
     
-    return () => window.removeEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll, true);
   }, [isMobile]);
 
   // Calculate image position based on scroll
   // Lower value = more sensitivity to scroll
   // Use a more sensitive scrollFactor for iOS Safari
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   const scrollFactor = isIOS && isSafari ? 1.5 : 3; // More sensitive for iOS Safari
   
