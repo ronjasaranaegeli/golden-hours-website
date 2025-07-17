@@ -9,20 +9,13 @@ const ImageMergeAnimation = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Check if the split images are already in localStorage
-    const storedLeftImg = localStorage.getItem('leftHalfImage');
-    const storedRightImg = localStorage.getItem('rightHalfImage');
+    // Clear any stored images to force new image load
+    localStorage.removeItem('leftHalfImage');
+    localStorage.removeItem('rightHalfImage');
     
-    if (storedLeftImg && storedRightImg) {
-      setLeftImageUrl(storedLeftImg);
-      setRightImageUrl(storedRightImg);
-      setIsLoaded(true);
-    } else {
-      // Update right image URL for mobile
-      setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
-      setRightImageUrl(isMobile 
-        ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png' 
-        : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png');
+    // Update right image URL for mobile - using new image with complete head
+    setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
+    setRightImageUrl('/src/assets/ronja-complete-head.jpg');
       
       // Preload images
       const leftHalf = new Image();
@@ -30,9 +23,7 @@ const ImageMergeAnimation = () => {
       const background = new Image();
       
       leftHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png';
-      rightHalf.src = isMobile 
-        ? '/lovable-uploads/9f10dae5-5e3c-4c28-b6ac-8639ac370cdb.png'
-        : '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-right.png';
+      rightHalf.src = '/src/assets/ronja-complete-head.jpg';
       background.src = '/images/golden-hours-image-1.JPG';
       
       let loadedCount = 0;
@@ -46,7 +37,6 @@ const ImageMergeAnimation = () => {
       leftHalf.onload = checkAllLoaded;
       rightHalf.onload = checkAllLoaded;
       background.onload = checkAllLoaded;
-    }
 
     const handleScroll = () => {
       // Use requestAnimationFrame for smoother performance, especially on iOS
@@ -60,15 +50,15 @@ const ImageMergeAnimation = () => {
     setScrollPosition(window.scrollY);
 
     // Use passive:true for better scroll performance on mobile
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true } as AddEventListenerOptions);
     
-    return () => window.removeEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll, { passive: true } as AddEventListenerOptions);
   }, [isMobile]);
 
   // Calculate image position based on scroll
   // Lower value = more sensitivity to scroll
   // Use a more sensitive scrollFactor for iOS Safari
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   const scrollFactor = isIOS && isSafari ? 1.5 : 3; // More sensitive for iOS Safari
   
