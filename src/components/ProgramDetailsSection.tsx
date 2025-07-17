@@ -135,7 +135,7 @@ const ProgramDetailsSection = () => {
               <Calendar className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl font-medium mb-2">Limitierte Plätze</h3>
-                <p className="text-forest-700">Nur 6 Plätze verfügbar, Start im Oktober 2025</p>
+                <p className="text-forest-700">Nur 6 Plätze verfügbar, Start im Januar 2026</p>
               </div>
             </div>
           </div>

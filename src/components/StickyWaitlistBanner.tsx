@@ -55,7 +55,7 @@ const StickyWaitlistBanner = () => {
               Auf die Warteliste – sichere dir deinen Platz
             </h3>
             <p className="text-forest-600 leading-snug text-center sm:text-left">
-              Nächster Start: Oktober 2025 – nur 6 Plätze
+              Nächster Start: Januar 2026 – nur 6 Plätze
             </p>
           </div>
           <Button 

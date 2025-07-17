@@ -76,7 +76,7 @@ const Datenschutz: FC = () => {
       <main className="container mx-auto px-4 md:px-8 py-20">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-serif text-3xl md:text-4xl mb-2 text-forest-800">Datenschutzerklärung</h1>
-          <p className="text-sm opacity-70 mb-10">Version 1.0, Stand 3.&nbsp;Mai 2025</p>
+          <p className="text-sm opacity-70 mb-10">Version 1.0, Stand 01.01.2026</p>
 
           <section className="mb-8">
             <h2 className="font-serif text-2xl mb-3 text-forest-800">1. Verantwortliche Stelle</h2>
@@ -131,7 +131,7 @@ const Datenschutz: FC = () => {
             <p className="text-forest-600">Die aktuelle Version wird stets auf dieser Seite veröffentlicht.</p>
           </section>
 
-          <p className="text-sm opacity-70 mt-10">Stand: 3.&nbsp;Mai 2025 (Europe/Zurich)</p>
+          <p className="text-sm opacity-70 mt-10">Stand: 01.01.2026 (Europe/Zurich)</p>
         </div>
       </main>
       

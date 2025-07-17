@@ -60,7 +60,7 @@ const WaitlistSection = () => {
                 </h2>
                 
                 <p className="text-lg mb-6 text-forest-600">
-                  Melde dich jetzt für die Warteliste an und erhalte als eine(r) der Ersten Zugang zum Golden Hours Coaching-Programm, das im Oktober 2025 startet.
+                  Melde dich jetzt für die Warteliste an und erhalte als eine(r) der Ersten Zugang zum Golden Hours Coaching-Programm, das im Januar 2026 startet.
                 </p>
               </div>
               

@@ -104,7 +104,7 @@ const Impressum: FC = () => {
             <p className="text-forest-600">Unsere Datenschutzerklärung finden Sie unter <a href="/datenschutz" className="text-primary hover:underline">Datenschutz</a>.</p>
           </section>
 
-          <p className="text-sm opacity-70 mt-10">Stand: 3.&nbsp;Mai 2025 (Europe/Zurich)</p>
+          <p className="text-sm opacity-70 mt-10">Stand: 01.01.2026 (Europe/Zurich)</p>
         </div>
       </main>
       
