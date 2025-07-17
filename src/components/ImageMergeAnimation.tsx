@@ -9,18 +9,13 @@ const ImageMergeAnimation = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Check if the split images are already in localStorage
-    const storedLeftImg = localStorage.getItem('leftHalfImage');
-    const storedRightImg = localStorage.getItem('rightHalfImage');
+    // Clear localStorage to force using new images
+    localStorage.removeItem('leftHalfImage');
+    localStorage.removeItem('rightHalfImage');
     
-    if (storedLeftImg && storedRightImg) {
-      setLeftImageUrl(storedLeftImg);
-      setRightImageUrl(storedRightImg);
-      setIsLoaded(true);
-    } else {
-      // Update right image URL for mobile
-      setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
-      setRightImageUrl('/src/assets/ronja-full-head-portrait.jpg');
+    // Set the new image URLs directly
+    setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
+    setRightImageUrl('/src/assets/ronja-full-head-portrait.jpg');
       
       // Preload images
       const leftHalf = new Image();
@@ -42,7 +37,6 @@ const ImageMergeAnimation = () => {
       leftHalf.onload = checkAllLoaded;
       rightHalf.onload = checkAllLoaded;
       background.onload = checkAllLoaded;
-    }
 
     const handleScroll = () => {
       // Use requestAnimationFrame for smoother performance, especially on iOS
