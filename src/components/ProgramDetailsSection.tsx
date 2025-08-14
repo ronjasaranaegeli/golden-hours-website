@@ -57,7 +57,7 @@ const ProgramDetailsSection = () => {
           </h2>
           
           <p className="text-lg md:text-xl leading-relaxed mb-0 max-w-3xl mx-auto">
-            Das 3-monatige Golden Hours Coaching-Programm ist für Menschen, die bereit sind, 
+            Die IC•You-Journey ist für Menschen, die bereit sind, 
             den nächsten Schritt in ihrer persönlichen Transformation zu gehen.
           </p>
         </div>
@@ -135,7 +135,7 @@ const ProgramDetailsSection = () => {
               <Calendar className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl font-medium mb-2">Limitierte Plätze</h3>
-                <p className="text-forest-700">Nur 6 Plätze verfügbar, Start im Januar 2026</p>
+                <p className="text-forest-700">Nächste IC•You-Journey - Start Januar 2026 (3/3 Spots noch verfügbar)</p>
               </div>
             </div>
           </div>

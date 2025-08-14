@@ -90,7 +90,7 @@ const Navbar = () => {
               variant="cream"
               className="hover:scale-105 transform transition-all duration-300 shadow-md hover:shadow-lg btn-shine"
             >
-              Auf die Warteliste
+              IC•You Check In
             </Button>
           </li>
         </ul>
@@ -145,7 +145,7 @@ const Navbar = () => {
                 variant="cream"
                 className="w-full transition-colors shadow-sm btn-shine"
               >
-                Auf die Warteliste
+                IC•You Check In
               </Button>
             </li>
           </ul>

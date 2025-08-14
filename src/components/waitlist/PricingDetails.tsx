@@ -42,7 +42,7 @@ const PricingDetails = () => {
       <div className="w-full h-px bg-golden-200 my-8"></div>
       
       <div className="text-left">
-        <p className="font-medium text-forest-800 mb-4">Das Programm umfasst:</p>
+        <p className="font-medium text-forest-800 mb-4">Die IC•You-Journey umfasst:</p>
         <ul className="space-y-3 mb-8">
           <li className="flex items-start gap-2">
             <Check className="h-4 w-4 shrink-0 text-amber-600" />
@@ -62,7 +62,7 @@ const PricingDetails = () => {
           </li>
           <li className="flex items-start gap-2">
             <Check className="h-4 w-4 shrink-0 text-amber-600" />
-            <span>Exklusiver Zugang zur Golden Hours App</span>
+            <span>Exklusives Angebot im Rahmen von maximal 3 verfügbaren Spots</span>
           </li>
           <li className="flex items-start gap-2">
             <Check className="h-4 w-4 shrink-0 text-amber-600" />
@@ -71,7 +71,7 @@ const PricingDetails = () => {
         </ul>
         
         <InfoBox>
-          <p className="text-sm">Begrenzte Teilnehmerzahl: Nur 6 Plätze pro Quartal verfügbar.</p>
+          <p className="text-sm">Begrenzte Teilnehmerzahl: Nur 5 Plätze pro Quartal verfügbar.</p>
         </InfoBox>
       </div>
     </div>

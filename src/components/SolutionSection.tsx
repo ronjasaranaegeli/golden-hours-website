@@ -46,7 +46,7 @@ const SolutionSection = () => {
               className="h-full w-full object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-              <p className="font-serif text-xl text-white mb-1">Golden Hours</p>
+              <p className="font-serif text-xl text-white mb-1">IC•You-Journey</p>
               <p className="text-base text-white/90">Dein Weg zu tiefer Bewusstheit und innerem Frieden</p>
             </div>
           </div>
@@ -54,7 +54,7 @@ const SolutionSection = () => {
           <div className="reveal space-y-8 order-1 lg:order-2" ref={contentRef}>
             <div className="space-y-4">
               <h2 className="font-serif text-3xl md:text-4xl font-medium heading-underline inline-block">
-                Golden Hours
+                IC•You-Journey
               </h2>
               
               <h3 className="text-xl font-serif text-forest-800">
@@ -69,7 +69,7 @@ const SolutionSection = () => {
             {/* Quote box with new design */}
             <InfoBox isQuote={true}>
               <p className="text-lg leading-relaxed">
-                "Ich schaffe einen sicheren, heiligen Raum, damit du deine innere Weisheit aktivierst und deiner Wahrheit folgst."
+                "Ich schaffe einen sicheren und geschützten Raum, damit du deine innere Weisheit aktivierst und deiner Wahrheit folgst."
               </p>
             </InfoBox>
             
@@ -97,7 +97,7 @@ const SolutionSection = () => {
 
                 <Card className="p-4 transition-all duration-300 hover:shadow-md bg-white/80">
                   <h5 className="text-lg font-medium mb-2 font-serif">Täglicher Support</h5>
-                  <p className="text-forest-700">via Circle App (Mo-Fr)</p>
+                  <p className="text-forest-700">via WhatsApp (Mo-Fr)</p>
                 </Card>
 
                 <Card className="p-4 transition-all duration-300 hover:shadow-md bg-white/80">

@@ -19,10 +19,10 @@ const WaitlistCTABanner = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between">
               <div className="mb-4 sm:mb-0">
                 <h3 className="font-serif text-xl sm:text-2xl text-forest-800 font-medium leading-tight text-center sm:text-left">
-                  Auf die Warteliste – sichere dir deinen Platz
+                  IC•You Check In – sichere dir deinen Platz
                 </h3>
                 <p className="text-forest-600 leading-snug text-center sm:text-left">
-                  Nächster Start: Januar 2026 – nur 6 Plätze
+                  Nächster Start: Januar 2026 – nur 5 Plätze
                 </p>
               </div>
               <Button 
@@ -30,7 +30,7 @@ const WaitlistCTABanner = () => {
                 className="w-full sm:w-auto"
                 size="lg"
               >
-                Auf die Warteliste
+                IC•You Check In
                 <ArrowRight className="ml-1" />
               </Button>
             </div>

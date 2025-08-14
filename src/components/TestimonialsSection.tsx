@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Play } from 'lucide-react';
+import YouTube from 'react-youtube';
 
 const TestimonialsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -25,14 +26,25 @@ const TestimonialsSection = () => {
     };
   }, []);
 
-  // Testimonial videos data with images
+  // Testimonial videos data with YouTube URLs
   const testimonials = [
-    { name: "Marie S.", role: "Unternehmerin", image: "/images/golden-hours-image-4.JPG" },
-    { name: "Thomas K.", role: "Lehrer", image: "/images/golden-hours-image-5.JPG" },
-    { name: "Laura P.", role: "Marketing Managerin", image: "/images/golden-hours-image-6.JPG" },
-    { name: "David M.", role: "Coach", image: "/images/golden-hours-image-7.JPG" },
-    { name: "Sarah L.", role: "Kreative", image: "/images/golden-hours-image-8.JPG" },
+    { name: "Anja", youtubeId: "AG5SY8gTLG8" },
+    { name: "Katarina", youtubeId: "bgYzcPxxjfc" },
+    { name: "Ludmilla", youtubeId: "Uqn5-Vul_Hw" },
+    { name: "Momo", youtubeId: "ubsW0lCEUz4" },
   ];
+
+  // YouTube player options
+  const opts = {
+    height: '100%',
+    width: '100%',
+    playerVars: {
+      autoplay: 0,
+      controls: 1,
+      modestbranding: 1,
+      rel: 0,
+    },
+  };
 
   return (
     <section 
@@ -47,7 +59,7 @@ const TestimonialsSection = () => {
           </h2>
           
           <p className="text-lg leading-relaxed max-w-3xl mx-auto">
-            Höre, wie Golden Hours das Leben dieser Menschen verändert hat
+            Höre, wie die IC•You-Journey das Leben dieser Menschen verändert hat
           </p>
         </div>
         
@@ -55,21 +67,13 @@ const TestimonialsSection = () => {
         <div className="mb-16">
           <div className="aspect-video max-w-4xl mx-auto bg-white rounded-xl overflow-hidden shadow-md border border-golden-100">
             {activeVideo !== null ? (
-              <div className="h-full w-full flex items-center justify-center bg-forest-50 relative">
-                <img 
-                  src={testimonials[activeVideo].image} 
-                  alt={`Testimonial von ${testimonials[activeVideo].name}`}
-                  className="h-full w-full object-cover opacity-20"
+              <div className="h-full w-full">
+                <YouTube
+                  videoId={testimonials[activeVideo].youtubeId}
+                  opts={opts}
+                  className="w-full h-full"
+                  iframeClassName="w-full h-full rounded-xl"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center border border-golden-200 mb-4 mx-auto cursor-pointer hover:bg-white transition-colors duration-300">
-                      <Play className="w-8 h-8 text-forest-800 ml-1" />
-                    </div>
-                    <p className="text-forest-800 font-serif text-2xl mb-2">{testimonials[activeVideo].name}</p>
-                    <p className="text-forest-600">{testimonials[activeVideo].role}</p>
-                  </div>
-                </div>
               </div>
             ) : (
               <div className="h-full w-full flex items-center justify-center bg-forest-50">
@@ -80,20 +84,24 @@ const TestimonialsSection = () => {
         </div>
         
         {/* Testimonial Thumbnails */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className={`cursor-pointer transition-all duration-300 reveal ${activeVideo === index ? 'scale-105' : 'hover:scale-105'}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`cursor-pointer transition-all duration-300 ${activeVideo === index ? 'scale-105' : 'hover:scale-105'}`}
               onClick={() => setActiveVideo(index)}
             >
               <div className={`aspect-video bg-white rounded-xl mb-3 overflow-hidden shadow-sm ${activeVideo === index ? 'ring-2 ring-primary' : 'border border-golden-100'}`}>
                 <div className="h-full w-full relative">
                   <img 
-                    src={testimonial.image} 
-                    alt={`Thumbnail von ${testimonial.name}`}
+                    src={`https://img.youtube.com/vi/${testimonial.youtubeId}/maxresdefault.jpg`}
+                    alt={`Testimonial von ${testimonial.name}`}
                     className="h-full w-full object-cover"
+                    onError={(e) => {
+                      // Fallback to medium resolution if maxresdefault fails
+                      e.currentTarget.src = `https://img.youtube.com/vi/${testimonial.youtubeId}/mqdefault.jpg`;
+                    }}
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-300 hover:bg-black/30">
                     <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center border border-golden-200">
@@ -103,9 +111,9 @@ const TestimonialsSection = () => {
                 </div>
               </div>
               <h3 className="font-medium text-center font-serif">{testimonial.name}</h3>
-              <p className="text-sm text-center text-forest-600">{testimonial.role}</p>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>

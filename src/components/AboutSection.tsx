@@ -83,18 +83,6 @@ const AboutSection = () => {
               </InfoBox>
             </div>
             
-            {/* Video Placeholder with improved styling */}
-            <div className="mt-10 bg-white rounded-xl shadow-sm border border-golden-100 overflow-hidden">
-              <div className="aspect-video bg-forest-50 flex items-center justify-center relative">
-                <div className="absolute inset-0 bg-black/5"></div>
-                <div className="z-10 flex flex-col items-center">
-                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center border border-golden-200 mb-4 cursor-pointer hover:bg-white transition-colors duration-300">
-                    <div className="w-0 h-0 border-y-8 border-y-transparent border-l-10 border-l-forest-800 ml-1"></div>
-                  </div>
-                  <p className="text-forest-800 font-medium">Persönliche Vorstellung (1-2 Min)</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

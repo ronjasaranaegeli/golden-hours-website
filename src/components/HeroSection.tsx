@@ -93,7 +93,7 @@ const HeroSection = () => {
             variant="cream"
             className="mt-2 px-4 sm:px-6 py-3 sm:py-4 text-sm btn-shine"
           >
-            Ich will Veränderung
+            Golden Hours IC•You-Journey
           </Button>
         </div>
       </div>
