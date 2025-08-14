@@ -18,17 +18,17 @@ const ImageMergeAnimation = () => {
       setRightImageUrl(storedRightImg);
       setIsLoaded(true);
     } else {
-      // Update right image URL for mobile
-      setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png');
-      setRightImageUrl('/src/assets/ronja-full-head-portrait.jpg');
+      // Use correct image paths for the door animation
+      setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png');
+      setRightImageUrl('/images/golden-hours-image-5-hochformat.JPG');
       
       // Preload images
       const leftHalf = new Image();
       const rightHalf = new Image();
       const background = new Image();
       
-      leftHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7-left.png';
-      rightHalf.src = '/src/assets/ronja-full-head-portrait.jpg';
+      leftHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png';
+      rightHalf.src = '/images/golden-hours-image-5-hochformat.JPG';
       background.src = '/images/golden-hours-image-1.JPG';
       
       let loadedCount = 0;
@@ -56,9 +56,9 @@ const ImageMergeAnimation = () => {
     setScrollPosition(window.scrollY);
 
     // Use passive:true for better scroll performance on mobile
-    window.addEventListener("scroll", handleScroll, true);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     
-    return () => window.removeEventListener("scroll", handleScroll, true);
+    return () => window.removeEventListener("scroll", handleScroll, { passive: true });
   }, [isMobile]);
 
   // Calculate image position based on scroll
@@ -110,11 +110,11 @@ const ImageMergeAnimation = () => {
             backgroundPosition: isMobile ? '65% center' : 'right center', 
             backgroundSize: 'cover',
             width: '50%',
-            transform: `translateX(-${slidePercentage}%)`,
+            transform: `translate3d(-${slidePercentage}%, 0, 0)`,
             transition: isIOS && isSafari ? 'transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.5s ease-out' : 'transform 0.5s ease-out, opacity 0.5s ease-out',
             zIndex: 5,
-            WebkitTransform: `translateX(-${slidePercentage}%)`, // Safari iOS hardware acceleration
-            WebkitBackfaceVisibility: 'hidden', // Safari iOS optimization
+            willChange: 'transform',
+            backfaceVisibility: 'hidden'
           }}
         />
       )}
@@ -128,11 +128,11 @@ const ImageMergeAnimation = () => {
             backgroundPosition: isMobile ? 'center center' : 'left center', // Centered for mobile
             backgroundSize: 'cover',
             width: '50%',
-            transform: `translateX(${slidePercentage}%)`,
+            transform: `translate3d(${slidePercentage}%, 0, 0)`,
             transition: isIOS && isSafari ? 'transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.5s ease-out' : 'transform 0.5s ease-out, opacity 0.5s ease-out',
             zIndex: 5,
-            WebkitTransform: `translateX(${slidePercentage}%)`, // Safari iOS hardware acceleration
-            WebkitBackfaceVisibility: 'hidden', // Safari iOS optimization
+            willChange: 'transform',
+            backfaceVisibility: 'hidden'
           }}
         />
       )}
