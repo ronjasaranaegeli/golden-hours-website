@@ -5,7 +5,7 @@ import YouTube from 'react-youtube';
 const TestimonialsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const [activeVideo, setActiveVideo] = useState<number | null>(null);
+  const [activeVideo, setActiveVideo] = useState<number | null>(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

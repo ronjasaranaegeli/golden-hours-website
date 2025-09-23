@@ -55,16 +55,16 @@ const ProgramDetailsSection = () => {
               <Clock className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl font-medium mb-2">12 Wochen Transformation</h3>
-                <p className="text-forest-700">Intensives 3-monatiges Online-Coaching mit wöchentlichen 120-minütigen 1:1 Sessions (insgesamt 12 Sessions)</p>
+                <p className="text-forest-700">Intensives 12-Wochen Online-Coaching mit wöchentlichen 120-min 1:1 Sessions (12x)</p>
               </div>
             </div>
             
-            {/* Feature 2: Exklusives Netzwerk */}
+            {/* Feature 2: Zugang zum Golden Hours Netzwerk */}
             <div className="flex items-start">
               <Users className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-serif text-xl font-medium mb-2">Exklusives Netzwerk</h3>
-                <p className="text-forest-700">Zugang zur Golden Hours Community mit Gleichgesinnten auf ähnlichem Weg</p>
+                <h3 className="font-serif text-xl font-medium mb-2">Zugang zum Golden Hours Netzwerk</h3>
+                <p className="text-forest-700">20% Rabatt auf alle weiteren Golden Hours Events (Workshops, Retreats etc.)</p>
               </div>
             </div>
             

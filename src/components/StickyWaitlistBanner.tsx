@@ -55,7 +55,7 @@ const StickyWaitlistBanner = () => {
               1:1 Deep Dive Check-in - sichere dir deinen Platz
             </h3>
             <p className="text-forest-600 leading-snug text-center sm:text-left">
-              Nächster Start: Januar 2026 - nur 5 Plätze
+              Anmeldung geöffnet 02.11.25 – 01.02.26
             </p>
           </div>
           <Button 
