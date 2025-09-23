@@ -51,7 +51,7 @@ Danach bleiben die Türen geschlossen – und meine volle Präsenz gilt den Mens
               <div className="mt-auto pt-12 pb-4 relative">
                 {/* Info box with new design */}
                 <InfoBox className="mb-8">
-                  <p className="text-forest-700">Danach bleiben die Türen geschlossen – und meine volle Präsenz gilt den Menschen, die in diesem Zeitfenster ihre Reise begonnen haben.Starte den ersten Schritt zu deinem ausgeglichenen Leben – finde heraus, ob Golden Hours das richtige Coaching für dich ist.</p>
+                  <p className="text-forest-700">Die beste Investition ist die in dich selbst. Du hast nur einen Geist und einen Körper, und die müssen dein ganzes Leben lang halten - Warren Buffet</p>
                 </InfoBox>
                 
                 {/* Button styled to match the image */}
