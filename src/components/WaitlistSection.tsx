@@ -42,17 +42,19 @@ const WaitlistSection = () => {
               <div>
                 <h2 className="font-serif text-3xl md:text-4xl font-medium mb-6 heading-underline inline-block text-forest-800">Du siehst Dich. Du erinnerst Dich. Du lebst Dich.</h2>
                 
-                <p className="text-lg mb-6 text-forest-600">
-                  Mache den IC•You Check und sichere dir einen von 3 exklusiven IC•You Coachee Spots.
-                </p>
+                <p className="text-lg mb-6 text-forest-600">Die Räume für den 1:1 Deep Dive sind vom 11.02.2025 bis zum 02.01.2026 für dich geöffnet.
+
+
+Wenn du dich in dieser Zeit für deinen Platz entscheidest, darfst du in einen geschützten Raum voller Transformation und Wachstum eintreten. 
+
+
+Danach bleiben die Türen geschlossen – und meine volle Präsenz gilt den Menschen, die in diesem Zeitfenster ihre Reise begonnen haben.</p>
               </div>
               
               <div className="mt-auto pt-12 pb-4 relative">
                 {/* Info box with new design */}
                 <InfoBox className="mb-8">
-                  <p className="text-forest-700">
-                    Starte den ersten Schritt zu deinem ausgeglichenen Leben – finde heraus, ob Golden Hours das richtige Coaching für dich ist.
-                  </p>
+                  <p className="text-forest-700">Danach bleiben die Türen geschlossen – und meine volle Präsenz gilt den Menschen, die in diesem Zeitfenster ihre Reise begonnen haben.Starte den ersten Schritt zu deinem ausgeglichenen Leben – finde heraus, ob Golden Hours das richtige Coaching für dich ist.</p>
                 </InfoBox>
                 
                 {/* Button styled to match the image */}
