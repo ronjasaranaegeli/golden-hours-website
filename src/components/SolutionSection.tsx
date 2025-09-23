@@ -58,7 +58,7 @@ const SolutionSection = () => {
               </h3>
               
               <p className="text-lg leading-relaxed">
-                In dem du dein Bewusstsein erweiterst und daraus dich persönlich entwickelst.
+                In dem du dein Bewusstsein erweiterst und dich daraus persönlich entwickelst.
               </p>
             </div>
             
@@ -76,14 +76,33 @@ const SolutionSection = () => {
                 <Card className="p-4 transition-all duration-300 hover:shadow-md bg-white/80">
                   <h5 className="text-lg font-medium mb-2 font-serif">Ganzheitliche Sessions</h5>
                   <p className="text-forest-700">
-                    Yoga, Meditation, Selbsthypnose,
-                    <span className="inline-block ml-1">
+                    <TooltipComponent
+                      trigger="Yoga"
+                      content="Eine jahrtausendealte Praxis aus Bewegung, Atem und innerer Ausrichtung, die Körper, Geist und Herz in Einklang bringt."
+                    />
+                    ,{' '}
+                    <TooltipComponent
+                      trigger="Meditation"
+                      content="Ein bewusster Raum stiller Präsenz, der dein Nervensystem reguliert und innere Klarheit stärkt."
+                    />
+                    ,{' '}
+                    <TooltipComponent
+                      trigger="Selbsthypnose"
+                      content="Ein Zustand tiefer Entspannung, in dem du dein Unterbewusstsein gezielt mit neuen Bildern und Impulsen nährst."
+                    />
+                    ,{' '}
+                    <span className="inline-block">
                       <TooltipComponent
                         trigger={<span className="border-dotted border-b-2 border-primary/70 cursor-help">EFT</span>}
                         content="Emotional Freedom Techniques (EFT) ist eine psychologische Akupressur-Technik, die durch sanftes Klopfen auf bestimmte Körperpunkte emotionale Blockaden löst und tiefe Heilung ermöglicht."
                       />
                     </span>
-                    {' '}und NLP.
+                    {' '}und{' '}
+                    <TooltipComponent
+                      trigger="NLP"
+                      content="Neurolinguistisches Programmieren verbindet Sprache, Bilder und Gefühle, um neue, stärkende Muster in deinem Alltag zu verankern."
+                    />
+                    .
                   </p>
                 </Card>
 

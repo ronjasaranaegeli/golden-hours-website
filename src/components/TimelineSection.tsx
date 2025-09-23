@@ -67,7 +67,12 @@ const TimelineSection = () => {
           <div className="mb-6">
             <h4 className="text-lg font-semibold text-golden-700 mb-2">Bewusstsein</h4>
             <ul className="list-disc pl-5 space-y-1 text-neutral-700">
-              <li className="text-base md:text-lg">Yoga-Formen (<span className="inline-block">
+              <li className="text-base md:text-lg">
+                <TooltipComponent
+                  trigger="Yoga-Formen"
+                  content="Individuell abgestimmte Praxis-Sequenzen, die Atem, Bewegung und Achtsamkeit kombinieren, um deine Energie auszubalancieren."
+                />
+                {' '}(<span className="inline-block">
                 <TooltipComponent 
                   trigger="Yin"
                   content="Eine langsame, passive Form des Yoga, bei der Positionen für längere Zeit gehalten werden, um tiefes Bindegewebe und Faszien zu dehnen."
@@ -85,8 +90,21 @@ const TimelineSection = () => {
                   content="Ein fliessender Yoga-Stil, bei dem Bewegungen mit der Atmung synchronisiert werden, um einen meditativen Bewegungsfluss zu erzeugen."
                 /></span>)
               </li>
-              <li className="text-base md:text-lg">Geführte Meditationen, die Klarheit und innere Ruhe vertiefen</li>
-              <li className="text-base md:text-lg">Selbsthypnose für das Unterbewusstsein</li>
+              <li className="text-base md:text-lg">
+                Geführte{' '}
+                <TooltipComponent
+                  trigger="Meditationen"
+                  content="Gezielte Bewusstseinsreisen, die deine Wahrnehmung schulen und tiefe Ruhe im Körper verankern."
+                />
+                , die Klarheit und innere Ruhe vertiefen
+              </li>
+              <li className="text-base md:text-lg">
+                <TooltipComponent
+                  trigger="Selbsthypnose"
+                  content="Ein sanfter Zugang zu deinem Unterbewusstsein, mit dem du alte Muster löst und neue Entscheidungen verankerst."
+                />{' '}
+                für das Unterbewusstsein
+              </li>
               <li className="text-base md:text-lg"><span className="inline-block">
                 <TooltipComponent 
                   trigger="EFT"
