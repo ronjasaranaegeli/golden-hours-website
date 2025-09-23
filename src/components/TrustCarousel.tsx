@@ -39,7 +39,7 @@ const TrustCarousel = () => {
           {duplicated.map((image, index) => (
             <figure
               key={`${image.src}-${index}`}
-              className="rounded-xl overflow-hidden shadow-md bg-white/10 backdrop-blur-sm border border-white/30 dark:border-white/10"
+              className="rounded-2xl overflow-hidden shadow-md bg-white/10 backdrop-blur-sm border border-white/30 dark:border-white/10"
             >
               <img
                 src={image.src}
@@ -48,8 +48,8 @@ const TrustCarousel = () => {
                 decoding="async"
                 width={320}
                 height={400}
-                className="h-32 w-auto object-cover sm:h-36 md:h-40 lg:h-44 xl:h-48"
-                sizes="(max-width: 640px) 70vw, (max-width: 1024px) 40vw, 33vw"
+                className="h-40 w-auto object-cover sm:h-44 md:h-48 lg:h-52 xl:h-56"
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 33vw"
               />
             </figure>
           ))}
