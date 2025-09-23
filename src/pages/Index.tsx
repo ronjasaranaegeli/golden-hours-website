@@ -5,6 +5,7 @@ import ProblemSection from '@/components/ProblemSection';
 import SolutionSection from '@/components/SolutionSection';
 import TransformationSection from '@/components/TransformationSection';
 import TimelineSection from '@/components/TimelineSection';
+import TrustCarousel from '@/components/TrustCarousel';
 import BalanceGraphic from '@/components/BalanceGraphic';
 import AboutSection from '@/components/AboutSection';
 import ProgramDetailsSection from '@/components/ProgramDetailsSection';
@@ -158,6 +159,7 @@ const Index = () => {
         <ProblemSection />
         <SolutionSection />
         <TransformationSection />
+        <TrustCarousel />
         <TimelineSection />
         <BalanceGraphic />
         <AboutSection />
