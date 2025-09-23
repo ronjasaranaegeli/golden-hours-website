@@ -68,7 +68,7 @@ const PricingDetails = () => {
         </ul>
         
         <InfoBox>
-          <p className="text-sm">Begrenzte Teilnehmerzahl: Nur 5 Plätze pro Quartal verfügbar.</p>
+          <p className="text-sm">Öffnung der Räume vom 02.11.25 bis 11.02.26 für eine begrenzte Teilnehmeranzahl.</p>
         </InfoBox>
       </div>
     </div>;
