@@ -58,7 +58,7 @@ const ImageMergeAnimation = () => {
     // Use passive:true for better scroll performance on mobile
     window.addEventListener("scroll", handleScroll, { passive: true });
     
-    return () => window.removeEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobile]);
 
   // Calculate image position based on scroll

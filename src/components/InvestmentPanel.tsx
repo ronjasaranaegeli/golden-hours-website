@@ -115,7 +115,7 @@ const InvestmentPanel = () => {
                   question: "Körperarbeit vermeiden willst",
                   answer: (
                     <p className="text-forest-700">
-                      In diesem Coaching arbeiten wir <TooltipComponent trigger="ganzheitlich" content="Ein Ansatz, der Körper, Geist und Seele als untrennbare Einheit betrachtet" /> – Körper, Geist und Seele sind untrennbar verbunden. Transformation geschieht nicht nur im Kopf, sondern muss verkörpert werden.
+                      In diesem Coaching arbeiten wir <TooltipComponent trigger="ganzheitlich" content="Ein Ansatz, der Körper, Geist und Seele als untrennbare Einheit betrachtet" /> – Körper, Geist und Seele sind untrennbar verbunden. Transformation geschieht nicht nur im Kopf, sondern darf verkörpert werden.
                     </p>
                   )
                 },
