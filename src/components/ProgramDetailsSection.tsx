@@ -55,7 +55,7 @@ const ProgramDetailsSection = () => {
               <Clock className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl font-medium mb-2">12 Wochen Transformation</h3>
-                <p className="text-forest-700">Intensives 3-monatiges Online-Coaching mit wöchentlichen 90-minütigen 1:1 Sessions (insgesamt 12 Sessions)</p>
+                <p className="text-forest-700">Intensives 3-monatiges Online-Coaching mit wöchentlichen 120-minütigen 1:1 Sessions (insgesamt 12 Sessions)</p>
               </div>
             </div>
             
@@ -100,7 +100,7 @@ const ProgramDetailsSection = () => {
               <Calendar className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl font-medium mb-2">Limitierte Plätze</h3>
-                <p className="text-forest-700">Nächste IC•You-Journey - Start Januar 2026 (3/3 Spots noch verfügbar)</p>
+                <p className="text-forest-700">Mit voller Präsenz und achtsamer Begleitung – exklusiv für deinen einzigartigen Herzensweg.</p>
               </div>
             </div>
           </div>
