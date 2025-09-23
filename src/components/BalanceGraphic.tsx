@@ -43,7 +43,7 @@ const BalanceGraphic: React.FC = () => {
               role="img"
               className="w-full h-auto opacity-0 transition-opacity duration-1000 relative z-20 text-white"
             >
-            <title id="balanceTitle">Living in Balance</title>
+            <title id="balanceTitle">Wenn dir das Leben eine Zitrone gibt, mach Limonade draus.</title>
             <desc id="balanceDesc">Visualisierung von acht Lebensbereichen in Balance</desc>
 
             <text 
@@ -54,7 +54,9 @@ const BalanceGraphic: React.FC = () => {
               fontWeight="700" 
               fill="currentColor"
             >
-              LIVING IN BALANCE
+              <tspan x="400" dy="0">WENN DIR DAS LEBEN</tspan>
+              <tspan x="400" dy="52">EINE ZITRONE GIBT,</tspan>
+              <tspan x="400" dy="52">MACH LIMONADE DRAUS.</tspan>
             </text>
 
             <g textAnchor="middle" fill="currentColor" fontSize="22" fontWeight="400">

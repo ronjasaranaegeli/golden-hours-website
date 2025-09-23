@@ -1,6 +1,5 @@
 
 import { useEffect, useRef } from 'react';
-import { TooltipComponent } from './ui/TooltipComponent';
 import InfoBox from './ui/InfoBox';
 
 const AboutSection = () => {
@@ -69,16 +68,12 @@ const AboutSection = () => {
             
             <div className="space-y-6">
               <p className="text-lg leading-relaxed">
-                Kennst du das Gefühl, dass mehr in dir steckt? Auch ich stand vor Jahren an diesem Punkt, fragte mich "Soll das alles sein?". Ein Job, der nicht erfüllte, persönliche Krisen – ich fühlte mich festgefahren, tief im <TooltipComponent trigger="Schatten" content="Die unterdrückten, unbewussten Anteile unseres Selbst, mit denen wir uns nicht identifizieren wollen" />. Dann kam der Weckruf, der mutige Schritt: Ich entschied mich, meiner eigenen Wahrheit ins Auge zu blicken.
+                Du kennst das Gefühl, dass mehr in dir steckt. Auch ich war an diesem Punkt. Gefangen in einem 9-to-5-Job der mich nicht erfüllte, fragte ich mich: "Soll das wirklich alles sein?" Ich fühlte mich festgefahren - in einem Kreislauf aus Aufstehen, Arbeiten, Nachhause kommen, essen, schlafen. Mit meiner Kündigung in der Pharma-Branche begann die Transformation. Ich liess los und trennte mich von einer Identität, die ich nur glaubte zu sein - bis ich mir erlaubte, meiner wahren Essenz zu begegnen. Meiner Wahrheit bin ich auf Solo-Wanderungen in der Stille, auf einer zweimonatigen Reise nach Indien, in über 800 Stunden Yogalehrer-Ausbildungen, im Vipassana, in tiefgehenden Workshops, in der Ausbildung zum NLP-Practitioner und in vielen weiteren Schritten meiner persönlichen Entwicklung begegnet. All diese Erfahrungen haben mich dazu geführt, das Leben zu 100 % zu leben - nicht in Schubladen, sondern im Einklang mit meinem Herzen.
               </p>
-              
-              <p className="text-lg leading-relaxed">
-                Das war der Anfang meiner <TooltipComponent trigger="Transformation" content="Ein tiefgreifender Wandlungsprozess, der über oberflächliche Veränderungen hinausgeht und unser ganzes Sein umfasst" />: Ich kündigte, reiste, vertiefte mich in Yoga & Tanz, gründete mein eigenes Wirken mit Kursen, Workshops, meinem Podcast <a href="https://open.spotify.com/show/5UhLT3NQwHcN4ZRaFtrqRg" target="_blank" rel="noopener noreferrer" className="text-forest-600 hover:text-forest-700 font-medium transition-colors underline">{"\"Generation Om\""}</a>. Die Natur wurde mein Zuhause und Anker, mein Körper, mein Tempel und <TooltipComponent trigger="Kompass" content="Ein inneres Navigationssystem, das uns durch Intuition und Körperweisheit führt" />, die Liebe zum Leben, mein Glaube und grösster Lehrer.
-              </p>
-              
+
               <InfoBox isQuote={true}>
                 <p className="text-lg leading-relaxed">
-                  Diese gelebte Erfahrung, die Höhen und Tiefen, ist das Herz und die Essenz von Golden Hours. Sie erlaubt mir, dich einfühlsam dabei zu unterstützen, deinen eigenen inneren Kompass wiederzufinden und zu aktivieren – und deiner Wahrheit zu folgen.
+                  Seit Anfang 2024 öffne ich mit Golden Hours Räume für Workshops, Retreats, Events und 1:1-Coachings - und begleite dich auf deinem einzigartigen, authentischen Weg des Herzens mit einem reichhaltigen Werkzeugkasten aus Methoden und Erfahrungen, der sich auf meinem eigenen Weg geformt hat.
                 </p>
               </InfoBox>
             </div>

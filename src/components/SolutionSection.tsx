@@ -45,16 +45,12 @@ const SolutionSection = () => {
               alt="Golden Hours Coaching - Transformative Reise" 
               className="h-full w-full object-cover"
             />
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-              <p className="font-serif text-xl text-white mb-1">IC•You-Journey</p>
-              <p className="text-base text-white/90">Dein Weg zu tiefer Bewusstheit und innerem Frieden</p>
-            </div>
           </div>
           
           <div className="reveal space-y-8 order-1 lg:order-2" ref={contentRef}>
             <div className="space-y-4">
               <h2 className="font-serif text-3xl md:text-4xl font-medium heading-underline inline-block">
-                IC•You-Journey
+                1:1 Deep Dive
               </h2>
               
               <h3 className="text-xl font-serif text-forest-800">
@@ -62,14 +58,14 @@ const SolutionSection = () => {
               </h3>
               
               <p className="text-lg leading-relaxed">
-                Ein intensiver, massgeschneiderter 1:1 Raum, in dem Persönlichkeitsentwicklung auf Bewusstseinserweiterung trifft.
+                In dem du dein Bewusstsein erweiterst und daraus dich persönlich entwickelst.
               </p>
             </div>
             
             {/* Quote box with new design */}
             <InfoBox isQuote={true}>
               <p className="text-lg leading-relaxed">
-                "Ich schaffe einen sicheren und geschützten Raum, damit du deine innere Weisheit aktivierst und deiner Wahrheit folgst."
+                Ich schaffe einen sicheren und geschützten Raum in dem ich deine innere Weisheit aktiviere und du dich an deine Essenz erinnerst.
               </p>
             </InfoBox>
             
@@ -80,13 +76,14 @@ const SolutionSection = () => {
                 <Card className="p-4 transition-all duration-300 hover:shadow-md bg-white/80">
                   <h5 className="text-lg font-medium mb-2 font-serif">Ganzheitliche Sessions</h5>
                   <p className="text-forest-700">
-                    mit Yoga, Meditation und 
+                    Yoga, Meditation, Selbsthypnose,
                     <span className="inline-block ml-1">
                       <TooltipComponent
                         trigger={<span className="border-dotted border-b-2 border-primary/70 cursor-help">EFT</span>}
                         content="Emotional Freedom Techniques (EFT) ist eine psychologische Akupressur-Technik, die durch sanftes Klopfen auf bestimmte Körperpunkte emotionale Blockaden löst und tiefe Heilung ermöglicht."
                       />
                     </span>
+                    {' '}und NLP.
                   </p>
                 </Card>
 

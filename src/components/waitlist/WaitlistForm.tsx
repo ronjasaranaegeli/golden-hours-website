@@ -96,7 +96,7 @@ const WaitlistForm = ({ onSubmitSuccess }: WaitlistFormProps) => {
         variant="cream"
         className="w-full py-6 text-lg shadow-md hover:shadow-lg transition-all duration-300 btn-shine"
       >
-        IC•You Check In
+        1:1 Deep Dive Check-in
       </Button>
     </form>
   );

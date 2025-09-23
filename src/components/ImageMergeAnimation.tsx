@@ -1,47 +1,78 @@
 import React, { useEffect, useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+const FULL_IMAGE_PATH = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png';
+const BACKGROUND_IMAGE_PATH = '/images/golden-hours-image-1.JPG';
+
 const ImageMergeAnimation = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [leftImageUrl, setLeftImageUrl] = useState('');
   const [rightImageUrl, setRightImageUrl] = useState('');
+  const [useFullImageFallback, setUseFullImageFallback] = useState(false);
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Check if the split images are already in localStorage
-    const storedLeftImg = localStorage.getItem('leftHalfImage');
-    const storedRightImg = localStorage.getItem('rightHalfImage');
-    
-    if (storedLeftImg && storedRightImg) {
-      setLeftImageUrl(storedLeftImg);
-      setRightImageUrl(storedRightImg);
+    let isMounted = true;
+
+    const storedLeftImg = typeof window !== 'undefined' ? localStorage.getItem('leftHalfImage') : null;
+    const storedRightImg = typeof window !== 'undefined' ? localStorage.getItem('rightHalfImage') : null;
+
+    const assignImages = (leftSrc: string, rightSrc: string, fallback: boolean) => {
+      if (!isMounted) return;
+      setLeftImageUrl(leftSrc);
+      setRightImageUrl(rightSrc);
+      setUseFullImageFallback(fallback);
       setIsLoaded(true);
+    };
+
+    if (storedLeftImg && storedRightImg) {
+      assignImages(storedLeftImg, storedRightImg, false);
     } else {
-      // Use correct image paths for the door animation
-      setLeftImageUrl('/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png');
-      setRightImageUrl('/images/golden-hours-image-5-hochformat.JPG');
-      
-      // Preload images
-      const leftHalf = new Image();
-      const rightHalf = new Image();
-      const background = new Image();
-      
-      leftHalf.src = '/lovable-uploads/24f3e263-20e5-49ac-b306-03654651f2f7.png';
-      rightHalf.src = '/images/golden-hours-image-5-hochformat.JPG';
-      background.src = '/images/golden-hours-image-1.JPG';
-      
-      let loadedCount = 0;
-      const checkAllLoaded = () => {
-        loadedCount++;
-        if (loadedCount === 3) {
-          setIsLoaded(true);
+      const fullImage = new Image();
+      fullImage.crossOrigin = 'anonymous';
+      fullImage.src = FULL_IMAGE_PATH;
+
+      fullImage.onload = () => {
+        if (!isMounted) return;
+
+        const width = fullImage.width / 2;
+        const height = fullImage.height;
+
+        const leftCanvas = document.createElement('canvas');
+        leftCanvas.width = width;
+        leftCanvas.height = height;
+
+        const rightCanvas = document.createElement('canvas');
+        rightCanvas.width = width;
+        rightCanvas.height = height;
+
+        const leftCtx = leftCanvas.getContext('2d');
+        const rightCtx = rightCanvas.getContext('2d');
+
+        if (leftCtx && rightCtx) {
+          leftCtx.drawImage(fullImage, 0, 0, width, height, 0, 0, width, height);
+          rightCtx.drawImage(fullImage, width, 0, width, height, 0, 0, width, height);
+
+          const leftDataUrl = leftCanvas.toDataURL('image/png');
+          const rightDataUrl = rightCanvas.toDataURL('image/png');
+
+          try {
+            localStorage.setItem('leftHalfImage', leftDataUrl);
+            localStorage.setItem('rightHalfImage', rightDataUrl);
+          } catch (error) {
+            console.warn('Speichern der geteilten Bilder im localStorage nicht möglich:', error);
+          }
+
+          assignImages(leftDataUrl, rightDataUrl, false);
+        } else {
+          assignImages(FULL_IMAGE_PATH, FULL_IMAGE_PATH, true);
         }
       };
-      
-      leftHalf.onload = checkAllLoaded;
-      rightHalf.onload = checkAllLoaded;
-      background.onload = checkAllLoaded;
+
+      fullImage.onerror = () => {
+        assignImages(FULL_IMAGE_PATH, FULL_IMAGE_PATH, true);
+      };
     }
 
     const handleScroll = () => {
@@ -57,8 +88,11 @@ const ImageMergeAnimation = () => {
 
     // Use passive:true for better scroll performance on mobile
     window.addEventListener("scroll", handleScroll, { passive: true });
-    
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      isMounted = false;
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [isMobile]);
 
   // Calculate image position based on scroll
@@ -92,7 +126,7 @@ const ImageMergeAnimation = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300"
         style={{ 
-          backgroundImage: 'url("/images/golden-hours-image-1.JPG")',
+          backgroundImage: `url("${BACKGROUND_IMAGE_PATH}")`,
           backgroundPosition: getBgPosition(),
           transform: `scale(${backgroundScale})`,
           transition: 'transform 0.5s ease-out'
@@ -107,8 +141,8 @@ const ImageMergeAnimation = () => {
           className={`absolute top-0 bottom-0 left-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
             backgroundImage: `url("${leftImageUrl}")`,
-            backgroundPosition: isMobile ? '65% center' : 'right center', 
-            backgroundSize: 'cover',
+            backgroundPosition: useFullImageFallback ? 'left center' : (isMobile ? '65% center' : 'right center'), 
+            backgroundSize: useFullImageFallback ? '200% 100%' : 'cover',
             width: '50%',
             transform: `translate3d(-${slidePercentage}%, 0, 0)`,
             transition: isIOS && isSafari ? 'transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.5s ease-out' : 'transform 0.5s ease-out, opacity 0.5s ease-out',
@@ -125,8 +159,8 @@ const ImageMergeAnimation = () => {
           className={`absolute top-0 bottom-0 right-0 h-full bg-cover bg-no-repeat ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ 
             backgroundImage: `url("${rightImageUrl}")`,
-            backgroundPosition: isMobile ? 'center center' : 'left center', // Centered for mobile
-            backgroundSize: 'cover',
+            backgroundPosition: useFullImageFallback ? 'right center' : (isMobile ? 'center center' : 'left center'),
+            backgroundSize: useFullImageFallback ? '200% 100%' : 'cover',
             width: '50%',
             transform: `translate3d(${slidePercentage}%, 0, 0)`,
             transition: isIOS && isSafari ? 'transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.5s ease-out' : 'transform 0.5s ease-out, opacity 0.5s ease-out',

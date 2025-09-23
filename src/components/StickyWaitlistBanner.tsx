@@ -52,10 +52,10 @@ const StickyWaitlistBanner = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between">
           <div className="mb-3 sm:mb-0">
             <h3 className="font-serif text-xl sm:text-2xl text-forest-800 font-medium leading-tight text-center sm:text-left">
-              IC•You Check In – sichere dir deinen Platz
+              1:1 Deep Dive Check-in - sichere dir deinen Platz
             </h3>
             <p className="text-forest-600 leading-snug text-center sm:text-left">
-              Nächster Start: Januar 2026 – nur 5 Plätze
+              Nächster Start: Januar 2026 - nur 5 Plätze
             </p>
           </div>
           <Button 
@@ -63,7 +63,7 @@ const StickyWaitlistBanner = () => {
             className="w-full sm:w-auto"
             size="lg"
           >
-            IC•You Check In
+            1:1 Deep Dive Check-in
             <ArrowRight className="ml-1" />
           </Button>
         </div>

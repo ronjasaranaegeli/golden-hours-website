@@ -60,7 +60,7 @@ const TestimonialsSection = () => {
           </h2>
           
           <p className="text-lg leading-relaxed max-w-3xl mx-auto">
-            Höre, wie die IC•You-Journey das Leben dieser Menschen verändert hat
+            Höre, wie der 1:1 Deep Dive das Leben dieser Menschen verändert hat
           </p>
         </div>
         

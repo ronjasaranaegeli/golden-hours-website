@@ -13,8 +13,8 @@ const HeroSection = () => {
 
   const [titleNumber, setTitleNumber] = useState(0);
   const [hasScrolled, setHasScrolled] = useState(false);
-  
-  const titles = ["Dein <i>Sein</i>", "<i>Wahrheit</i>", "Dein <i>Leben</i>"];
+
+  const titles = ["Du siehst Dich", "Du erinnerst Dich", "Du lebst Dich"];
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -77,15 +77,16 @@ const HeroSection = () => {
                       stiffness: 50,
                       duration: 0.6
                     }}
-                    dangerouslySetInnerHTML={{ __html: title === "<i>Wahrheit</i>" ? "Deine " + title + "." : title + "." }}
-                  />
+                  >
+                    {`${title}.`}
+                  </motion.span>
                 ))}
               </div>
             </div>
           </h1>
         </div>
         <p className="text-base md:text-lg mb-6 font-extralight leading-relaxed max-w-lg text-center">
-          Ist dein Bewusstsein bereit dein vollstes Potenzial zu entfalten?
+          Und ich begleite Dich dabei - Zurück zu Dir Selbst.
         </p>
         <div className="flex justify-center w-full">
           <Button 
@@ -93,7 +94,7 @@ const HeroSection = () => {
             variant="cream"
             className="mt-2 px-4 sm:px-6 py-3 sm:py-4 text-sm btn-shine"
           >
-            Golden Hours IC•You-Journey
+            Golden Hours 1:1 Deep Dive
           </Button>
         </div>
       </div>

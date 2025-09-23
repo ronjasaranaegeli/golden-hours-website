@@ -67,40 +67,44 @@ const TimelineSection = () => {
           <div className="mb-6">
             <h4 className="text-lg font-semibold text-golden-700 mb-2">Bewusstsein</h4>
             <ul className="list-disc pl-5 space-y-1 text-neutral-700">
-              <li className="text-base md:text-lg">Einführung & Vertiefung individueller Praktiken:</li>
-              <ul className="list-disc pl-5 space-y-1 text-neutral-700">
-                <li className="text-base md:text-lg">Yoga-Formen (<span className="inline-block">
-                  <TooltipComponent 
-                    trigger="Yin"
-                    content="Eine langsame, passive Form des Yoga, bei der Positionen für längere Zeit gehalten werden, um tiefes Bindegewebe und Faszien zu dehnen."
-                  /></span>, <span className="inline-block">
-                  <TooltipComponent 
-                    trigger="Hatha"
-                    content="Eine traditionelle Form des Yoga, die Körperhaltungen (Asanas), Atemübungen und Meditation kombiniert."
-                  /></span>, <span className="inline-block">
-                  <TooltipComponent 
-                    trigger="Kundalini"
-                    content="Eine kraftvolle Form des Yoga, die auf das Erwecken der Kundalini-Energie ausgerichtet ist, mit dynamischen Bewegungen, Atemarbeit und Mantras."
-                  /></span>, <span className="inline-block">
-                  <TooltipComponent 
-                    trigger="Vinyasa"
-                    content="Ein fliessender Yoga-Stil, bei dem Bewegungen mit der Atmung synchronisiert werden, um einen meditativen Bewegungsfluss zu erzeugen."
-                  /></span>)
-                </li>
-                <li className="text-base md:text-lg">Selbsthypnose für das Unterbewusstsein</li>
-                <li className="text-base md:text-lg"><span className="inline-block">
-                  <TooltipComponent 
-                    trigger="EFT"
-                    content="Emotional Freedom Techniques (EFT) ist eine psychologische Akupressur-Technik, die durch sanftes Klopfen auf bestimmte Körperpunkte emotionale Blockaden löst und tiefe Heilung ermöglicht."
-                  /></span> (Emotional Freedom Techniques)
-                </li>
-                <li className="text-base md:text-lg">Bewusste Atemarbeit (<span className="inline-block">
-                  <TooltipComponent 
-                    trigger="Pranayama"
-                    content="Yogische Atemübungen zur Kontrolle der Lebensenergie (Prana), die Körper und Geist reinigen, Energie steigern und das Bewusstsein erweitern."
-                  /></span>)
-                </li>
-              </ul>
+              <li className="text-base md:text-lg">Yoga-Formen (<span className="inline-block">
+                <TooltipComponent 
+                  trigger="Yin"
+                  content="Eine langsame, passive Form des Yoga, bei der Positionen für längere Zeit gehalten werden, um tiefes Bindegewebe und Faszien zu dehnen."
+                /></span>, <span className="inline-block">
+                <TooltipComponent 
+                  trigger="Hatha"
+                  content="Eine traditionelle Form des Yoga, die Körperhaltungen (Asanas), Atemübungen und Meditation kombiniert."
+                /></span>, <span className="inline-block">
+                <TooltipComponent 
+                  trigger="Kundalini"
+                  content="Eine kraftvolle Form des Yoga, die auf das Erwecken der Kundalini-Energie ausgerichtet ist, mit dynamischen Bewegungen, Atemarbeit und Mantras."
+                /></span>, <span className="inline-block">
+                <TooltipComponent 
+                  trigger="Vinyasa"
+                  content="Ein fliessender Yoga-Stil, bei dem Bewegungen mit der Atmung synchronisiert werden, um einen meditativen Bewegungsfluss zu erzeugen."
+                /></span>)
+              </li>
+              <li className="text-base md:text-lg">Geführte Meditationen, die Klarheit und innere Ruhe vertiefen</li>
+              <li className="text-base md:text-lg">Selbsthypnose für das Unterbewusstsein</li>
+              <li className="text-base md:text-lg"><span className="inline-block">
+                <TooltipComponent 
+                  trigger="EFT"
+                  content="Emotional Freedom Techniques (EFT) ist eine psychologische Akupressur-Technik, die durch sanftes Klopfen auf bestimmte Körperpunkte emotionale Blockaden löst und tiefe Heilung ermöglicht."
+                /></span> (Emotional Freedom Techniques)
+              </li>
+              <li className="text-base md:text-lg">Bewusste Atemarbeit (<span className="inline-block">
+                <TooltipComponent 
+                  trigger="Pranayama"
+                  content="Yogische Atemübungen zur Kontrolle der Lebensenergie (Prana), die Körper und Geist reinigen, Energie steigern und das Bewusstsein erweitern."
+                /></span>)
+              </li>
+              <li className="text-base md:text-lg"><span className="inline-block">
+                <TooltipComponent 
+                  trigger="NLP"
+                  content="Neurolinguistisches Programmieren nutzt Sprache, Bilder und Körperarbeit, um alte Muster zu lösen und neue, dienliche Verbindungen im Nervensystem zu schaffen."
+                /></span>-Sequenzen zur bewussten Neuausrichtung deiner inneren Sprache
+              </li>
             </ul>
           </div>
           

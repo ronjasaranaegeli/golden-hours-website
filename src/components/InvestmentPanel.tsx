@@ -1,7 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { Laptop, MapPin, ArrowRight } from 'lucide-react';
 import { FaqSection } from '@/components/ui/faq-section';
-import { Button } from '@/components/ui/button';
 import { TooltipComponent } from '@/components/ui/TooltipComponent';
 
 const InvestmentPanel = () => {
@@ -30,63 +28,22 @@ const InvestmentPanel = () => {
     };
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="pt-0 md:pt-0 pb-12 md:pb-16 bg-cream-50 relative z-20" id="investment" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 reveal" ref={headerRef}>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-4 heading-underline inline-block">
-              Investment
+              Deine Entscheidung für den 1:1 Deep Dive
             </h2>
           </div>
           
           <div className="reveal" ref={contentRef}>
-            <div className="bg-white rounded-xl shadow-md p-6 md:p-8 mb-0">
-              <div className="max-w-4xl mx-auto space-y-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-golden-100 rounded-xl">
-                  <div className="flex items-center mb-3 sm:mb-0">
-                    <Laptop className="text-primary w-6 h-6 mr-4 flex-shrink-0" />
-                    <span className="font-serif text-xl font-medium text-forest-800">Online-Coaching:</span>
-                  </div>
-                  <div>
-                    <span className="text-forest-700 font-bold text-xl">CHF 3.900</span>
-                    <span className="text-forest-600 text-sm ml-2">(Einmalzahlung oder 3 x CHF 1.350)</span>
-                  </div>
-                </div>
-                
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border border-golden-100 rounded-xl">
-                  <div className="flex items-center mb-3 sm:mb-0">
-                    <MapPin className="text-primary w-6 h-6 mr-4 flex-shrink-0" />
-                    <span className="font-serif text-xl font-medium text-forest-800">Vor-Ort-Coaching:</span>
-                  </div>
-                  <div>
-                    <span className="text-forest-700 font-bold text-xl">CHF 5.490</span>
-                    <span className="text-forest-600 text-sm ml-2">(im Umkreis von 70km ab Baden, AG)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
             <FaqSection
               title="Ist Golden Hours wirklich das Richtige für DICH?"
               description="Golden Hours ist eine tiefgreifende, transformative Reise – und sie ist nicht für jeden geeignet. Dieses Programm ist wahrscheinlich nichts für dich, wenn du:"
               className="elegant-card text-center bg-white p-4 sm:p-8 rounded-sm shadow-md mt-16"
               items={[
-                {
-                  question: "Schnelle Lösungen suchst",
-                  answer: (
-                    <p className="text-forest-700">
-                      Echte Veränderung braucht Zeit, Commitment und die Bereitschaft, wirklich hinzuschauen – nicht nur an der <TooltipComponent trigger="Oberfläche" content="Oberflächliche Veränderungen führen selten zu tiefgreifenden und langfristigen Transformationen" /> zu kratzen.
-                    </p>
-                  )
-                },
                 {
                   question: "Starre Programme erwartest",
                   answer: (

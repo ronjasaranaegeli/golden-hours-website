@@ -39,7 +39,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="max-w-5xl mx-auto pt-8 pb-0 px-4 md:px-8 lg:px-10 text-center">
         <h2 className="text-2xl md:text-5xl mb-3 text-forest-900 font-serif font-medium relative inline-block">
-          IC•You-Journey
+          1:1 Deep Dive
           <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-golden-400 to-transparent"></span>
         </h2>
         <p className="text-neutral-700 text-base md:text-lg max-w-2xl mx-auto mb-2">
