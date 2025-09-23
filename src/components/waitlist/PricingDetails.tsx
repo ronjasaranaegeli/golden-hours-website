@@ -63,7 +63,7 @@ const PricingDetails = () => {
           </li>
           <li className="flex items-start gap-2">
             <Check className="h-4 w-4 shrink-0 text-amber-600" />
-            <span>Bonus: Zugang zum Golden Hours Netzwerk mit 20% auf alle w</span>
+            <span>Bonus: Zugang zum Golden Hours Netzwerk mit 20% auf alle weiteren Golden Hours Events (Workshops, Retreats & Co)</span>
           </li>
         </ul>
         
