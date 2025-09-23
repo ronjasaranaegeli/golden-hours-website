@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Laptop, MapPin, Check } from 'lucide-react';
 import InfoBox from '../ui/InfoBox';
-
 const PricingDetails = () => {
-  return (
-    <div className="text-center">
+  return <div className="text-center">
       <div className="mb-8">
         <h3 className="font-serif text-2xl mb-4 text-forest-800">Investment in deine Zukunft</h3>
         <p className="text-forest-600 mb-8">3-monatiges 1:1 Premium-Coaching</p>
@@ -46,7 +43,7 @@ const PricingDetails = () => {
         <ul className="space-y-3 mb-8">
           <li className="flex items-start gap-2">
             <Check className="h-4 w-4 shrink-0 text-amber-600" />
-            <span>12 wöchentliche 1:1 Sessions à 90 Minuten</span>
+            <span>12 wöchentliche 1:1 Sessions à 120 Minuten</span>
           </li>
           <li className="flex items-start gap-2">
             <Check className="h-4 w-4 shrink-0 text-amber-600" />
@@ -66,7 +63,7 @@ const PricingDetails = () => {
           </li>
           <li className="flex items-start gap-2">
             <Check className="h-4 w-4 shrink-0 text-amber-600" />
-            <span>Bonus: Zugang zum Golden Hours Netzwerk</span>
+            <span>Bonus: Zugang zum Golden Hours Netzwerk mit 20% auf alle w</span>
           </li>
         </ul>
         
@@ -74,8 +71,6 @@ const PricingDetails = () => {
           <p className="text-sm">Begrenzte Teilnehmerzahl: Nur 5 Plätze pro Quartal verfügbar.</p>
         </InfoBox>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default PricingDetails;
