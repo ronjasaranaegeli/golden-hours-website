@@ -1,82 +1,47 @@
 import { useEffect, useRef } from 'react';
 import { CheckCircle, Clock, Calendar, Users, Award } from 'lucide-react';
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
-} from '@/components/ui/carousel';
-
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 const ProgramDetailsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
     if (headerRef.current) observer.observe(headerRef.current);
     if (contentRef.current) observer.observe(contentRef.current);
-
     return () => {
       if (headerRef.current) observer.unobserve(headerRef.current);
       if (contentRef.current) observer.unobserve(contentRef.current);
     };
   }, []);
 
-
   // Program images for carousel
-  const programImages = [
-    "/images/golden-hours-image-18.JPG",
-    "/images/golden-hours-image-21.JPG",
-    "/images/golden-hours-image-8.JPG",
-    "/images/golden-hours-image-23.JPG",
-    "/images/golden-hours-image-14.JPG",
-  ];
-
-  return (
-    <section 
-      id="program" 
-      className="py-24 md:py-32 pb-8 md:pb-12 bg-secondary/30 relative z-20" 
-      ref={sectionRef}
-    >
+  const programImages = ["/images/golden-hours-image-18.JPG", "/images/golden-hours-image-21.JPG", "/images/golden-hours-image-8.JPG", "/images/golden-hours-image-23.JPG", "/images/golden-hours-image-14.JPG"];
+  return <section id="program" className="py-24 md:py-32 pb-8 md:pb-12 bg-secondary/30 relative z-20" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16 reveal" ref={headerRef}>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 heading-underline inline-block">
-            Programm Details
-          </h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6 heading-underline inline-block">Golden Hours 1:1 Deep Dive</h2>
           
-          <p className="text-lg md:text-xl leading-relaxed mb-0 max-w-3xl mx-auto">
-            Die IC•You-Journey ist für Menschen, die bereit sind, 
-            den nächsten Schritt in ihrer persönlichen Transformation zu gehen.
-          </p>
+          <p className="text-lg md:text-xl leading-relaxed mb-0 max-w-3xl mx-auto">Es ist eine Einladung an Menschen, die den Mut haben, neue, noch unbekannte Orte in sich selbst zu entdecken – und die bereit sind, ihren inneren Garten liebevoll zu pflegen und zu erneuern. Mit dieser Offenheit entsteht die Grundlage für eine kraftvolle, transformative und erfüllende Zusammenarbeit.</p>
         </div>
 
         {/* Program Image Carousel */}
         <div className="mb-16 max-w-5xl mx-auto reveal">
           <Carousel>
             <CarouselContent>
-              {programImages.map((image, index) => (
-                <CarouselItem key={index}>
+              {programImages.map((image, index) => <CarouselItem key={index}>
                   <div className="aspect-video overflow-hidden rounded-sm">
-                    <img 
-                      src={image} 
-                      alt={`Golden Hours Coaching Impression ${index + 1}`}
-                      className="h-full w-full object-cover"
-                    />
+                    <img src={image} alt={`Golden Hours Coaching Impression ${index + 1}`} className="h-full w-full object-cover" />
                   </div>
-                </CarouselItem>
-              ))}
+                </CarouselItem>)}
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
@@ -142,8 +107,6 @@ const ProgramDetailsSection = () => {
           
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProgramDetailsSection;
