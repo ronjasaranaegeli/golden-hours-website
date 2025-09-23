@@ -28,10 +28,11 @@ const TestimonialsSection = () => {
 
   // Testimonial videos data with YouTube URLs
   const testimonials = [
-    { name: "Anja", youtubeId: "AG5SY8gTLG8" },
-    { name: "Katarina", youtubeId: "bgYzcPxxjfc" },
-    { name: "Ludmilla", youtubeId: "Uqn5-Vul_Hw" },
-    { name: "Momo", youtubeId: "ubsW0lCEUz4" },
+    { name: "Marica", youtubeId: "hJmTFzkHwUc" },
+    { name: "Momo", youtubeId: "-To6ElGUa_4" },
+    { name: "Renu", youtubeId: "bvs0kjY22e4" },
+    { name: "Ania", youtubeId: "s8Q_LHusZcI" },
+    { name: "Caterina", youtubeId: "4v2gUsak6Rc" },
   ];
 
   // YouTube player options
@@ -85,7 +86,7 @@ const TestimonialsSection = () => {
         
         {/* Testimonial Thumbnails */}
         <div className="flex justify-center">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
