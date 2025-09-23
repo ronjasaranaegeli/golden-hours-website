@@ -45,10 +45,7 @@ const WaitlistSection = () => {
                 <p className="text-lg mb-6 text-forest-600">Die Räume für den 1:1 Deep Dive sind vom 11.02.2025 bis zum 02.01.2026 für dich geöffnet.
 
 
-Wenn du dich in dieser Zeit für deinen Platz entscheidest, darfst du in einen geschützten Raum voller Transformation und Wachstum eintreten. 
-
-
-Danach bleiben die Türen geschlossen – und meine volle Präsenz gilt den Menschen, die in diesem Zeitfenster ihre Reise begonnen haben.</p>
+Wenn du dich in dieser Zeit für deinen Platz entscheidest, darfst du in einen geschützten Raum voller Transformation und Wachstum eintreten. </p>
               </div>
               
               <div className="mt-auto pt-12 pb-4 relative">
