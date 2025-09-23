@@ -59,7 +59,7 @@ const PricingDetails = () => {
           </li>
           <li className="flex items-start gap-2">
             <Check className="h-4 w-4 shrink-0 text-amber-600" />
-            <span>Exklusives Angebot im Rahmen von maximal 3 verfügbaren Spots</span>
+            <span>Mit voller Präsenz und achtsamer Begleitung – exklusiv für deinen einzigartigen Herzensweg.</span>
           </li>
           <li className="flex items-start gap-2">
             <Check className="h-4 w-4 shrink-0 text-amber-600" />
