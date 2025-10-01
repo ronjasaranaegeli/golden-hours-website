@@ -1,5 +1,4 @@
 import React from 'react';
-import { GiLemon } from 'react-icons/gi';
 
 const BalanceGraphic: React.FC = () => {
   return (
@@ -9,7 +8,6 @@ const BalanceGraphic: React.FC = () => {
           Sei du selbst die Veränderung, die du dir wünschst für diese Welt
         </h2>
         <p className="mt-8 text-black text-xl sm:text-2xl md:text-3xl font-medium">— Mahatma Gandhi</p>
-        <GiLemon className="mt-6 h-12 w-12 text-black" aria-hidden={true} />
       </div>
     </section>
   );
