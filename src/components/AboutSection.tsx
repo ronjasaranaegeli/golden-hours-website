@@ -52,7 +52,7 @@ const AboutSection = () => {
               <img 
                 src="/images/golden-hours-image-5-hochformat.JPG" 
                 alt="Coach Portrait" 
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-[center_70%]"
               />
             </div>
             <InfoBox isQuote={true} className="mt-8">
