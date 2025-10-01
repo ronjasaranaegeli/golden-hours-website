@@ -7,8 +7,12 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Impressum from "./components/Impressum";
 import Datenschutz from "./components/Datenschutz";
+import ComingSoonOverlay from "./components/ComingSoonOverlay";
 
 const queryClient = new QueryClient();
+
+// Set to false to disable the coming soon overlay
+const SHOW_COMING_SOON = true;
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -24,6 +28,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      {SHOW_COMING_SOON && <ComingSoonOverlay />}
     </TooltipProvider>
   </QueryClientProvider>
 );
