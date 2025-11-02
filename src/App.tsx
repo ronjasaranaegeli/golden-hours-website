@@ -12,7 +12,7 @@ import ComingSoonOverlay from "./components/ComingSoonOverlay";
 const queryClient = new QueryClient();
 
 // Set to false to disable the coming soon overlay
-const SHOW_COMING_SOON = true;
+const SHOW_COMING_SOON = false;
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
