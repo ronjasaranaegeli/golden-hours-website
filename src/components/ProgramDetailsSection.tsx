@@ -95,14 +95,6 @@ const ProgramDetailsSection = () => {
               </div>
             </div>
             
-            {/* Feature 6: Limitierte Plätze */}
-            <div className="flex items-start">
-              <Calendar className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
-              <div>
-                <h3 className="font-serif text-xl font-medium mb-2">Limitierte Plätze</h3>
-                <p className="text-forest-700">Mit voller Präsenz und achtsamer Begleitung – exklusiv für deinen einzigartigen Herzensweg.</p>
-              </div>
-            </div>
           </div>
           
         </div>

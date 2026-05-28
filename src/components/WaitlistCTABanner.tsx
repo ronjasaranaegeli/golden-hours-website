@@ -1,16 +1,10 @@
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import InfoBox from '@/components/ui/InfoBox';
+import { MessageCircle } from 'lucide-react';
+
+const WHATSAPP_URL = 'https://wa.me/41762800550?text=' + encodeURIComponent('Hallo du mutige Seele! Schön hast Du den Weg hierher gefunden. Bist du bereit für innere Arbeit, persönliche Weiterentwicklung und eine transformative Reise? Dann schlag mir 2-3 Daten vor für ein kostenloses Erstgespräch. Deine Prozessbegleiterin -Ronja');
 
 const WaitlistCTABanner = () => {
-  const scrollToWaitlist = () => {
-    const waitlistSection = document.getElementById('waitlist');
-    if (waitlistSection) {
-      waitlistSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="py-10 mb-6 relative z-20">
       <div className="container mx-auto px-4 md:px-8">
@@ -22,16 +16,14 @@ const WaitlistCTABanner = () => {
                   1:1 Deep Dive Check-in - sichere dir deinen Platz
                 </h3>
                 <p className="text-forest-600 leading-snug text-center sm:text-left">
-                  Anmeldung geöffnet 02.11.25 – 01.02.26
+                  Melde dich direkt per WhatsApp für ein kostenloses Erstgespräch
                 </p>
               </div>
-              <Button 
-                onClick={scrollToWaitlist}
-                className="w-full sm:w-auto"
-                size="lg"
-              >
-                1:1 Deep Dive Check-in
-                <ArrowRight className="ml-1" />
+              <Button asChild className="w-full sm:w-auto" size="lg">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-1" />
+                  Per WhatsApp melden
+                </a>
               </Button>
             </div>
           </div>
