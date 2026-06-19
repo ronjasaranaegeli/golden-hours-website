@@ -55,7 +55,7 @@ const ProgramDetailsSection = () => {
               <Clock className="text-primary w-6 h-6 mr-4 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-serif text-xl font-medium mb-2">12 Wochen Transformation</h3>
-                <p className="text-forest-700">Intensives 12-Wochen Online-Coaching mit wöchentlichen 120-min 1:1 Sessions (12x)</p>
+                <p className="text-forest-700">intensives 12-Wochen Online /oder vor Ort Coaching mit wöchentlichen 180-min 1:1 Sessions (12x)</p>
               </div>
             </div>
             
