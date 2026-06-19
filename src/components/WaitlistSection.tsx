@@ -55,7 +55,7 @@ const WaitlistSection = () => {
               {/* Button styled to match the image */}
               <Button asChild className="w-auto px-8 py-3 bg-[#25D366] hover:bg-[#1ebe57] text-white font-medium" size="default">
                 <a
-                  href={'https://wa.me/41762800550?text=' + encodeURIComponent('Hallo du mutige Seele! Schön hast Du den Weg hierher gefunden. Bist du bereit für innere Arbeit, persönliche Weiterentwicklung und eine transformative Reise? Dann schlag mir 2-3 Daten vor für ein kostenloses Erstgespräch. Deine Prozessbegleiterin -Ronja')}
+                  href={'https://wa.me/41762800550?text=' + encodeURIComponent('Ich bin bereit, tiefer zu tauchen, und freue mich auf ein Erstgespräch, bei dem wir uns näher kennenlernen.')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center"

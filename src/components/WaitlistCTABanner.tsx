@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { MessageCircle } from 'lucide-react';
 
-const WHATSAPP_URL = 'https://wa.me/41762800550?text=' + encodeURIComponent('Hallo du mutige Seele! Schön hast Du den Weg hierher gefunden. Bist du bereit für innere Arbeit, persönliche Weiterentwicklung und eine transformative Reise? Dann schlag mir 2-3 Daten vor für ein kostenloses Erstgespräch. Deine Prozessbegleiterin -Ronja');
+const WHATSAPP_URL = 'https://wa.me/41762800550?text=' + encodeURIComponent('Ich bin bereit, tiefer zu tauchen, und freue mich auf ein Erstgespräch, bei dem wir uns näher kennenlernen.');
 
 const WaitlistCTABanner = () => {
   return (
